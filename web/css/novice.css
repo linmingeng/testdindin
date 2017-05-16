@@ -1,0 +1,121 @@
+@import url( global.css );
+.banner_guide {
+	TEXT-INDENT: -9999px; BACKGROUND: url(../image/bg_novice.png) no-repeat; HEIGHT: 206px
+}
+.content_guide {
+	BORDER-BOTTOM: #d9d9d9 1px solid; BORDER-LEFT: #d9d9d9 1px solid; MARGIN-BOTTOM: 10px; BORDER-TOP: #d9d9d9 1px solid; BORDER-RIGHT: #d9d9d9 1px solid
+}
+.module_process {
+	POSITION: relative
+}
+.module_process .title {
+	TEXT-INDENT: -9999px; MARGIN: 30px 0px 20px 30px; BACKGROUND: url(../image/bg_novice.png) no-repeat 0px -206px; HEIGHT: 73px
+}
+.module_security .title {
+	TEXT-INDENT: -9999px; MARGIN: 30px 0px 20px 30px; BACKGROUND: url(../image/bg_novice.png) no-repeat 0px -206px; HEIGHT: 73px
+}
+.module_security .title {
+	BACKGROUND-POSITION: 0px -279px
+}
+.module_process .detail .process_list {
+	POSITION: relative; LIST-STYLE-TYPE: none; MARGIN: 10px 0px 0px 98px; WIDTH: 841px; BACKGROUND: url(../image/bg_novice.png) no-repeat 0px -352px; HEIGHT: 295px; LIST-STYLE-IMAGE: none
+}
+.module_process .detail .process_list H4 {
+	DISPLAY: none
+}
+.module_process .detail .process_list .step1 P {
+	POSITION: absolute; WIDTH: 156px; TOP: 216px; LEFT: 28px
+}
+.module_process .detail .process_list .step2 P {
+	POSITION: absolute; WIDTH: 156px; TOP: 216px; LEFT: 238px
+}
+.module_process .detail .process_list .step3 P {
+	POSITION: absolute; WIDTH: 156px; TOP: 216px; LEFT: 446px
+}
+.module_process .detail .process_list .step4 P {
+	POSITION: absolute; WIDTH: 156px; TOP: 216px; LEFT: 660px
+}
+.module_security .detail {
+	MARGIN: 10px 20px 0px 98px
+}
+.module_security H4 {
+	PADDING-BOTTOM: 7px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; MARGIN-BOTTOM: 14px; BACKGROUND: #f0f0f0; COLOR: #3f3f3f; FONT-SIZE: 14px; PADDING-TOP: 6px
+}
+.module_security H4 STRONG {
+	COLOR: #e70000
+}
+.module_security .security {
+	POSITION: relative; ZOOM: 1
+}
+.module_security .security .security_list {
+	MARGIN-BOTTOM: 20px
+}
+.module_security .security .security_list LI {
+	BORDER-BOTTOM: #d0d0d0 1px dashed; PADDING-BOTTOM: 20px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; ZOOM: 1; OVERFLOW: hidden; PADDING-TOP: 20px
+}
+.module_security .security .security_list .icon_se {
+	WIDTH: 160px; FLOAT: left
+}
+.module_security .security .security_list .icon_se STRONG {
+	TEXT-INDENT: 40px; DISPLAY: block
+}
+.module_security .security .security_list .icon_se SPAN {
+	TEXT-INDENT: 40px; DISPLAY: block
+}
+.module_security .security .security_list P {
+	WIDTH: 680px; FLOAT: right
+}
+.module_security .security .security_list .security1 .icon_se {
+	BACKGROUND: url(../image/bg_novice.png) no-repeat -940px -423px
+}
+.module_security .security .security_list .security2 .icon_se {
+	BACKGROUND: url(../image/bg_novice.png) no-repeat -940px -478px
+}
+.module_security .security .security_list .security3 .icon_se {
+	BACKGROUND: url(../image/bg_novice.png) no-repeat -940px -534px
+}
+.module_security .security .security_list .security4 .icon_se {
+	BACKGROUND: url(../image/bg_novice.png) no-repeat -940px -595px
+}
+.module_security .security .security_list .security4 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+.module_security .tenpay {
+	POSITION: relative; ZOOM: 1
+}
+.module_security .tenpay_exp {
+	ZOOM: 1; OVERFLOW: hidden
+}
+.module_security .tenpay_exp .tenpay_logo {
+	TEXT-INDENT: -9999px; WIDTH: 135px; BACKGROUND: url(../image/bg_novice.png) no-repeat -845px -356px; FLOAT: left; HEIGHT: 50px
+}
+.module_security .tenpay_exp .tenpay_con {
+	LINE-HEIGHT: 22px; WIDTH: 700px; FLOAT: right
+}
+.module_security .tenpay_exp .tenpay_con H5 {
+	COLOR: #f80000; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+.module_security .bt_login {
+	TEXT-ALIGN: center; MARGIN-TOP: 10px; WIDTH: 111px; DISPLAY: block; BACKGROUND: url(../image/bg_novice.png) no-repeat -869px -705px; HEIGHT: 22px; COLOR: white
+}
+.module_security A.bt_login:link {
+	TEXT-DECORATION: none
+}
+.module_security A.bt_login:visited {
+	TEXT-DECORATION: none
+}
+.module_security .tenpay_process {
+	PADDING-BOTTOM: 10px; MARGIN: 18px 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BACKGROUND: #f7f7f7; PADDING-TOP: 10px
+}
+.module_security .tenpay_process H5 {
+	MARGIN: 5px 0px 10px 10px; COLOR: #3f3f3f; FONT-SIZE: 12px
+}
+.module_security .tenpay_process .detail {
+	TEXT-INDENT: -9999px; MARGIN: 10px; WIDTH: 806px; BACKGROUND: url(../image/bg_novice.png) no-repeat 0px -647px; HEIGHT: 80px
+}
+.module_process .more {
+	TOP: 40px; RIGHT: 20px
+}
+.more {
+	POSITION: absolute; TOP: 5px; RIGHT: 5px
+}

@@ -1,0 +1,39 @@
+.clearfix:after{content: ".";height: 0;display: block;overflow: hidden;clear: both;}
+
+
+#fix{position: fixed;right: 20px;top: 200px;background: #fff;z-index: 999;width: 70px;border:1px solid #f4f4f4;display:none;}
+#fix ul li{width: 100%;height: 46px;cursor: pointer;position: relative;border-bottom: 1px solid #f4f4f4;}
+#fix ul li a{background: url(../images/fix.png) no-repeat;display: block;width: 100%;height: 100%;position: relative;}
+#fix ul li a.service{background-position: -2px -4px;}
+#fix ul li a.phone{background-position: -2px -49px;}
+#fix ul li a.webchat{background-position: -2px -94px;}
+#fix ul li a.share{background-position: -2px -140px;}
+#fix ul li a.back{background-position: -2px -186px;}
+#fix ul li:hover{background: rgba(74,196,250,1);}
+#fix ul li a.service:hover{background-position: -66px -4px;}
+#fix ul li a.phone:hover{background-position: -66px -49px;}
+#fix ul li a.webchat:hover{background-position: -66px -94px;}
+#fix ul li a.share:hover{background-position: -66px -140px;}
+#fix ul li a.back:hover{background-position: -66px -186px;}
+#fix ul li a .tel{display: none;position: absolute;height: 100%;width: 120px;left: -120px;background: #fff;color: #4ac4fa;text-align: center;border:1px solid #86d8fc;line-height: 46px;font-size: 15px;font-weight: bold;border-right: none;z-index: 10;}
+#fix ul li a span{display: block;position: absolute;width: 30px;height: 30px;background: #fff;left: 90px;z-index: -3;top: 8px;transform: rotate(45deg);}
+#fix ul li a .chat{display: none;position: absolute;left: -108px;top: -82px;border: 1px solid #86d8fc;z-index: 10}
+#fix ul li a .chat span{z-index: -3;top: 90px;left: 79px;}
+#fix ul li>span.share{background: url(../images/fix.png) no-repeat -2px -140px;display: block;height: 46px;}
+#fix ul li>span.share:hover{background-position: -66px -140px;}
+#fix ul li dl{width: 100px;position: absolute;display: none;left: -100px;top: -230px;}
+#fix ul li dl dd{background: #fff;width: 100px;height: 46px;border: 1px solid #86d8fc;z-index: 2;border-bottom: none;}
+#fix ul li dl dd:last-child{border-bottom: 1px solid #86d8fc;}
+#fix ul li dl dd a{background: url(../images/share.png) no-repeat;display: block;}
+#fix ul li dl dd a.weixin{background-position: 10px -2px}
+#fix ul li dl dd a.tx{background-position: 10px -48px}
+#fix ul li dl dd a.sina{background-position: 10px -92px}
+#fix ul li dl dd a.bd{background-position: 10px -136px}
+#fix ul li dl dd a.qq{background-position: 10px -182px}
+#fix ul li dl dd a.qz{background-position: 10px -230px}
+#fix ul li>span i{display: block;position: absolute;width: 30px;height: 30px;background: #fff;left: -27px;z-index: 10;top: 8px;transform: rotate(45deg);}
+#fix ul li>span.share i{display:none;}
+.bdshare-button-style0-32 a{float:none;margin:0;}
+@media screen and (max-width:767px){
+	#fix{display:none;}
+}

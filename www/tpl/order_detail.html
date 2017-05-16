@@ -1,0 +1,168 @@
+<ion-view title="订单详情" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goState('orders')" >
+            {{ utils.hasHistory()?'返回':'我的订单'}}
+       </button>
+    </ion-nav-buttons>
+    <div class="order-bar">
+        <div class="order-status">
+            <div class="status">
+                <div class="status-icon">
+                    <i class="icon iconfont icon-order"></i>
+                </div>
+                已提交
+            </div>
+            <div class="dot">
+               ...
+            </div>
+            <div class="status red" ng-if="dt.data.status == 0">
+                <div class="status-icon">
+                    <i class="icon iconfont icon-31shijian"></i>
+                </div>
+                已过期
+            </div>
+            
+            <div class="status" ng-class="{'gray':dt.data.status <= 1}" ng-if="dt.data.status > 0">
+                <div class="status-icon">
+                    <i class="icon iconfont icon-iconfontxianjin"></i>
+                </div>
+                已付款
+            </div>
+            <div class="dot" ng-if="dt.data.status > 0">
+                ...
+            </div>
+            <div class="status" ng-class="{'gray':dt.data.status < 3}" ng-if="dt.data.status > 0">
+                <div class="status-icon">
+                    <i class="icon iconfont icon-deliver"></i>
+                </div>
+                已发货
+            </div>
+            <div class="dot" ng-if="dt.data.status > 0">
+                ...
+            </div>
+            <div class="status" ng-class="{'gray':dt.data.status != 5}" ng-if="dt.data.status > 0">
+                <div class="status-icon">
+                    <i class="icon iconfont icon-androiddone"></i>
+                </div>
+                已完成
+            </div>
+            
+            <div class="prices">
+                <div class="pr" ng-bind="'￥'+dt.data.price" ng-if="dt.data.status == 1"></div>
+                <div class="button button-assertive act-button one" ng-click="removeOrder(dt.data.orderid)" ng-if="dt.data.status == 0 || dt.data.status == 5">删除</div>
+                <div class="button button-assertive act-button" ng-click="payIt(dt.data)" ng-if="dt.data.status == 1">支 付</div>
+                <div class="button button-positive act-button one" ng-click="receiveIt(dt.data)" ng-if="dt.data.status == 3">确认收货</div>
+                <div class="button button-assertive act-button one" ng-click="commentIt(dt.data)" ng-if="dt.data.status == 4">我要评价</div>
+            </div>
+            
+        </div>
+    </div>
+    <ion-content lazy-scroll class="has-order-bar" has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list app-list">
+            <div class="item item-divider" ng-if="dt.data.delivery_company && dt.data.delivery_company != 'NULL'">
+                物流信息 
+            </div>
+            <div class="item item-icon-right" ng-if="dt.data.delivery_company && dt.data.delivery_company != 'NULL' && dt.data.delivery_sn && dt.data.delivery_sn != 'NULL'" ng-click="goDeliveryDetail(dt.data.delivery_company,dt.data.delivery_sn)">
+                <span>
+                    快递公司：{{dt.data.delivery_company}} <br>
+                    快递单号：{{dt.data.delivery_sn}}
+                </span>
+                <i class="icon iconfont icon-iosarrowright" ></i>
+            </div>
+            
+            <div class="item item-icon-right" ng-if="dt.data.delivery_company && dt.data.delivery_company != 'NULL' && (!dt.data.delivery_sn || dt.data.delivery_sn == 'NULL') " >
+                <span class="fs_11" >{{dt.data.delivery_company}}</span>
+            </div>
+            
+            <div class="item item-divider" >
+                收货地址 
+            </div>
+            <div class="item addr" >
+                <span ng-bind="dt.data.name" ></span>，<span ng-bind="dt.data.phone"></span> <br>
+                <span ng-bind="dt.data.area+' '+dt.data.address"  class="fs_10"></span>
+            </div>
+            <div class="item item-divider" >
+                订单明细 
+            </div>
+            <div class="item item-thumbnail-left" ng-repeat="item in dt.data.order_goods">
+                <img class="bg" image-lazy-src="{{item.image}}" ng-click="goGoods(item.goodsid)" />
+                <h2>{{item.name}}</h2>
+                <p>&nbsp;x{{item.quantity}}</p> 
+                <span class="item-note" ng-if="dt.data.order_type == 10">{{item.price*item.quantity}} {{dt.memberConf.score_txt || '积分'}}</span>
+                <span class="item-note" ng-if="dt.data.order_type != 10" ng-bind="item.price*item.quantity | currency: '￥'"></span>
+            </div>
+            <div class="count">
+                <div class="row">
+                    <span class="col pl_12" >商品总额</span>
+                    <span class="col col-50 mount" ng-bind="dt.data.total | currency: '￥'"></span>
+                </div>
+                <div class="row" ng-if="dt.data.reach_reduce > 0">
+                    <span class="col pl_12" >满减优惠</span>
+                    <span class="col col-50 mount" >-{{dt.data.reach_reduce | currency: '￥'}}</span>
+                </div>
+                <div class="row" ng-if="dt.data.newbie_reduce > 0">
+                    <span class="col pl_12" >首单优惠</span>
+                    <span class="col col-50 mount" >-{{dt.data.newbie_reduce | currency: '￥'}}</span>
+                </div>
+                <div class="row" ng-if="dt.data.coupon_money > 0">
+                    <span class="col pl_12" >优惠券优惠</span>
+                    <span class="col col-50 mount" >-{{dt.data.coupon_money | currency: '￥'}}</span>
+                </div>
+                <div class="row" ng-if="dt.data.hongbao_money > 0">
+                    <span class="col pl_12" >使用红包</span>
+                    <span class="col col-50 mount" >-{{dt.data.hongbao_money | currency: '￥'}}</span>
+                </div>
+                <div class="row">
+                    <span class="col pl_12" >运费</span>
+                    <span class="col col-50 mount" >+{{dt.data.delivery_fee | currency: '￥'}}</span>
+                </div>
+            </div>
+            <div class="item pay_info">
+                <div>实付款：<span>{{dt.data.price | currency: '￥'}}</span></div>
+                <!--div style="font-size:8pt;color:#999;">配送方：{{dt.data.app_name}}</div-->
+                <div style="font-size:8pt;color:#999;">下单时间：{{dt.data.add_at*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+            </div>
+            
+            <div class="item item-divider" ng-if="dt.data.return_money > 0 || (dt.memberConf.open == 1 && (dt.data.score > 0 || dt.data.exp > 0))">
+                {{dt.data.status == 5?'订单奖励':'订单完成后可获得以下奖励'}}
+            </div>
+            <div class="item" ng-if="dt.data.return_money > 0">
+                <span>返现：{{dt.data.return_money | currency: '￥'}} </span>
+                <span ng-if="dt.data.return_time>0"> &nbsp; ({{dt.data.return_time*1000 | date : 'yyyy-MM-dd'}})</span>
+            </div>
+            
+            <div class="item" ng-if="dt.memberConf.open == 1 && dt.data.score > 0">
+                <span>{{dt.memberConf.score_txt || '积分'}}：+{{dt.data.score}} </span>
+                <span ng-if="dt.data.score_time>0"> &nbsp; ({{dt.data.score_time*1000 | date : 'yyyy-MM-dd'}})</span>
+            </div>
+            
+            <div class="item" ng-if="dt.memberConf.open == 1 && dt.data.exp > 0">
+                <span>{{dt.memberConf.exp_txt || '经验'}}：+{{dt.data.exp}} </span>
+                <span ng-if="dt.data.score_time>0"> &nbsp; ({{dt.data.score_time*1000 | date : 'yyyy-MM-dd'}})</span>
+            </div>
+            
+            <div class="item item-divider" ng-if="dt.data.invoice">
+                发票抬头 
+            </div>
+            <div class="item" ng-if="dt.data.invoice">
+                <span>{{dt.data.invoice}}</span>
+            </div>
+            <div class="item item-divider" ng-if="dt.data.note">
+                备注信息 
+            </div>
+            <div class="item" ng-if="dt.data.note">
+                <span>{{dt.data.note}}</span>
+            </div>
+            
+            <div class="item item-divider" >
+                订单号 
+            </div>
+            <div class="item row">
+                <span class="pl_12" ng-bind="dt.data.order_number"></span>
+            </div>
+            
+        </div>
+        <div class="blank-float"></div>
+    </ion-content>
+</ion-view>

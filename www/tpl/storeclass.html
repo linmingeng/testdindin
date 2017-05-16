@@ -1,0 +1,135 @@
+<style>
+
+    .album1{
+        background-color:#fff;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0rem 0.5rem;
+    }
+    .album1 div{
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+    }
+    .album1 img{
+        padding: 0 0.5rem;
+        width:8rem;
+    }
+    .album1 .view_more{
+        height: 7rem;
+        margin-left: 1rem;
+        margin-right: 3rem;
+    }
+    .cate_pro_name{
+        position: relative;
+        text-overflow: ellipsis;
+        width:8rem;
+        overflow: hidden;
+        white-space:normal;
+        display:block;
+        height: 2.4rem;
+        color: #000;
+    }
+    .cate_pro_price{
+        font-size: 1.1rem;
+        font-weight: 600;
+        width:100%;
+        color: #F00000;
+        text-align: center;
+    }
+
+    .cate_pro_old_price{
+        color: #C5C5C5;
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
+    }
+    .ad{
+        padding: 0.1rem;
+    }
+     .navi{
+         overflow: hidden;
+         white-space: nowrap;
+         /*padding: 0.5rem 0;*/
+         line-height: 2.5rem;
+         font-size: 1rem;
+         height: 2.5rem;
+         background-color: #ffffff;
+     }
+    .store_banner{
+        height:12rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 6rem 0rem 0rem 2rem;
+    }
+    .store_banner .store_icon{
+        width: 20%;
+    }
+    .store_banner .store_icon img{
+        width: 100%;
+    }
+    .store_banner .store_info{
+        width: 80%;
+        padding-left: 0.5rem;
+    }
+    .store_banner div{
+        float: left;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+    .store_banner .store_name{
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        width: 100%;
+    }
+    .store_tag div{
+        float: left;
+        font-size: 0.8rem;
+        color: #000000;
+        background-color: #ffffff;
+        padding: 0 1rem;
+        margin: 0 0.1rem;
+        border-radius: 1rem;
+    }
+    .footer_btn{
+        width: 50%;
+        color: #000000;
+        text-align: center;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.1rem;
+    }
+</style>
+<ion-view hide-back-button="true" title="叮叮网">
+
+    <ion-nav-buttons side="left">
+        <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack()" >
+            返回
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-bar>
+
+    </ion-nav-bar>
+
+    <!--<ion-nav-buttons side="right">-->
+        <!--<button class="button hearrd_button">-->
+            <!--<i class="iconfont  icon-search"></i>-->
+        <!--</button>-->
+    <!--</ion-nav-buttons>-->
+
+    <ion-content lazy-scroll has-bouncing="true" delegate-handle="homeScroll" class="cont" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+
+        <ion-list>
+            <ion-item-sliding>
+                <ion-item  ng-click="toUrl('storegoods/{{dt.storeid}}/0/')">
+                    全部商品<em class="iconfont icon-iosarrowright" style="float: right"></em>
+                </ion-item>
+                <div><br></div>
+                <ion-item ng-repeat="group in dt.store.groups_detail" ng-click="toStoreGroup(group.groupid)">
+                    {{group.name}}<em class="iconfont icon-iosarrowright" style="float: right"></em>
+                </ion-item>
+            </ion-item-sliding>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

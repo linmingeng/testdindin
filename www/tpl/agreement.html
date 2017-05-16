@@ -1,0 +1,10 @@
+<div class="modal">
+    <div class="bar bar-header bar-light">
+        <h1 class="title">服务协议</h1>
+        <button class="button button-small button-clear button-positive" ng-click="close()">关闭</button>
+    </div>
+    <ion-content class="padding has-header" has-bouncing="true">
+        <div ng-if="dt.spinner" class="center padding"><ion-spinner></ion-spinner></div>
+        <div class="news-content" ng-if="agreement" compile="agreement" ></div>
+    </ion-content>
+</div>

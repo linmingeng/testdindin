@@ -1,0 +1,37 @@
+<ion-view title="我的{{dt.traderConf.sub_txt || '下线'}}" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('trader')" >
+            {{ utils.hasHistory()?'返回':'我是'+(dt.traderConf.txt || '分销商')}}
+       </button>
+    </ion-nav-buttons>
+    <div class="foot-bar">
+        <div class="tip" >
+            人脉就是金钱！{{dt.traderConf.sub_txt || '下线'}}越多，收入越多！
+        </div>
+        <div class="button button-assertive pay-button" ng-if="utils.showShare()" ng-click="shareIt();">招募</div>
+    </div>
+    <ion-content class="has-foot-bar" has-bouncing="true">
+       <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+       <div class="my-table" ng-if="dt.items.length">
+            <div class="row header">
+                <div class="col">日期</div>
+                <div class="col">昵称</div>
+                <div class="col">性别</div>
+                <div class="col">等级</div>
+            </div>
+            <div class="row" ng-repeat="item in dt.items track by item.userid" >
+                <div class="col">{{item.add_at*1000 | date : 'yyyy-MM-dd'}}</div>
+                <div class="col">{{item.nickname | limitTo: 10}}</div>
+                <div class="col">{{utils.config.mySexArr[item.sex] || '保密'}}</div>
+                <div class="col" ng-style="{'color':dt.traderLevels[item.level].color}">{{dt.traderLevels[item.level].title}}</div>
+            </div>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-alert gray" style="font-size:64px;"></i>
+             <br /><span class="lh_64">暂时没有任何数据</span>
+        </div>
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

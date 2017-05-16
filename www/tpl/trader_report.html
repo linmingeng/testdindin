@@ -1,0 +1,37 @@
+<ion-view title="运营报表" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('trader')" >
+            {{ utils.hasHistory()?'返回':'我是'+(dt.traderConf.txt || '分销商')}}
+       </button>
+    </ion-nav-buttons>
+    <div class="foot-bar" ng-if="utils.showShare()" ng-click="shareIt();">
+        <div class="tip" >
+            把APP分享到朋友圈，坐等软妹币！
+        </div>
+        <div class="button button-assertive pay-button" ng-click="share()">分享</div>
+    </div>
+    <ion-content class="has-foot-bar" has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="my-table" ng-if="dt.items.length">
+            <div class="row header">
+                <div class="col">日期</div>
+                <div class="col">访问人数</div>
+                <div class="col">订单数</div>
+                <div class="col">订单金额</div>
+            </div>
+            <div class="row" ng-repeat="item in dt.items track by item.reportid" >
+                <div class="col">{{item.add_at*1000 | date : 'yyyy-MM-dd'}}</div>
+                <div class="col">{{item.uv}}</div>
+                <div class="col">{{item.orders}}</div>
+                <div class="col">{{item.money | currency: '￥'}}</div>
+            </div>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-alert gray" style="font-size:64px;"></i>
+             <br /><span class="lh_64">暂时没有任何数据</span>
+        </div>
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

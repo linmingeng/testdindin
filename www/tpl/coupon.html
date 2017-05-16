@@ -1,0 +1,44 @@
+<ion-view title="我的优惠券" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('account')" >
+            {{ utils.hasHistory()?'返回':'我的'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-clear button-positive" ng-if="showUseful()" ng-click="useCoupon(null,null,null,null);" >不使用</button>
+    </ion-nav-buttons>
+    <div class="button-bar my-button-bar">
+        <div class="button button-small" ng-class="{'on': dt.type == 0}" ng-click="clickBtn(0)">{{showUseful()?'可':'未'}}使用</div>
+        <div class="button button-small" ng-class="{'on': dt.type == 1}" ng-click="clickBtn(1)">已使用</div>
+        <div class="button button-small" ng-class="{'on': dt.type == 2}" ng-click="clickBtn(2)">已过期</div>
+    </div>
+    <ion-content has-header="true" has-bouncing="true" delegate-handle="couponScroll" ng-class="{'has-button-bar': !dt.useful}">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list no-margin-bottom" ng-if="dt.items.length">
+            <div class="item coupon-item" ng-if="ifShow(dt.type, coupon.coupon_type.consume)" ng-repeat="coupon in dt.items track by coupon.couponid" ng-click="useCoupon(coupon.coupon_type.appid, coupon.couponid, coupon.coupon_typeid, coupon.coupon_type.consume, coupon.coupon_type.money);">
+                <div class="coupon-item-left">
+                    <div class="moneyTip">满{{coupon.coupon_type.consume}}元减</div>
+                    <div class="money">￥<span>{{coupon.coupon_type.money}}</span></div>
+                </div>
+                <div class="coupon-item-right">
+                    <div class="scope">适用于</div> 
+                    <div class="scopeTip">{{coupon.coupon_type.tip}}</div> 
+                    <div class="expires">
+                        <span ng-if="coupon.coupon_type.type == 0">有效期：{{coupon.add_at}}~{{coupon.expires_at}}</span>
+                        <span ng-if="coupon.coupon_type.type == 1">&nbsp;</span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-centercoupon gray" style="font-size:64px;"></i>
+             <br />
+             <span class="lh_64" ng-if="dt.type == 0">您暂时没有可用的优惠券</span>
+             <span class="lh_64" ng-if="dt.type == 1">您暂时没有已使用的优惠券</span>
+             <span class="lh_64" ng-if="dt.type == 2">您暂时没有已过期的优惠券</span>
+        </div>
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

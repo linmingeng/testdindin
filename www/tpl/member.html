@@ -1,0 +1,47 @@
+<ion-view title="我的{{dt.score_txt}}" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('account')" >
+            {{ utils.hasHistory()?'返回':'我的'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <i class="icon iconfont icon-iconfontwenhao1 positive" style="font-size:18pt;line-height:36px;" ng-click="common.ifGoUrl('page/member');" ></i>
+    </ion-nav-buttons>
+    <ion-content has-bouncing="true" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="member_info">
+            <img class="avatar" ng-src="{{ dt.profile.avatar || dt.defaultFace || 'img/logo.png' }}" onerror="javascript:this.src='img/logo.png'" />
+            <div class="name" ng-bind="dt.profile.nickname || dt.phone || '您好'"></div>
+            <span class="level" ng-if="dt.memberData.cur" ng-style="dt.curColor">{{dt.memberData.cur.title}}</span>
+            <div class="txt"> 
+                <span ng-if="dt.profile.score">{{dt.score_txt+': '+dt.profile.score}}</span>
+                <span ng-if="dt.memberConf.exp == 1 && dt.profile.exp">{{', '+dt.exp_txt+': '+dt.profile.exp}}</span>
+                <span ng-if="dt.memberData.cur.buy_rate > 0 && dt.memberData.cur.buy_rate > 0">{{', 购物打'+dt.memberData.cur.buy_rate+'折'}}</span>
+                <span ng-if="dt.memberData.next && dt.needExp"><br >再获得<span ng-style="dt.nextColor">{{dt.needExp}}</span>{{dt.memberConf.exp == 1?dt.exp_txt:dt.score_txt}}即可升级为<span ng-style="dt.nextColor">{{dt.memberData.next.title}}</span>{{dt.memberData.next.buy_rate>0?(', 购物打'+dt.memberData.next.buy_rate+'折'):''}}</span>
+            </div>
+        </div>
+        <div class="list my-list">
+            <div class="item item-icon-right" ng-click="common.ifGoUrl('page/birthday')" ng-if="dt.isBirthday">
+                生日祝福
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div class="item item-icon-right" ng-click="common.ifGoUrl('page/sign')">
+                每日签到
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div class="item item-icon-right" ng-if="dt.memberConf.lbs_sign > 0" ng-click="common.ifGoUrl('sub_shop/sign')">
+                {{dt.memberConf.lbs_sign_pre || '门店'}}签到
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div class="item item-icon-right" ng-click="common.ifGoUrl('score_log')">
+                {{dt.score_txt}}明细
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div class="item item-icon-right" ng-click="utils.toUrl('/app/shop/0/-10')" ng-if="dt.memberConf.exchange == 1">
+                我要换购
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+        </div>
+        
+    </ion-content>
+</ion-view>

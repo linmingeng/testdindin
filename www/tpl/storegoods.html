@@ -1,0 +1,215 @@
+<style>
+
+    .album1{
+        background-color:#fff;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0rem 0.5rem;
+    }
+    .album1 div{
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+    }
+    .album1 img{
+        padding: 0 0.5rem;
+        width:8rem;
+    }
+    .album1 .view_more{
+        height: 7rem;
+        margin-left: 1rem;
+        margin-right: 3rem;
+    }
+    .cate_pro_name{
+        position: relative;
+        text-overflow: ellipsis;
+        width:8rem;
+        overflow: hidden;
+        white-space:normal;
+        display:block;
+        height: 2.4rem;
+        color: #000;
+    }
+    .cate_pro_price{
+        font-size: 1.1rem;
+        font-weight: 600;
+        width:100%;
+        color: #F00000;
+        text-align: center;
+    }
+
+    .cate_pro_old_price{
+        color: #C5C5C5;
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
+    }
+    .ad{
+        padding: 0.1rem;
+    }
+     .navi{
+         overflow: hidden;
+         white-space: nowrap;
+         /*padding: 0.5rem 0;*/
+         line-height: 2.5rem;
+         font-size: 1rem;
+         height: 2.5rem;
+         background-color: #ffffff;
+     }
+    .store_banner{
+        height:12rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 6rem 0rem 0rem 2rem;
+    }
+    .store_banner .store_icon{
+        width: 20%;
+    }
+    .store_banner .store_icon img{
+        width: 100%;
+    }
+    .store_banner .store_info{
+        width: 80%;
+        padding-left: 0.5rem;
+    }
+    .store_banner div{
+        float: left;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+    .store_banner .store_name{
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        width: 100%;
+    }
+    .store_tag div{
+        float: left;
+        font-size: 0.8rem;
+        color: #000000;
+        background-color: #ffffff;
+        padding: 0 1rem;
+        margin: 0 0.1rem;
+        border-radius: 1rem;
+    }
+    .footer_btn{
+        width: 50%;
+        color: #000000;
+        text-align: center;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.1rem;
+    }
+    .st{
+        background-color: red;
+    }
+</style>
+<ion-view hide-back-button="true" title="叮叮网">
+
+    <ion-nav-buttons side="left">
+        <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack()" >
+            返回
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-bar>
+
+    </ion-nav-bar>
+
+    <ion-nav-title>
+        <div ng-if="dt.groupid>0">
+            {{dt.group_info.name}}
+        </div>
+        <div ng-if="dt.groupid<=0">
+            叮叮网
+        </div>
+    </ion-nav-title>
+
+    <!--<ion-nav-buttons side="right">-->
+        <!--<button class="button hearrd_button">-->
+            <!--<i class="iconfont  icon-search"></i>-->
+        <!--</button>-->
+    <!--</ion-nav-buttons>-->
+
+    <ion-content lazy-scroll has-bouncing="true" delegate-handle="homeScroll" class="cont" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <!--商家banner-->
+        <div ng-if="dt.groupid<=0">
+            <div class="store_banner" style="background-image:url('{{utils.getImgUrl(dt.store.banner)}}');">
+                <div class="store_icon">
+                    <img src="{{dt.store.icon}}">
+                </div>
+                <div class="store_info">
+                    <div class="store_name">{{dt.store.name}}</div>
+                    <div class="store_tag">
+                        <div>
+                            品牌商入驻
+                        </div>
+                        <div>
+                            服务保障
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="group-list" style="padding-top: 0;">
+                <div class="row navi" style="padding: 0;">
+                    <div ng-class="{'col':true,'st':dt.nav==-1}"  ng-click="toUrl('store/{{dt.storeid}}')">
+                        店铺首页
+                    </div>
+                    <div ng-class="{'col':true,'st':dt.nav==0}"  ng-click="toUrl('storegoods/{{dt.storeid}}/0/')">
+                        全部商品
+                    </div>
+                    <div ng-class="{'col':true,'st':dt.nav==1}" ng-click="toUrl('storegoods/{{dt.storeid}}/1/')">
+                        店铺推荐
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="home_block" ng-if="dt.showMoreGoods">
+            <div class="center">
+                <div class="title">
+                    {{dt.homeConf.more_goods.title}}
+                </div>
+                <div class="tip">
+                    {{dt.homeConf.more_goods.tip}}
+                </div>
+            </div>
+            <ul class="list goods-ul" >
+                <li class="item" goods-item ng-if="!dt.hideItems[item.goodsid]" ng-repeat="item in dt.items" >
+                    <div class="goods-div">
+                        <div class="img hasTag">
+                            <div class="tag"><div class="left color{{item.tag.status}}" ng-if="item.tag.txt">{{item.tag.txt}}</div> <div class="right color-1" ng-if="item.tag.show_limit">限购</div> <div class="right color-2" ng-if="item.store == 0">{{dt.conf.no_goods_txt || '无货'}}</div></div>
+                            <img class="bg" ng-if="$index < 6" ng-src="{{item.image}}" ng-click="goGoods(item.goodsid)"/>
+                            <img class="bg" ng-if="$index >= 6" image-lazy-src="{{item.image}}" image-lazy-loader="dots" ng-click="goGoods(item.goodsid)"/>
+                            <div class="count_down" ng-class="{'ing': item.tag.ing == 1}" ng-if="item.tag.show_cd == 1 && cds[item.goodsid]">{{cds[item.goodsid].cd}}</div>
+                        </div>
+                        <div class="name">
+                            {{item.name}}
+                        </div>
+                        <div class="stepper" ng-class="{'gray-dom': item.store == 0}">
+                            <div ng-if="item.tag.btn" class="btn" ng-click="orderIt(item);">{{item.tag.btn}}</div>
+                            <div ng-if="!item.tag.btn" class="addCart icon iconfont icon-cartplus" ng-click="addQuantity(item);"></div>
+                        </div>
+                        <span class="goods_price" ng-class="{'hasCD': item.tag.show_cd == 1}" >
+                            <span class="rmb" ng-if="item.tag.status != 10">￥</span><span class="pr">{{item.tag.prices.pr}}</span> <span class="dis" ng-if="item.tag.status == 10">{{dt.memberConf.score_txt || '积分'}}</span>
+                            <span class="dis" ng-if="item.tag.prices.dis">{{item.tag.prices.dis}}折</span>
+                            <span class="prt" ng-if="item.tag.prices.prt">{{item.tag.prices.prt}}</span>
+                            <span class="rt" ng-if="item.tag.prices.rt">返￥{{item.tag.prices.rt}}</span>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+
+    <div class="bar bar-footer">
+        <div class="footer_btn iconfont icon-search" ng-click="toUrl('storeclass/{{dt.storeid}}')" >商品分类</div>
+        <div class="footer_btn iconfont icon-search" ng-click="toUrl('storegoods/{{dt.storeid}}/1/')" >商品推荐</div>
+    </div>
+</ion-view>

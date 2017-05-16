@@ -1,0 +1,173 @@
+@charset "gbk";
+
+.header_wrapper .input-search .search_wrapper{border-color: #009de0;border-radius: 0px;padding-right:74px;}
+#search input{height:33px;}
+.clearfix.after,ul:after,li:after,.row:after,.ma:after,{content: ".";height: 0;display: block;overflow: hidden;clear: both;}
+
+/*顶部导航条*/
+.main-bgs{background:#F7F6F6;border-bottom: 1px solid #EFEFEF;padding: 5px 0;display: block;font-size: 13px;}
+.main-bgs .cont-left{float: left;color: #777777;}
+.main-bgs .cont-right{float: right;line-height: 22px;}
+.main-bgs .cont-right ul{float: right;}
+.main-bgs .cont-right ul li{float: left;padding: 0 10px;border-right: 1px solid #b6b6b6;}
+.main-bgs .cont-right ul li:nth-child(1){padding-left: 0;}
+.main-bgs .cont-right ul li:nth-child(3),.main-bgs .cont-right ul li:nth-child(5){padding-right: 0;border: none;}
+/*.main-bgs .cont-right ul li.webchat:before{content: "";background: url(../images/head_webchat.jpg) no-repeat;height: 18px;width: 21px;display: block;float: left;margin-right: 2px;}*/
+.main-bgs .cont-right ul li.webchat:before{content: "";background: url(../image/head_app.jpg) no-repeat;height: 18px;width: 21px;display: block;float: left;margin-right: 2px;}
+.main-bgs .cont-right ul li.service:before{content: "";background: url(../image/con-s.jpg) no-repeat;height: 18px;width: 21px;display: block;float: left;margin-right: 2px;}
+.main-bgs .cont-right ul li.service span{color: #0f78b9;font-weight: bold;}
+.main-bgs .webchat{position:relative;}
+.main-bgs .webchat .webchatimg{position:absolute;left:0;top:19px;z-index: 8999;display:none;padding-top:5px;}
+.main-bgs .qiandao:before{content: "";background: url(../images/qiandao2.png) no-repeat;background-size:19px 16px;height: 18px;width: 21px;display: block;float: left;margin-right: 2px;}
+.main-bgs .webchat:hover .webchatimg{display:block;width:100%;}
+/*首页横幅*/
+.tuijian-img{position:relative;color:#fff;}
+    .tuijian-number{position: absolute;
+		right: 23.5%;
+		top: 28%;
+		font-size: 18px;
+		font-weight: bold;}
+		.tuijian-number a{color:#F2DEDE;font-size:15px;}
+		.tuijian-number a:hover{text-decoration:underline;}
+    /*.tuijian-number span{display:inline-block;width:21px;height:21px;line-height:21px;border:1px solid #fff;margin-right:5px;text-align:center;}*/
+    .header_wrapper .baoyou ul{overflow:hidden;}
+    .header_wrapper .baoyou ul li{text-align:center;float:left;margin-right:0px;}
+
+	.main_menu > ul > li > a.v_menu_trigger.light_bg_color,.main_menu > ul.horizontal > li > a,.menu_wrapper .mini_cart{height:40px;line-height:16px;}
+	.footer_wrapper ul li{margin-bottom:13px;}
+	/*页面右侧分享到微信宽度*/
+	#bdshare_weixin_qrcode_dialog_bg,#bdshare_weixin_qrcode_dialog{width: 260px!important;height:317px!important;}
+	#colorbox.loginbox{min-height:319px;margin-top:-250px;}
+	/*新频道底部  开始*/
+	/*底部*/
+.zheng{background: #009de0;padding: 25px 0;}
+.footer .din-info{padding-top: 25px;background: #fff;}
+.footer .din-info .footer-item{width: 13%;padding: 0;}
+.footer .din-info .footer-ma{width: 22%;padding: 0;}
+.din-info .footer-item h3{font-size: 14px;font-weight: bold;color: #000;}
+.din-info .footer-item a{font-size: 13px;line-height: 25px;display: inline-block;position:relative;}
+/*.din-info .footer-item a.dinbi{background:url(../images/newChannel/hot_icon.jpg) no-repeat right top;}*/
+.din-info .footer-item a i{position:absolute;top:-5px;right:-15px;}
+.din-info .footer-ma .ma{width: 50%; float: left;text-align: left;}
+.din-info .footer-ma .ma img{width: 100%;max-width: 100px;}
+.footer-ma .ma span{display:block;margin-bottom: 5px;}
+.footer-ma .new-zi{padding-left: 15px;}
+.bottom-info{padding: 13px 0 20px;background: #fff;text-align: center;}
+.bottom-info .beian{padding: 8px 0;color: #999;}
+.bottom-info .beian a{color:#999;}
+.bottom-info .bottom-icon{padding: 10px 0;text-align: center;}
+.bottom-info .bottom-icon a{display: inline-block;}
+.header_wrapper .baoyou{width:22%;}
+#column-left .left-title i{display:none;}
+/*底部结束*/
+	/*新频道底部  结束*/
+	@media screen and (max-width: 1530px) {
+		.tuijian-number{right:20%!important;top:21%;}
+	}
+	@media screen and (max-width: 1260px) {
+		.tuijian-number{right:18%;}
+	}
+	@media screen and (max-width: 1199px) {
+    	
+    	.header_wrapper .baoyou ul li{margin-right:0;}
+    	/*底部 开始 */
+		.din-info .container{padding: 0;width: 990px;}
+		.footer .din-info .footer-item{width: 12%;}
+		.footer .din-info .footer-ma{width: 27%;}
+		.footer .din-info .footer-item:nth-child(1){padding-left: 25px;}
+		/*底部结束*/
+	}
+	@media only screen and (min-width: 1025px){
+		.menu_wrapper {height: 40px;}
+	}
+	@media screen and (max-width: 1015px) {
+		.tuijian-number{right:0;}
+	}
+	@media screen and (min-width:992px){
+		.outer_container .menu_table .menu_cell .main_menu ul#top-menu.white_color>li>a,
+		.outer_container .menu_table .menu_cell .main_menu ul#top-menu.white_color>li>a .fa-sort-desc,#cart .cart_holder{color:#fff!important;}
+		.header_wrapper .logos{width:18%;}
+		/*.header_wrapper .baoyou{width:46%;}
+		.header_wrapper .input-search{width:32%;}*/
+		
+		
+	}
+	@media screen and (max-width:991px) {
+		/*底部 开始*/
+		.footer .din-info .footer-item{float: left;width: 16%;margin-bottom: 25px;}
+		.din-info .container{width: 750px;}
+		.footer .din-info .footer-item:nth-child(1){padding-left: 0;}
+		.footer .din-info .footer-ma{width: 36%;}
+		.din-info .footer-ma .ma{padding-left: 0;}
+		.bottom-info .bottom-icon{text-align: left;}
+		.bottom-info .bottom-icon a{margin-bottom: 5px;}
+		/*底部结束*/
+		.header_wrapper .baoyou{width:30%;}
+	}
+	@media screen and (max-width: 767px) {
+		.main-bgs .cont-right{display: none;}
+		.tuijian-img{display:none;}
+		.menu_table .menu_cell {width: 33%;float:left;}
+		.menu_table .menu_cell.fill{width:30%;float:left;}
+		.main_menu > ul > li > a.v_menu_trigger.light_bg_color{width:100%;}
+		.menu_table .menu_cell.right{border-right:none;border-bottom:none;}
+		.menu_wrapper .mini_cart{border-right:none;border-left:none;}
+		.main_menu > ul > li.trigger{border-left:none;border-right: none;}
+		.menu_wrapper .mini_menu_trigger{border-bottom:none;}
+		.main_menu ul.vertical,.main_menu ul.links_holder{width:280px;}
+		.main_menu ul.links_holder{left:-90px;}
+		.nopaddings{padding-left:0;padding-right:0;}
+		.menu_wrapper .mini_cart{padding: 6px 11px 6px 0px;}
+		.footer_wrapper .row.footer .footer-item:nth-child(4){height:230px;}
+		.footer_wrapper .row.footer .footer-item{padding-left:20px;}
+		/*底部 开始*/
+		.footer .din-info{padding: 25px 15px 0 15px;}
+		.din-info .container{width: 100%;padding-left: 15px;}
+		.din-info .footer-item a{font-size: 12px;}
+		.services .ser-cont{margin-bottom: 10px;}
+		.footer .din-info .footer-ma{width: 60%;}
+		/*底部结束*/
+		.header_wrapper .chongzhi,#column-left .application-h,#column-left .application{display:none;}
+		/*会员中心左侧菜单*/
+		#column-left{position: absolute;right: 0;z-index: 999;top: -4px;}
+		#column-left > *{display:block;}
+		#column-left .list-group.box{position: absolute;right: 14px;top: 30px;width: 200px;z-index: 9999;display:none;}
+		#column-left .left-title{font-size: 14px;width: 85px;height: 28px;line-height: 24px;margin-bottom: 10px;background: #4AC4FA;color: #fff;padding:3px;}
+    	.breadcrumb_wrapper{margin-bottom:0;}
+    	#column-left .left-title i{display:inline-block;}
+		/*会员中心左侧菜单*/
+	}
+	
+	@media screen and (max-width: 480px){
+		/*底部 开始*/
+		.pro-text a{font-size: 12px;}
+		.footer .din-info .footer-item{width: 50%;}
+		.footer .din-info .footer-ma{width: 100%;}
+		.bottom-info .bottom-icon{text-align: center;}
+		.bottom-info .beian{font-size: 12px;}
+		/*底部结束*/
+	}
+@media screen and (max-width: 991px) {
+		.main-bgs{font-size: 13px;}
+		.main-bgs .cont-right ul li{padding: 0 5px;}
+		
+		#cart .cart_holder,.menu_wrapper .fill .fa.fa-list{color:#fff;}
+		.menu_wrapper .mini_menu_trigger{height:45px;}
+		.main-bgs .container{width:100%;}
+	}
+	@media screen and (max-width: 991px) and (min-width:768px){
+		.main-bgs .cont-right ul li:nth-child(3){border-right:none;}
+		.main-bgs .cont-right ul li:nth-child(4){display:none;}
+		.header_wrapper .baoyou ul{width:190px;margin:0 auto;}
+	}
+	@media screen and (max-width: 767px) and (min-width:375px) {
+		.header_wrapper .baoyou ul{width:190px;}	
+	}
+	@media screen and (max-width: 374px) {
+		/*.header_wrapper .baoyou{display: none;}*/
+		.header_wrapper .baoyou ul{width:190px;margin:0 auto;}
+	}
+	@media screen and (max-width: 365px) {
+		.menu_table .menu_cell.fill{width:20%;}
+		
+	}

@@ -1,0 +1,17 @@
+<ion-view title="关于我们">
+    <ion-content has-header="true" has-bouncing="true">
+        <div class="about-logo" style="background: url({{utils.getAppLogo()}}) no-repeat center center;background-size: 100%;"></div>
+        <p class="about-version" ng-bind="'当前版本: ' + curVersion"></p>
+        <div class="list my-list">
+            <a href="#/app/page/agreement" class="item item-icon-right">
+                服务协议
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+            <a href="#/app/page/declaration" class="item item-icon-right">
+                免责声明
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+            
+        </div>
+    </ion-content>
+</ion-view>

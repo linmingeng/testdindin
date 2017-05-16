@@ -1,0 +1,17 @@
+<ion-view title="订单备注">
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-clear button-positive" ng-click="setNote(dt.note)">确定</button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="list my-list">
+            <label class="item item-input">
+                <input maxLength="18" type="text" ng-model="dt.note" style="height:24px;" placeholder="请输入订单备注" one-key-clear-input />
+            </label>
+        </div>
+        <div style="text-align:center;">
+            <div style="margin:5px;width:45%;" class="button button-small button-balanced" ng-click="dt.note = note" ng-repeat="note in dt.order_notes track by $index">
+                {{note}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

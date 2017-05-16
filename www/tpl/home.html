@@ -1,0 +1,302 @@
+<style>
+    .navi{
+        overflow: hidden;
+        white-space: nowrap;
+        /*padding: 0.5rem 0;*/
+        line-height: 2.5rem;
+        font-size: 1rem;
+        height: 2.5rem;
+        background-color: #ffffff;
+    }
+
+    /**图片占满画廊*/
+    .navi a{
+        margin: 0 0.5rem;
+        width:5rem;
+        color: #666;
+    }
+    .navi a:link{
+        color:black;
+
+    }
+    .navi a:hover{
+        color:black;
+
+    }
+    .navi a:visited{
+        color:black;
+    }
+    .bar .title{
+        margin: 0;
+    }
+    .item-input-inset{
+        padding: 0;
+    }
+    .hearrd_button{
+        background-color: #ffffff
+    }
+    .home_block{
+        margin-top: 0;
+    }
+    .limit_title{
+        float: left;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0.5rem 1rem 0.5rem 1rem;
+    }
+    .album1{
+        background-color:#fff;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0rem 0.5rem;
+    }
+    .album1 div{
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+    }
+    .album1 img{
+        padding: 0 0.5rem;
+        width:8rem;
+    }
+    .album1 .view_more{
+        height: 7rem;
+        margin-left: 1rem;
+        margin-right: 3rem;
+    }
+    .cate_pro_name{
+        position: relative;
+        text-overflow: ellipsis;
+        width:8rem;
+        overflow: hidden;
+        white-space:normal;
+        display:block;
+        height: 2.4rem;
+        color: #000;
+    }
+    .cate_pro_price{
+        font-size: 1.1rem;
+        font-weight: 600;
+        width:100%;
+        color: #F00000;
+        text-align: center;
+    }
+
+    .cate_pro_old_price{
+        color: #C5C5C5;
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
+    }
+    .ad{
+        padding: 0.1rem;
+    }
+    .adv{
+        width: 100%;
+        float: left;
+        background-color: #ffffff;
+    }
+    .adv div{
+        width: 49.5%;
+    }
+    .adv img{
+        width: 100%;
+    }
+    .adv div:nth-child(odd){
+        float: left;
+    }
+    .adv div:nth-child(even){
+        float: right;
+    }
+    .select{
+        border-bottom: 0.2rem solid #F00;
+    }
+    .triangle{
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        border-bottom: 0.75rem solid #FFF;
+        width: 0.5rem;
+        position: relative;
+        left: 15%;
+        top: -0.7rem;
+
+    }
+</style>
+<ion-view hide-back-button="true" title="叮叮网">
+    <!--<ion-nav-buttons side="left">-->
+        <!--<button class="button hearrd_button">-->
+            <!--<i class="iconfont icon-qrcode"></i>-->
+        <!--</button>-->
+    <!--</ion-nav-buttons>-->
+
+    <ion-nav-bar title="首页">
+        <!--<ion-nav-title>-->
+            <!--<ion-header-bar class="item-input-inset">-->
+                <!--<label class="item-input-wrapper" ng-click="jumpUrl('#/tab/seach')">-->
+                    <!--<i class="iconfont icon-search"></i>-->
+                    <!--<input type="search" placeholder="搜索商品" ng-model="searchContent">-->
+                <!--</label>-->
+            <!--</ion-header-bar>-->
+        <!--</ion-nav-title>-->
+    </ion-nav-bar>
+
+    <!--<ion-nav-buttons side="right">-->
+        <!--<button class="button hearrd_button">-->
+            <!--<i class="iconfont  icon-search"></i>-->
+        <!--</button>-->
+    <!--</ion-nav-buttons>-->
+
+
+    <ion-content lazy-scroll has-bouncing="true" delegate-handle="homeScroll" class="cont" overflow-scroll="true">
+        <div>
+            <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x" class="navi">
+                <a ng-repeat="group in dt.homeGroups" ng-click="utils.goState('home', {groupid: group.groupid},true);" class="{{group.select}}">{{group.name}}</a>
+            </ion-scroll>
+        </div>
+
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+
+        <div ng-if="dt.spinner" class="center padding"><ion-spinner></ion-spinner></div>
+        <!--广告-->
+        <div>
+            <div class="group-list" style="padding-top: 0;" ng-repeat="ads in dt.ad">
+            	<div class="row"  ng-if="ads.type==1">
+                    <div class="col" ng-repeat="ad in ads.detail">
+                        <a  ng-click="toUrl(ad.url)">
+                            <div class="ad" ng-style="{'background-color': ad.image}">
+                                <img ng-src="{{utils.getImgUrl(ad.image)}}">
+                            </div>
+                            <em ng-if="ads.is_showname>0">{{ad.name}}</em>
+                        </a>
+                    </div>
+            	</div>
+                <div ng-if="ads.type==2">
+                    <ion-slide-box  auto-play="true" does-continue="true">
+                        <ion-slide ng-repeat="ad in ads.detail">
+                            <img class="bg img" style="width:100%" ng-src="{{utils.getImgUrl(ad.image)}}" ng-click="toUrl(ad.url)">
+                        </ion-slide>
+                    </ion-slide-box>
+                </div>
+            </div>
+        </div>
+
+        <!--限时抢购-->
+        <div class="home_block" ng-if="dt.groupid<=0 && sdt.items && sdt.items.length"  ng-repeat="sdt in dt.sort_goods" >
+            <div class="center" style="width: 100%;float: left">
+                <div class="limit_title">
+                    {{sdt.title}}
+                </div>
+            </div>
+            <div>
+                <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x" class="album1">
+                    <div class="album1"  ng-repeat="item in sdt.items track by item.goodsid" ng-click="goGoods(item.goodsid)">
+                        <ul>
+                            <li><img ng-src="{{item.image}}"></li>
+                            <li><div class="count_down" ng-class="{'ing': item.tag.ing == 1}" ng-if="item.tag.show_cd == 1 && cds[item.goodsid]">{{cds[item.goodsid].cd}}</div></li>
+                            <li><span class="cate_pro_name">{{item.name}}</span>
+                                <span class="cate_pro_price">￥{{item.tag.prices.pr}}</span>
+                                <span class="cate_pro_old_price">￥<del>{{item.tag.prices.prt}}</del></span></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="album1 view_more" ng-click="moreGoods(sdt.groupid,sdt.sub_groupid)">
+                            查看更多
+                    </div>
+                </ion-scroll>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+        <!--专题-->
+        <div  style="margin-top: 5px;">
+            <div ng-repeat="special in dt.SpecialList" >
+                <div ng-if="special.type==1">
+                    <!--banner图3-->
+                    <div style="background-color: #ffffff">
+                        <a ng-click="toUrl('special/{{special.specialid}}')" >
+                            <img ng-src="{{special.image}}" style="width: 100%;display:block; " title="{{special.title}}">
+                            <div class="triangle"></div>
+                        </a>
+                    </div>
+                    <!--侧滑相册-->
+                    <div>
+                        <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x" class="album1">
+
+                            <div class="album1" ng-repeat="detail in special.home_items">
+                                <a ng-click="goGoods(detail.goodsid)">
+                                    <img ng-src="{{detail.image}}">
+                                    <br>
+                                    <div>
+                                        <span class="cate_pro_name">{{detail.name}}</span>
+                                        <span class="cate_pro_price">￥{{detail.price}}</span>
+                                        <span class="cate_pro_old_price">￥<del>{{detail.original_price}}</del></span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="album1 view_more">
+                                <a ng-click="toUrl('special/{{special.specialid}}')">
+                                    查看更多
+                                </a>
+                            </div>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div ng-if="special.type==2">
+                    <div class="group-list">
+                        <div class="row" >
+                            <div class="col"  ng-repeat="detail in special.detail">
+                                <a  ng-click="toUrl(ad.url)">
+                                    <div class="ad" ng-style="{'background-color': detail.image}">
+                                        <img ng-src="{{utils.getImgUrl(detail.image)}}">
+                                    </div>
+                                    <em ng-if="detail.is_showname>0">{{detail.name}}</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="home_block" ng-if="dt.showMoreGoods">
+            <div class="center">
+                <div class="title">
+                    {{dt.homeConf.more_goods.title}}
+                </div>
+                <div class="tip">
+                    {{dt.homeConf.more_goods.tip}}
+                </div>
+            </div>
+            <ul class="list goods-ul" >
+                <li class="item" goods-item ng-if="!dt.hideItems[item.goodsid]" ng-repeat="item in dt.items" >
+                    <div class="goods-div">
+                        <div class="img hasTag">
+                            <div class="tag"><div class="left color{{item.tag.status}}" ng-if="item.tag.txt">{{item.tag.txt}}</div> <div class="right color-1" ng-if="item.tag.show_limit">限购</div> <div class="right color-2" ng-if="item.store == 0">{{dt.conf.no_goods_txt || '无货'}}</div></div>
+                            <img class="bg" ng-if="$index < 6" ng-src="{{item.image}}" ng-click="goGoods(item.goodsid)"/>
+                            <img class="bg" ng-if="$index >= 6" image-lazy-src="{{item.image}}" image-lazy-loader="dots" ng-click="goGoods(item.goodsid)"/>
+                            <div class="count_down" ng-class="{'ing': item.tag.ing == 1}" ng-if="item.tag.show_cd == 1 && cds[item.goodsid]">{{cds[item.goodsid].cd}}</div>
+                        </div>
+                        <div class="name">
+                            {{item.name}}
+                        </div>
+                        <div class="stepper" ng-class="{'gray-dom': item.store == 0}">
+                            <div ng-if="item.tag.btn" class="btn" ng-click="orderIt(item);">{{item.tag.btn}}</div>
+                            <div ng-if="!item.tag.btn" class="addCart icon iconfont icon-cartplus" ng-click="addQuantity(item);"></div>
+                        </div>
+                        <span class="goods_price" ng-class="{'hasCD': item.tag.show_cd == 1}" >
+                            <span class="rmb" ng-if="item.tag.status != 10">￥</span><span class="pr">{{item.tag.prices.pr}}</span> <span class="dis" ng-if="item.tag.status == 10">{{dt.memberConf.score_txt || '积分'}}</span>
+                            <span class="dis" ng-if="item.tag.prices.dis">{{item.tag.prices.dis}}折</span>
+                            <span class="prt" ng-if="item.tag.prices.prt">{{item.tag.prices.prt}}</span>
+                            <span class="rt" ng-if="item.tag.prices.rt">返￥{{item.tag.prices.rt}}</span>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

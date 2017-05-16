@@ -1,0 +1,237 @@
+<style>
+
+    .album1{
+        background-color:#fff;
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 0rem 0.5rem;
+    }
+    .album1 div{
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+    }
+    .album1 img{
+        padding: 0 0.5rem;
+        width:8rem;
+    }
+    .album1 .view_more{
+        height: 7rem;
+        margin-left: 1rem;
+        margin-right: 3rem;
+    }
+    .cate_pro_name{
+        position: relative;
+        text-overflow: ellipsis;
+        width:8rem;
+        overflow: hidden;
+        white-space:normal;
+        display:block;
+        height: 2.4rem;
+        color: #000;
+    }
+    .cate_pro_price{
+        font-size: 1.1rem;
+        font-weight: 600;
+        width:100%;
+        color: #F00000;
+        text-align: center;
+    }
+
+    .cate_pro_old_price{
+        color: #C5C5C5;
+        font-size: 0.8rem;
+        margin-left: 0.3rem;
+    }
+    .ad{
+        padding: 0.1rem;
+    }
+     .navi{
+         overflow: hidden;
+         white-space: nowrap;
+         /*padding: 0.5rem 0;*/
+         line-height: 2.5rem;
+         font-size: 1rem;
+         height: 2.5rem;
+         background-color: #ffffff;
+     }
+    .store_banner{
+        height:12rem;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 6rem 0rem 0rem 2rem;
+    }
+    .store_banner .store_icon{
+        width: 20%;
+    }
+    .store_banner .store_icon img{
+        width: 100%;
+    }
+    .store_banner .store_info{
+        width: 80%;
+        padding-left: 0.5rem;
+    }
+    .store_banner div{
+        float: left;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+    .store_banner .store_name{
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        width: 100%;
+    }
+    .store_tag div{
+        float: left;
+        font-size: 0.8rem;
+        color: #000000;
+        background-color: #ffffff;
+        padding: 0 1rem;
+        margin: 0 0.1rem;
+        border-radius: 1rem;
+    }
+    .footer_btn{
+        width: 50%;
+        color: #000000;
+        text-align: center;
+        height: 2rem;
+        line-height: 2rem;
+        font-size: 1.1rem;
+    }
+    .st{
+        background-color: red;
+    }
+</style>
+<ion-view hide-back-button="true" title="叮叮网">
+    <ion-nav-buttons side="left">
+        <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack()" >
+            返回
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-bar>
+    </ion-nav-bar>
+
+    <!--<ion-nav-buttons side="right">-->
+        <!--<button class="button hearrd_button">-->
+            <!--<i class="iconfont  icon-search"></i>-->
+        <!--</button>-->
+    <!--</ion-nav-buttons>-->
+
+    <ion-content lazy-scroll has-bouncing="true" delegate-handle="storeScroll" class="cont" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+
+        <!--商家banner-->
+        <div class="store_banner" style="background-image:url('{{utils.getImgUrl(dt.store.banner)}}');">
+            <div class="store_icon">
+                <img src="{{dt.store.icon}}">
+            </div>
+            <div class="store_info">
+                <div class="store_name">{{dt.store.name}}</div>
+                <div class="store_tag">
+                    <div>
+                        品牌商入驻
+                    </div>
+                    <div>
+                        服务保障
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="group-list" style="padding-top: 0;">
+            <div class="row navi" style="padding: 0;">
+                <div ng-class="{'col':true,'st':dt.nav==-1}"  ng-click="toUrl('store/{{dt.storeid}}')">
+                    店铺首页
+                </div>
+                <div ng-class="{'col':true,'st':dt.nav==0}"  ng-click="toUrl('storegoods/{{dt.storeid}}/0/')">
+                    全部商品
+                </div>
+                <div ng-class="{'col':true,'st':dt.nav==1}" ng-click="toUrl('storegoods/{{dt.storeid}}/1/')">
+                    店铺推荐
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="group-list" style="padding-top: 0;" ng-repeat="ads in dt.ad">
+                <div class="row"  ng-if="ads.type==1">
+                    <div class="col" ng-repeat="ad in ads.detail">
+                        <a  ng-click="toUrl(ad.url)">
+                            <div class="ad">
+                                <img ng-src="{{utils.getImgUrl(ad.image)}}">
+                            </div>
+                            <em ng-if="ad.is_showname">{{ad.name}}</em>
+                        </a>
+                    </div>
+                </div>
+                <div ng-if="ads.type==2">
+                    <ion-slide-box  auto-play="true" does-continue="true">
+                        <ion-slide ng-repeat="ad in ads.detail">
+                            <img class="bg img" style="width:100%" ng-src="{{utils.getImgUrl(ad.image)}}" ng-click="toUrl(ad.url)">
+                        </ion-slide>
+                    </ion-slide-box>
+                </div>
+            </div>
+        </div>
+        <!--专题-->
+        <div  style="margin-top: 5px;">
+            <div ng-repeat="special in dt.SpecialList" >
+                <div ng-if="special.type==1">
+                    <!--banner图3-->
+                    <div>
+                        <a ng-click="toUrl(special.url)" >
+                            <img ng-src="{{special.image}}" style="width: 100%;display:block; " title="{{special.title}}">
+                            <div class="triangle"></div>
+                        </a>
+                    </div>
+                    <!--侧滑相册-->
+                    <div>
+                        <ion-scroll scrollbar-x="false" style="overflow-x: hidden;" direction="x" class="album1">
+
+                            <div class="album1" ng-repeat="detail in special.home_items">
+                                <a ng-click="goGoods(detail.goodsid)">
+                                    <img ng-src="{{detail.image}}">
+                                    <br>
+                                    <div>
+                                        <span class="cate_pro_name">{{detail.name}}</span>
+                                        <span class="cate_pro_price">￥{{detail.price}}</span>
+                                        <span class="cate_pro_old_price">￥<del>{{detail.original_price}}</del></span>
+                                    </div>
+                                </a>
+
+                            </div>
+                            <div class="album1 view_more">
+                                <a ng-click="toUrl(detail.url)">
+                                    查看更多
+                                </a>
+                            </div>
+                        </ion-scroll>
+                    </div>
+                </div>
+                <div ng-if="special.type==2">
+                    <div class="group-list">
+                        <div class="row" >
+                            <div class="col"  ng-repeat="detail in special.detail">
+                                <a  ng-click="toUrl(ad.url)">
+                                    <div class="ad" ng-style="{'background-color': detail.image}">
+                                        <img ng-src="{{utils.getImgUrl(detail.image)}}">
+                                    </div>
+                                    <em ng-if="detail.is_showname">{{detail.name}}</em>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <br>
+            <br>
+        </div>
+
+        <div class="blank-float"></div>
+    </ion-content>
+    <div class="bar bar-footer">
+        <div class="footer_btn iconfont icon-search" ng-click="toUrl('storeclass')" >商品分类</div>
+        <div class="footer_btn iconfont icon-search" ng-click="toUrl('storegoods/{{dt.storeid}}/1/')" >商品推荐</div>
+    </div>
+</ion-view>

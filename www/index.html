@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <LINK href="img/logo.ico" type=image/x-icon rel="shortcut icon" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv=Content-Security-Policy >
+        <title>商城</title>
+        <meta name="description" id="description" content="商城">
+    </head>
+    <body class="platform-webview">
+        <div id="loading-view">
+            <div id="ld-img" style="left:50%;top:50%;width:120px;height:120px;position:absolute;margin-top:-60px;margin-left:-60px;"></div>
+            <div id="ld-btn" style="bottom:40px;width:100%;height:40px;position:absolute;text-align:center;" ></div>
+        </div>
+        <script>
+            var charset = "";
+            if(navigator.userAgent.indexOf("MSIE")!=-1){
+                charset = document.charset;
+            }else{
+                charset = document.characterSet;
+            }
+            var dt = window.location.hash;
+            if(window.location.search){
+                dt = window.location.hash+window.location.search;
+            }
+            dt = dt.replace(/\?/g,'&').split('&');
+            var pa = {};
+            for(var k in dt){
+                if(dt[k]){
+                    var tmp = dt[k].split('=');
+                    if(tmp.length == 2){
+                        pa[tmp[0]] = tmp[1];
+                    }
+                }
+            }
+            var code = pa.code || '';
+            var bind = pa.bind || '';
+            var appid = pa.appid || 1;
+            var app_name = pa.name || '商城';
+            var service_tel = '';
+            var inviter_uid = pa.inviter_uid || 0;
+            var modal = 'h5';
+            var version = 'v0.0.0.1';
+            var protocol = 'https:';
+            if(modal == 'h5'){
+                protocol = window.location.protocol.toLowerCase();
+            }
+            var domain = 'www.dindin.com';
+            var app_server = protocol+'//'+domain;
+            var api_server = app_server+'/api/?';
+            var static_server = protocol+'//lan.dindin.com';
+            var js_path = '';
+            if(modal == 'h5'){
+                domain = window.location.host;
+                app_server = protocol+'//'+domain;
+                api_server = app_server+'/api/?';
+                js_path = static_server+window.location.pathname;
+            }
+
+            var app_logo = 'img/logo.png';
+            var default_face = app_logo;
+            var in_time = new Date().getTime();
+            var reqid = pa.reqid || in_time+'_'+Math.ceil(Math.random()*10000);
+            var store_it = function(key, data){
+                localStorage && data && localStorage.setItem('ls.'+key, JSON.stringify(data));
+            };
+            var app_conf = {};
+            if(modal != 'h5'){
+                store_it('app_conf', app_conf);
+            }
+            var vDt = {
+                "appid": appid,
+                "app_name": app_name,
+                "app_logo": app_logo,
+                "modal": modal,
+                "protocol": protocol,
+                "version": version,
+                "domain": domain,
+                "app_server": app_server,
+                "api_server": api_server,
+                "static_server": static_server,
+                "inviter_uid": inviter_uid,
+                "default_face": default_face,
+                "service_tel": service_tel,
+                "reqid": reqid,
+                "url": window.location.href,
+                "platform": navigator.platform,
+                "user_agent": navigator.userAgent,
+                "cookie_enabled": !!navigator.cookieEnabled,
+                "refer": document.referrer,
+                "width": screen.width,
+                "height": screen.height,
+                "charset": charset,
+                "in_time": in_time
+            };
+            var params = '';
+            for(var k in vDt){
+                params +='&'+k+'='+vDt[k];
+            }
+            var getImgUrl = function(img){
+                if(!img || img == 'NULL'){
+                    return '';
+                }
+                var tmp = img.toLowerCase();
+                if(tmp.indexOf('https://') < 0 && tmp.indexOf('http://') < 0){
+                    var s = tmp.indexOf('upload');
+                    if(s >= 0){
+                        img = static_server+'/'+img.substr(s);
+                    }
+                }
+                return img;
+            };
+            var initApp = function(data){
+                if(data && data.code == 200){
+                    if(data.loading_image){
+                        document.getElementById("ld-img").innerHTML = '<img src="'+getImgUrl(data.loading_image)+'" style="width:120px;height:120px;">';
+                    }
+                    document.title = data.name;
+                    appid = data.appid;
+                    app_name = data.name;
+                    data.logo && (app_logo = getImgUrl(data.logo));
+                    data.default_face && (default_face = getImgUrl(data.default_face));
+                    data.loading_image && (loading_image = getImgUrl(data.loading_image));
+                    vDt.appid = appid;
+                    vDt.app_name = app_name;
+                    vDt.app_logo = app_logo;
+                    vDt.default_face = default_face;
+                    vDt.service_tel = data.tel || '';
+                    if(modal != 'h5'){
+                        vDt.domain = data.domain;
+                    }
+                    store_it('app_conf', data.conf);
+                    delete data.code;
+                    delete data.conf;
+                    store_it('app', data);
+                    store_it('visitDt', vDt);
+                }
+                var it = setInterval(function(){
+                    if('undefined' != typeof angular){
+                        var scope = angular.element(document.querySelector('#main-view')).scope();
+                        if('undefined' != typeof scope){
+                            scope.initApp();
+                            clearInterval(it);
+                        }
+                    }
+                }, 1000);
+            };
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", api_server+'visit/init&modal='+modal+'&version='+version+'&reqid='+reqid+'&inviter_uid='+inviter_uid+'&time='+in_time);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.send(params);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4) {
+                    var body = xhr.responseText;
+                    if (xhr.status == 200) {
+                        try{
+                            body = JSON.parse(body);
+                        }catch(e){
+                            body = '';
+                        }
+                        initApp(body);
+                        return ;
+                    }
+                    initApp();
+                }
+            };
+            var enter = function(){
+                if(modal == 'h5'){
+                    if(window.location.search){
+                        window.location.search += '&reqid='+reqid;
+                    }else{
+                        window.location.search = '?reqid='+reqid;
+                    }
+                }else{
+                    window.location.reload();
+                }
+            };
+            var isWeiXin = function (){
+                var ua = window.navigator.userAgent.toLowerCase();
+                if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                    return true;
+                }else{
+                    return false;
+                }
+            };
+            var showEnterBtn = function(txt){
+                if(!txt){
+                    txt = '<a href="javascript:enter();" style="text-decoration: none;background:#69af05;color:#fff;padding:6px 15px;border-radius: 4px;-webkit-border-radius: 4px;font-size:12pt;">开始体验</a>';
+                }
+                document.getElementById("ld-btn").innerHTML = txt;
+            };
+            var t1 = setTimeout(function(){showEnterBtn('<br>请稍候...');}, 5000);
+            var t2 = setTimeout(function(){showEnterBtn('<br>您的网络较慢，请耐心等待...');}, 12000);
+            var t3 = setTimeout(function(){showEnterBtn('');}, 18000);
+        </script>
+
+        <div id="main-view">
+            <link href="css/ionic.css" rel="stylesheet" type="text/css">
+            <link href="css/ng-animation.css" rel="stylesheet" type="text/css">
+            <link href="iconfont/iconfont.css" rel="stylesheet" type="text/css">
+            <ion-nav-bar class="bar-light">
+                <ion-nav-back-button class="button-icon icon iconfont icon-iosarrowback"></ion-nav-back-button>
+            </ion-nav-bar>
+            <ion-nav-view></ion-nav-view>
+            <script>
+                if(isWeiXin()){
+                     document.write('<script id="jweixin-script" type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"><\/script>');
+                }
+                document.write('<link href="'+js_path+'css/main.css?version='+version+'" rel="stylesheet" type="text/css">');
+                document.write('<script data-main="'+js_path+'js/main.js?version='+version+'" src="'+js_path+'js/require.js"><\/script>');
+            </script>
+        </div>
+    </body>
+</html>

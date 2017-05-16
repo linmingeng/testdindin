@@ -1,0 +1,35 @@
+<ion-view title="登录" class="entrance-view" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-if="utils.hasHistory()" ng-click="utils.goBack()" >
+            返回
+       </button>
+    </ion-nav-buttons>
+    
+    <ion-nav-title>
+        登录
+    </ion-nav-title>
+    <div class="entrance-bottom">
+        <a href="#/app/forgot" class="pull-right">忘记密码?</a>
+        <a href="#/app/register">免费注册</a>
+    </div>
+    <ion-content class="login-content" has-bouncing="true">
+        <div class="list list-inset">
+            <form form-produce="formCtrl.conf">
+                <div class="item item-input">
+                    <i class="icon iconfont icon-iphone placeholder-icon"></i>
+                    <input type="text" placeholder="手机号码" input-produce="formCtrl.phone" ng-model="formCtrl.models.phone" one-key-clear-input />
+                </div>
+                <div class="item item-input">
+                    <i class="icon iconfont icon-ioslockedoutline placeholder-icon"></i>
+                    <input type="password" placeholder="密码" input-produce="formCtrl.password" ng-model="formCtrl.models.password" one-key-clear-input />
+                </div>
+                <button class="button button-balanced button-block button-login">
+                    登　录
+                </button>
+            </form>
+        </div>
+        <div class="padding center" ng-if="utils.getTonggles().wx_login">
+            <i class="icon iconfont icon-weixin" style="font-size:48pt;color:#69af05" ng-click="login('wechat')" ></i>
+        </div>
+    </ion-content>
+</ion-view>

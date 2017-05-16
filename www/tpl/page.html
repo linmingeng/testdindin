@@ -1,0 +1,18 @@
+<ion-view title="{{dt.page.title || ''}}" hide-back-button="true" hide-nav-bar="hideNavBar()">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack()" >
+           {{ utils.hasHistory()?'返回':'购物'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        {{dt.page.title || ''}}
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button ng-if="dt.page.share == 1 && utils.showShare() " class="button button-small button-clear button-positive icon iconfont icon-share" ng-click="shareIt();"></button> 
+    </ion-nav-buttons>
+    <ion-content lazy-scroll has-header="true" has-bouncing="true" ng-style="content_style">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div ng-if="dt.spinner" class="center padding"><ion-spinner></ion-spinner></div>
+        <div class="page-content" ng-class="{'padding': dt.page.padding == 1 }" ng-if="dt.page.content" compile="dt.page.content"></div>
+    </ion-content>
+</ion-view>

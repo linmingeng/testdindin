@@ -1,0 +1,17 @@
+<ion-view title="消息详情" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('msg')" >
+       </button>
+    </ion-nav-buttons>
+    <ion-content lazy-scroll has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="news-container ">
+            <div class="news-image" >
+                <img ng-src="{{dt.data.image}}" />    
+            </div>
+            <div class="news-title" ng-bind="dt.data.title"></div>
+            <div class="news-basic-info">时间: {{dt.data.add_at*1000 | date : 'yyyy-MM-dd hh:mm'}}</div>
+        </div>
+        <div class="news-content full-height" compile="dt.data.content" ></div>
+    </ion-content>
+</ion-view>

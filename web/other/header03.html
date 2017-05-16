@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0048)http://www.dindin.com/tuangou/help/header03.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<link rel="stylesheet" type="text/css" href="../css/service.css">
+<title>叮叮网 不出国门 跨境购物</title>
+<script type="text/javascript">
+<!--
+var timeout         = 500;
+var closetimer		= 0;
+var ddmenuitem      = 0;
+
+// open hidden layer
+function mopen(id)
+{	
+	// cancel close timer
+	mcancelclosetime();
+
+	// close old layer
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+	// get new layer and show it
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+
+// close layer when click-out
+document.onclick = mclose; 
+// -->
+</script>
+</head>
+<body>
+<div id="head">
+  
+  <div class="clear"></div>
+  <div class="top">
+    <div class="logo"><a href="../index.html" target="_parent"><img src="../image/logo_newyear_2011.png" border="0"></a> </div>
+    <div class="title">
+      <ul>
+        <li><a href="../index.html" target="_parent">叮叮首页</a></li>
+        <!--<li><a href="index.html" target="_parent">帮助中心</a></li>
+        --><li><a href="../tuangou/order_search.html" target="_parent">查询订单</a></li>
+        <li class="titbg"><a href="./tuangou/tousu.html" target="_parent">投诉建议</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+</body></html>

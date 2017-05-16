@@ -1,0 +1,45 @@
+
+<table>
+<tbody>
+    <tr>
+        <th>Time</th>
+        <td>17-04-11 17:18:26</td>
+        <th>Error</th>
+        <td><pre>Uncaught exception 'Exception' with message 'Error:php_network_getaddresses: getaddrinfo failed: 不知道这样的主机。 ;hostname:dd.mysql.rds.aliyuncs.com:3306;username:dd;passwd:dd520888!@#$;dbname:the_dd;port:0;dbcharset:utf8;' in E:\dindin_new\plugins\libraries\mysqli.php:145
+Stack trace:
+#0 E:\dindin_new\plugins\libraries\mysqli.php(35): mysql->halt('Error:php_netwo...')
+#1 E:\dindin_new\plugins\wechat\WxAuth.php(73): mysql->connect('dd.mysql.rds.al...', 'dd', 'dd520888!@#$', 'the_dd', 0, 'utf8')
+#2 E:\dindin_new\index.php(17): include('E:\\dindin_new\\p...')
+#3 {main}
+  thrown</pre></td>
+        <th>Errno</th>
+        <td><pre>1</pre></td>
+        <th>File</th>
+        <td>E:\dindin_new\plugins\libraries\mysqli.php</td>
+        <th>Line</th>
+        <td>145</td>
+    </tr>
+</tbody>
+</table>
+<table>
+<tbody>
+    <tr>
+        <th>Time</th>
+        <td>17-04-11 17:18:52</td>
+        <th>Error</th>
+        <td><pre>Uncaught exception 'Exception' with message 'Error:Access denied for user 'dd'@'localhost' (using password: YES);hostname:dd.mysql.rds.aliyuncs.com:3306;username:dd;passwd:dd520888!@#$;dbname:the_dd;port:0;dbcharset:utf8;' in E:\dindin_new\plugins\libraries\mysqli.php:145
+Stack trace:
+#0 E:\dindin_new\plugins\libraries\mysqli.php(35): mysql->halt('Error:Access de...')
+#1 E:\dindin_new\plugins\wechat\WxAuth.php(73): mysql->connect('dd.mysql.rds.al...', 'dd', 'dd520888!@#$', 'the_dd', 0, 'utf8')
+#2 E:\dindin_new\index.php(17): include('E:\\dindin_new\\p...')
+#3 {main}
+  thrown</pre></td>
+        <th>Errno</th>
+        <td><pre>1</pre></td>
+        <th>File</th>
+        <td>E:\dindin_new\plugins\libraries\mysqli.php</td>
+        <th>Line</th>
+        <td>145</td>
+    </tr>
+</tbody>
+</table>

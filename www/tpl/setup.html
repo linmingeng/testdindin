@@ -1,0 +1,48 @@
+<ion-view title="设置" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('account')" >
+            {{ utils.hasHistory()?'返回':'我的'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-content has-header="true" has-bouncing="true">
+        <ion-toggle ng-if="utils.getModal() != 'h5'" ng-model="dt.receive" ng-checked="!!dt.receive" ng-click="setReceive()">
+            接收通知信息
+        </ion-toggle>
+        <div class="list my-list">
+            <a href="javascript:;" ng-click="clearCache()" class="item item-icon-right">
+                清空数据缓存
+                <i class="icon iconfont icon-iosboxoutline"></i>
+            </a>
+        </div>
+        <div class="list my-list">
+            <!--a class="item item-icon-right" href="#/app/page/services">
+                服务中心
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a-->
+            <a class="item item-icon-right" href="#/app/page/cooperation">
+                商务合作
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+            <a class="item item-icon-right" href="#/app/about">
+                关于我们
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+        </div>
+        <div class="list my-list">
+            <a class="item item-icon-right" href="#/app/complain">
+                投诉意见
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+            <a href="javascript:;" ng-if="utils.getModal() != 'h5'"  ng-click="call()" class="item item-icon-right">
+                客服电话
+                <span class="item-note">{{utils.getServiceTel()}}</span>
+                <i class="icon iconfont icon-iostelephoneoutline"></i>
+            </a>
+            <a ng-href="{{'tel:'+utils.getServiceTel()}}" ng-if="utils.getModal() == 'h5'"  class="item item-icon-right">
+                客服电话
+                <span class="item-note">{{utils.getServiceTel()}}</span>
+                <i class="icon iconfont icon-iostelephoneoutline"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

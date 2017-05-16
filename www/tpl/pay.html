@@ -1,0 +1,114 @@
+<ion-view title="结算" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack()" >
+            {{ utils.hasHistory()?'返回':'购物'}}
+       </button>
+    </ion-nav-buttons>
+    <div class="foot-bar">
+        <div class="price pay-price" >
+            <span class="reduce_money" ng-if="showReduceMoney() && dt.orderType != 10" ng-bind="'已减￥'+showReduceMoney()"></span>
+            <span class="reduce_money" ng-if="getReturnMoney() && dt.orderType != 10" ng-bind="'可返￥'+getReturnMoney()"></span>
+            <span class="reduce_money" ng-if="dt.orderType == 10">-{{dt.score}} {{dt.memberConf.score_txt || '积分'}}</span>
+            <span ng-bind="getPayMoney() | currency: '￥'" ></span>
+            <span ng-if="ifNeedDeliveryFee()" class="fs_10">+运费</span>
+        </div>
+        <div class="button button-assertive pay-button" ng-click="payIt()">下 单</div>
+    </div>
+    <ion-content class="has-foot-bar" has-bouncing="true">
+        <div class="list app-list" ng-if="dt.curAddr">
+            <div class="item item-icon-right addr" ng-click="goAddress()">
+                <span ng-bind="dt.curAddr.name"></span>，<span ng-bind="dt.curAddr.phone" ></span> <br>
+                <span ng-bind="dt.curAddr.area+' '+dt.curAddr.address" class="fs_10"></span>
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+        </div>
+        <div class="list app-list" ng-if="!dt.curAddr">
+            <div ng-click="goAddressAdd()" class="item">
+                <i class="icon iconfont icon-iosplusoutline assertive-icon" ></i>
+                <span class="assertive">&nbsp; 新增收货地址</span>
+            </div>
+        </div>
+        <div class="list app-list" ng-if="dt.app.payment == 2 && dt.orderType != 10">
+            <div class="item item-icon-right" ng-click="setPayment(1)" ng-if="dt.app.payment == 1 || dt.app.payment == 2">
+                在线支付 <span class="assertive"></span>
+                <i class="icon" ng-class="{'iconfont icon-ioscircleoutline': dt.payment != 1,'iconfont icon-ioscheckmark balanced-icon': dt.payment == 1}"></i>
+            </div>
+            <div class="item item-icon-right" ng-click="setPayment(0)" ng-if="dt.app.payment == 0 || dt.app.payment == 2">
+                货到付款
+                <i class="icon" ng-class="{'iconfont icon-ioscircleoutline': dt.payment != 0,'iconfont icon-ioscheckmark balanced-icon': dt.payment == 0}" ></i>
+            </div>
+        </div>
+        <div class="list app-list" ng-if="dt.orderType != 10">
+            <div class="item item-icon-right" ng-if="dt.orderType == 5">
+                <span class="assertive fs_10">
+                    本次订购商品发货日期：
+                    <span ng-if="dt.deliveryAt > 0" ng-bind="dt.deliveryAt | date:'yyyy-MM-dd'"></span>
+                    <span ng-if="dt.deliveryAt == 0">请咨询客服</span>
+                </span>
+            </div>
+            <div class="item" ng-if="dt.app.delivery_fee > 0" ng-click="ifGoShop(ifNeedDeliveryFee())">
+                满<span ng-bind="'￥' + dt.app.free_send_price"></span>免运费
+                <span class="assertive fs_10" ng-if="ifNeedDeliveryFee()">{{'(还差￥'+((dt.app.free_send_price - dt.totalPrice) | number:2)+')'}}</span>
+                <span class="item-note assertive" ng-if="!ifNeedDeliveryFee()">{{'-￥'+dt.app.delivery_fee}}</span>
+            </div>
+            <div ng-repeat="activity in dt.app.activitis" ng-if="activity.close == 0" ng-click="ifGoShop(dt.totalPrice < activity.consume)">
+                <div class="item" ng-if="dt.payment==1 && activity.type == 0">
+                    {{activity.name}}
+                    <span class="assertive fs_10" ng-if="dt.totalPrice < activity.consume">{{'(还差￥'+((activity.consume - dt.totalPrice) | number:2)+')'}}</span>
+                    <span class="item-note assertive" ng-if="dt.totalPrice >= activity.consume">-￥{{activity.money}}</span>
+                </div>
+                <div class="item" ng-if="dt.payment==1 && activity.type == 1 && dt.newbie == 1">
+                    {{activity.name}}
+                    <span class="item-note assertive">-￥{{activity.money}}</span>
+                </div>
+            </div>
+            <div ng-click="goCoupon(1)" ng-if="dt.conf.hongbao && dt.conf.hongbao.open == 1" class="item item-icon-right">
+                使用红包
+                <span class="item-note assertive" ng-if="dt.hongbaoMoney > 0">-￥{{ dt.hongbaoMoney }}</span>
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-click="goCoupon()" ng-if="dt.conf.coupon && dt.conf.coupon.open == 1" class="item item-icon-right">
+                使用优惠券
+                <span class="item-note assertive" ng-if="dt.couponMoney > 0">-￥{{ dt.couponMoney }}</span>
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+        </div>
+        
+        <div class="list app-list">
+            <div ng-click="common.ifGoState('pay-note')" class="item item-icon-right">
+                <span style="float:left;">备注</span>
+                <span class="item-note">{{dt.note || '添加备注'}}</span>
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-click="common.ifGoState('pay-invoice')" ng-if="dt.app.invoice > 0 && dt.orderType != 10" class="item item-icon-right">
+                发票
+                <span class="item-note">{{dt.invoice || '填写发票抬头'}}</span>
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+        </div>
+        
+        <div class="list app-list">
+            <div class="item">
+                <i class="icon iconfont icon-dianpu" style="font-size:16pt;"></i>
+                 &nbsp;{{dt.app.name}}
+            </div>
+            <div class="item item-thumbnail-left" ng-repeat="item in dt.app.items">
+                <img class="bg" ng-src="{{utils.getImgUrl(item.image)}}" ng-click="goGoods(item.goodsid)" />
+                <h2>{{item.name}}</h2>
+                <p>&nbsp;x{{item.quantity}}</p>
+                <span class="item-note" ng-if="dt.orderType == 10">{{item.tag.prices.pr*item.quantity}} {{dt.memberConf.score_txt || '积分'}}</span>
+                <span class="item-note" ng-bind="item.tag.prices.pr*item.quantity | currency: '￥'" ng-if="dt.orderType != 10"></span>
+            </div>
+        </div>
+        
+        <div class="list app-list" ng-if="dt.app.delivery_fee > 0">
+            <div class="item row">
+                <span class="col pl_12" >运费</span>
+                <span class="col col-20" ></span>
+                <span class="col col-25" style="text-align:right;" >{{dt.app.delivery_fee | currency: '￥' }}</span>
+            </div>
+        </div>
+        
+        <div class="blank-float"></div>
+    </ion-content>
+</ion-view>

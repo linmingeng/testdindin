@@ -1,0 +1,71 @@
+<ion-view title="我是{{dt.traderConf.txt || '分销商'}}" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('account')" >
+            {{ utils.hasHistory()?'返回':'我的'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <i class="icon iconfont icon-iconfontwenhao1 positive" style="font-size:18pt;line-height:36px;" ng-click="utils.goUrl('page/trader_faq');" ></i>
+    </ion-nav-buttons>
+    <ion-content has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="top_tip center" ng-if="dt.trader.level && dt.trader.status == -1">您的{{dt.traderConf.txt || '分销商'}}资格被冻结，有疑问请联系客服！</div>
+        <div class="top_tip center" ng-if="dt.trader.level && dt.trader.status == 0">您的{{dt.traderConf.txt || '分销商'}}资格未通过审核！请联系客服！</div>
+        <div class="top_tip center" ng-if="!dt.trader.level" ng-click="utils.toUrl('/app/activity/trader')">请点这里申请成为{{dt.traderConf.txt || '分销商'}}，赚取高额佣金！</div>
+        <div class="dashboard income">
+            <div class="row">
+                <div class="col">
+                    <span>累计收入</span><br>
+                    <b>{{dt.trader.income | currency: '￥'}}</b>
+                    <span ng-if="dt.curLevel">
+                        等级：<span ng-style="dt.curColor">{{dt.curLevel.title}}</span> &nbsp; 提成：<span ng-style="dt.curColor">{{dt.curLevel.order_rate}}%</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard count">
+            <div class="row">
+                <div class="col">
+                    <b>{{dt.uv}}</b>
+                    <span>七日访问</span>
+                </div>
+                <div class="col">
+                    <b>{{dt.orders}}</b>
+                    <span>七日订单</span>
+                </div>
+                <div class="col">
+                    <b>{{dt.money | currency: '￥'}}</b>
+                    <span>七日销售</span>
+                </div>
+            </div>
+        </div>
+        <div class="list my-list" style="margin-top:9px;">
+            <div ng-click="ifGoUrl('trader/withdraw')" class="item item-icon-right">
+                我要提现
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-click="ifGoUrl('trader/income')" class="item item-icon-right">
+                收入明细
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-click="ifGoUrl('trader/report')" class="item item-icon-right">
+                运营报表
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-click="ifGoUrl('trader/customer')" class="item item-icon-right">
+                我的{{dt.traderConf.cus_txt || '客户'}}
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-click="ifGoUrl('trader/partner')" class="item item-icon-right">
+                我的{{dt.traderConf.sub_txt || '下线'}}
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <a ng-click="ifGoUrl('page/haibao')" class="item item-icon-right">
+                我的海报
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+        </div>
+        
+    </ion-content>
+</ion-view>

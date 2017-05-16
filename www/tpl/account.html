@@ -1,0 +1,65 @@
+<ion-view title="我的" hide-back-button="true">
+    <ion-content has-bouncing="true" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list my-list">
+            <div class="item item-avatar item-icon-left item-icon-right" style="padding-bottom:24px;height:96px;">
+                <img ng-src="{{ dt.profile.avatar || dt.defaultFace || 'img/logo.png' }}" onerror="javascript:this.src='img/logo.png'" ng-click="common.ifGoState('profile')" />
+                <h2 ng-if="!dt.profile.nickname" ng-click="common.ifGoState('profile')" class="login" style="margin-top:24px">请登录/注册</h2>
+                <h2 ng-if="dt.profile.nickname" ng-click="common.ifGoState('profile')" ng-class="{'name': dt.phone, 'name_one': !dt.phone}" ng-bind="dt.profile.nickname || dt.phone || '您好'"></h2>
+                <h2 ng-if="dt.phone" ng-bind="dt.phone" ng-click="common.ifGoState('profile')"></h2>
+                <i class="icon iconfont icon-iosarrowright" ng-if="!dt.conf.member || dt.conf.member.qrcode != 1 || !dt.profile.nickname" ng-click="common.ifGoState('profile')"></i>
+                <i class="icon iconfont icon-qrcode" ng-if="dt.conf.member && dt.conf.member.qrcode == 1 && dt.profile.nickname" ng-click="common.ifGoUrl('page/qrcode')"></i>
+            </div>
+        </div>
+        <div class="list my-list">
+            <div ng-if="dt.conf.member && dt.conf.member.open == 1" class="item item-icon-left item-icon-right" ng-click="common.ifGoState('member')">
+                <i class="icon iconfont icon-bingmember" style="font-size:18pt;"></i>
+                我的{{dt.score_txt}}
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div class="item item-icon-left item-icon-right" ng-click="common.ifGoState('orders')">
+                <i class="icon iconfont icon-order" style="font-size:22pt;"></i>
+                我的订单
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div class="item item-icon-left item-icon-right" ng-click="common.ifGoState('address')">
+                <i class="icon iconfont icon-31dingwei" style="font-size:22pt;"></i>
+                收货地址
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-if="dt.conf.hongbao && dt.conf.hongbao.open == 1" class="item item-icon-left item-icon-right" ng-click="common.ifGoState('hongbao')">
+                <i class="icon iconfont icon-iconfonthongbao" style="font-size:18pt;"></i>
+                我的红包
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-if="dt.conf.coupon && dt.conf.coupon.open == 1" class="item item-icon-left item-icon-right" ng-click="common.ifGoState('coupon')">
+                <i class="icon iconfont icon-centercoupon" style="font-size:18pt;"></i>
+                我的优惠券
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+            <div ng-if="dt.profile.trader == 1 || (dt.conf.trader && dt.conf.trader.open == 1 && dt.conf.trader.show_btn == 1)" class="item item-icon-left item-icon-right" ng-click="utils.goUrl('trader')">
+                <i class="icon iconfont icon-icon31" style="font-size:20pt;"></i>
+                我是{{dt.traderConf.txt || '分销商'}}
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </div>
+        </div>
+        
+        <div class="list my-list">
+            <!--a class="item item-icon-left item-icon-right" href="#/app/complain">
+                <i class="icon iconfont icon-iosredooutline"></i>
+                推荐给好友
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+            <a class="item item-icon-left item-icon-right" href="#/app/complain">
+                <i class="icon iconfont icon-iosstaroutline"></i>
+                喜欢楼下呀？鼓励下
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a-->
+            <a class="item item-icon-left item-icon-right" ng-click="utils.goUrl('setup')">
+                <i class="icon iconfont icon-gear" style="font-size:17pt;"></i>
+                设置
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,84 @@
+@charset "gbk";
+.clearfix:after,.evarution .percent dl:after,ul:after,.p-con:after{content: ".";height: 0;display: block;overflow: hidden;clear: both;}
+/*总评价*/
+.evarution .rate{width: 15%;text-align: center;border-right: 1px solid #bebcbd;float: left;}
+.evarution .rate strong{color: #f90908;font-size: 28px;}
+.evarution .percent{width: 40%;float: left;padding: 5px 35px;position: relative;margin-top: -15px;}
+.evarution .percent dl{margin-bottom: 5px;}
+.evarution .percent dl dt{float: left;width: 50%;font-weight: normal;}
+.evarution .percent dl dd{float: left;width: 50%;background: #d1d2cc;height: 15px;margin-top: 5px;}
+.evarution .percent dl dd div{background: #d7004a;height: 15px;}
+.evarution .percent dl dd div.hp{width: 88%;}
+.evarution .percent dl dd div.zp{width: 10%;}
+.evarution .percent dl dd div.cp{width: 2%;}
+.evarution .publi{float: left;width: 45%;border-left: 1px solid #bebcbd;padding: 0 45px;}
+.evarution .publi p{color: #858585;margin-bottom: 0;padding-bottom: 6px;}
+.evarution .publi a{display: block;padding: 5px 20px;background: #a1defa;width: 40%;text-align: center;border-radius: 3px;color: #fff;}
+/*评价选项*/
+.all-percent .percent-list{border-top: 1px solid #cccccc;border-bottom: 1px solid #cccccc;padding: 10px 0;}
+.all-percent .percent-list ul li{float: left;margin-left: 20px;}
+.all-percent .percent-list ul li:nth-child(1){margin-left: 0;}
+.all-percent .percent-list ul li span{position: relative; border-radius: 100%;margin-right: 10px; display: inline-block;width: 15px;height: 15px;border: 1px solid #151515;cursor: pointer;}
+.all-percent .percent-list ul li span i{background: #fff; position: absolute;top: 1px;left: 1px; width: 11px;height: 11px;display: inline-block;border-radius: 100%;border: none;}
+.all-percent .percent-list ul li span i.active{background: #80983a;}
+.all-percent .percent-list ul li span i:hover{background: #80983a;}
+.all-percent .percent-list ul li small{font-size: 14px;}
+.all-percent .percent-list ul li small em{font-style: normal;}
+/*评价列表*/
+.all-percent .percent-text ul li{}
+.all-percent .percent-text ul li table{width: 100%;}
+.all-percent .percent-text ul li table tr{border-bottom: 1px solid #bebcbd;display: block;padding: 20px 0;}
+.all-percent .percent-text ul li table tr td{display: inline-block;}
+.all-percent .percent-text ul li table tr td:nth-child(1){width: 79%;padding-right:30px;}
+.all-percent .percent-text ul li table tr td:nth-child(2){width: 20%;text-align: left;}
+.all-percent .percent-text ul li table tr td p{color: #000;}
+.all-percent .percent-text ul li table tr td p.date{color: #b5b5b5;padding: 5px 0;margin-bottom: 0px;}
+.all-percent .percent-text ul li table tr td span.show-user{color: #151515;}
+.all-percent .percent-text ul li table tr td span.show-name{color: #c8c8c8;}
+.all-percent .percent-text ul li table tr td .pro-img{text-align: left;}
+.all-percent .percent-text ul li table tr td .p-con span{float: left;display: block;}
+.all-percent .percent-text ul li table tr td .p-con span.first-pj{color: #b5b5b5;width: 13%;/*display: none;*/}
+.all-percent .percent-text ul li table tr td .p-con span.two-pj{color: #b5b5b5;width: 17%;}
+.all-percent .percent-text ul li table tr td .p-con span.pj{width: 87%;color: #000;}
+.all-percent .percent-text ul li table tr td .p-con .p-text{float: left;}
+.all-percent .percent-text ul li table tr td .p-con .p-text img{display: inline-block;width: 49px;height: auto;margin-right: 1px;margin-bottom: 10px;}
+.all-percent .percent-text ul li table tr td .p-con .first-text{float: left;width: 83%;}
+.all-percent .percent-text ul li table tr td .p-con .first-text img{display: inline-block;width: 49px;height: auto;margin-right: 1px;margin-bottom: 10px;}
+.percent-text .goods-img{width:50px;height:50px!important;}
+/*分页*/
+.all-percent .page{padding-top: 30px;}
+#div-saleRecordsPageLink{overflow: hidden;}
+.all-percent .page ul,ul#saleRecordsPageLink {float: right;}
+.all-percent .page ul li,  ul#saleRecordsPageLink li{float: left;width: 30px;height: 30px;text-align: center;line-height: 30px;border: 1px solid #ebebeb;margin-right: 1px;}
+.all-percent .page ul li a{display: block;width: 100%;}
+
+@media screen and (max-width: 1200px){
+	.evarution .percent{padding: 5px 20px;}
+	.all-percent .percent-text ul li table tr td .p-con span.first-pj{width: 15%;}
+	.all-percent .percent-text ul li table tr td .p-con span.two-pj{width: 21%;}
+	.evarution .publi a{padding: 5px 15px;width: 45%;}
+}
+@media screen and (max-width: 991px){
+	.evarution .rate,.evarution .percent,.evarution .publi{width: 100%;}
+	.evarution .rate{border: none;}
+	.evarution .percent{margin-top: 12px;padding: 10px 5px;border-top: 1px solid #bebcbd;}
+	.evarution .publi{border-left: none;border-top: 1px solid #bebcbd;padding: 10px 0 0 0;}
+	.evarution .publi a{width: 30%;}
+	.all-percent .percent-text ul li table tr td .p-con span.first-pj{width: 100%;}
+	.all-percent .percent-text ul li table tr td .p-con span.two-pj{width: 100%;}
+}
+@media screen and (max-width: 768px){
+	.evarution .publi a{width: 27%;}
+}
+@media screen and (max-width: 420px){
+	.evarution .publi a{width: 30%;}
+	.all-percent .percent-text ul li table tr td,.all-percent .percent-text ul li table tr td .p-con span.first-pj,.all-percent .percent-text ul li table tr td .p-con .first-text,.all-percent .percent-text ul li table tr td .p-con span.two-pj{width: 100%;}
+	.all-percent .percent-text ul li table tr td:nth-child(1){width: 100%;margin-top: 10px;}
+	.all-percent .percent-text ul li table tr td:nth-child(2){width: 100%;margin-top: 10px;}
+}
+@media screen and (max-width: 377px) {
+	.evarution .percent{padding: 10px 0 10px 0;}
+	.evarution .publi a{width: 45%;}
+	.all-percent .percent-list ul li span{margin-right: 0;}
+	.all-percent .percent-list ul li{margin-left: 10px;}
+}

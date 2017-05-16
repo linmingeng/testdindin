@@ -1,0 +1,17 @@
+<ion-view title="设置生日">
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-clear button-positive" ng-click="utils.saveIt('birthdaySubmitBtn');$event.stopPropagation();" >保存</button>
+    </ion-nav-buttons>
+    <ion-content has-header="true" has-bouncing="true">
+        <form form-produce="formCtrl.conf">
+            <div class="list my-list">
+                <label class="item item-input">
+                    <input type="date" input-produce="formCtrl.birthday" ng-model="formCtrl.models.birthday" style="height:24px;" placeholder="yyyy-MM-dd" min="1960-01-01" max="2005-12-31" />
+                </label>
+            </div>
+            <div style="display:none;">
+                <button class="button button-block button-balanced" id="birthdaySubmitBtn">保 存</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

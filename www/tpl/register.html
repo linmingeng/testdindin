@@ -1,0 +1,92 @@
+<ion-view class="entrance-view" title="{{formCtrl.stepTitle[formCtrl.step] || '注册'}}">
+    <ion-nav-bar class="bar-light">
+        <ion-nav-back-button class="button-icon icon iconfont icon-iosarrowback" from-title ng-click="goStep(formCtrl.step - 1)">
+            返回
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="login-content" has-bouncing="true">
+        <div class="resiter-step-container" ng-show="formCtrl.step == 1">
+        <form form-produce="formCtrl.conf">
+            <div class="list">
+                <label class="item item-input">
+                    <i class="icon iconfont icon-iphone placeholder-icon positive"></i>
+                    &nbsp;&nbsp;
+                    <input type="text" placeholder="请输入手机号码" input-produce="formCtrl.phone" ng-model="formCtrl.models.phone" one-key-clear-input/>
+                </label>
+            </div>
+            <div class="list register-agreement">
+                <div class="item item-checkbox">
+                    <label class="checkbox">
+                       <input type="checkbox" checked="checked" disabled="disabled" />
+                    </label>
+                    <a href="javascript:;" ng-click="showAgreement()" class="positive">同意服务协议</a>
+                </div>
+            </div>
+            <div class="list list-inset">
+                <button type="button" class="button button-balanced button-block" form-only-check="goStep(2)" ng-disabled="formCtrl.SMSConf.timeout">
+                    获取验证码 {{ formCtrl.SMSConf.timeout?'(' + formCtrl.SMSConf.timeout + 's)': '' }}
+                </button>
+                <p class="dark">
+                    绑定手机不收取任何费用，一个手机只能绑定一个账号
+                </p>
+            </div>
+        </form>
+        </div>
+        <div class="resiter-step-container" ng-show="formCtrl.step == 2">
+            <p class="dark">&nbsp;&nbsp;&nbsp;&nbsp;已发送验证码至手机: {{ formCtrl.models.phone }}</p>
+            <div class="list">
+                <div class="item item-input reg-sms-container">
+                    &nbsp;&nbsp;
+                    <label>
+                        <input type="text" placeholder="请输入验证码" maxlength="6" ng-model="formCtrl.models.code" one-key-clear-input/>
+                    </label>
+                    <a href="javascript:;" ng-class="{'disabled': formCtrl.SMSConf.timeout != 0}" ng-bind="'重新获取' + (formCtrl.SMSConf.timeout?'(' + formCtrl.SMSConf.timeout + 's)': '')" ng-click="formCtrl.SMSConf.timeout || sendSMS()"></a>
+                </div>
+            </div>
+            <div class="list list-inset">
+                <button class="button button-balanced button-block" ng-click="goStep(3)">
+                    下一步
+                </button>
+                <p class="dark">
+                    绑定手机不收取任何费用，一个手机只能绑定一个账号
+                </p>
+            </div>
+        </div>
+        <div class="resiter-step-container" ng-show="formCtrl.step == 3">
+            <form form-produce="formCtrl.conf">
+                <div class="list">
+                    <label class="item item-input">
+                        &nbsp;&nbsp;
+                        <input type="text" placeholder="请输入用户名" input-produce="formCtrl.username" ng-model="formCtrl.models.username" one-key-clear-input/>
+                    </label>
+                </div>
+                <div class="list">
+                    <label class="item item-input">
+                        &nbsp;&nbsp;
+                        <input type="{{ formCtrl.password.show?'text': 'password' }}" placeholder="请输入密码" input-produce="formCtrl.password" ng-model="formCtrl.models.password" one-key-clear-input/>
+                    </label>
+                </div>
+                <div class="list register-agreement">
+                    <div class="item item-checkbox">
+                        <label class="checkbox">
+                           <input type="checkbox" ng-model="formCtrl.password.show" />
+                        </label>
+                        显示密码
+                    </div>
+                </div>
+                <div class="list list-inset">
+                    <input type="hidden" input-produce="formCtrl.phone" ng-model="formCtrl.models.phone"/>
+                    <input type="hidden" input-produce="formCtrl.code" ng-model="formCtrl.models.code"/>
+                    <input type="hidden" input-produce="formCtrl.cityid" ng-model="formCtrl.models.cityid"/>
+                    <input type="hidden" input-produce="formCtrl.address" ng-model="formCtrl.models.address"/>
+                    <input type="hidden" input-produce="formCtrl.business" ng-model="formCtrl.models.business"/>
+                    <input type="hidden" input-produce="formCtrl.lng" ng-model="formCtrl.models.lng"/>
+                    <input type="hidden" input-produce="formCtrl.lat" ng-model="formCtrl.models.lat"/>
+                    <button class="button button-balanced button-block">
+                        完成
+                    </button>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

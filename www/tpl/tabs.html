@@ -1,0 +1,24 @@
+<ion-tabs class="tabs-icon-top tabs-light main-navbar {{hideTabs}}" delegate-handle="main-tabs" >
+    <ion-tab title="{{(tabsConf.home && tabsConf.home.txt)?tabsConf.home.txt:'主页'}}" icon="iconfont icon-icon44" ng-click="toState('app.home')" class="{{homeActive}}"  hidden="{{tabsConf.home && tabsConf.home.close == 1}}">
+        <ion-nav-view name="tab-home"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="国家馆" icon="fs_15pt iconfont icon-earth" ng-click="toState('app.oversea')" class="{{overSeasActive}}" >
+        <ion-nav-view name="tab-oversea"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="{{(tabsConf.list && tabsConf.list.txt)?tabsConf.list.txt:'分类'}}" icon="iconfont icon-list" ng-click="toState('app.list')" class="{{listActive}}"  hidden="{{tabsConf.list && tabsConf.list.close == 1}}">
+        <ion-nav-view name="tab-list"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="{{cartCd}}" icon="iconfont icon-shoppingcart" id="shoppingcart" badge="dt.cartBadge" badge-style="badge-assertive" ng-click="toState('app.cart')" class="{{cartActive}}"  hidden="{{tabsConf.cart && tabsConf.cart.close == 1}}">
+        <ion-nav-view name="tab-shopping"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="发现" hidden="true" icon="iconfont icon-faxian" ng-click="toState('app.news')" class="{{newsActive}}"  >
+        <ion-nav-view name="tab-news"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="我的" icon="iconfont icon-youshangjiao" ng-click="toState('app.account')" class="{{accountActive}}" hidden="{{tabsConf.mine && tabsConf.mine.close == 1}}">
+        <ion-nav-view name="tab-mine"></ion-nav-view>
+    </ion-tab>
+    <ion-tab hidden="true" title="" >
+        <ion-nav-view name="tab-page"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

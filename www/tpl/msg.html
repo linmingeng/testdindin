@@ -1,0 +1,22 @@
+<ion-view title="通知信息"  hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('account')" >
+       </button>
+    </ion-nav-buttons>
+    <ion-content has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list msg-list" ng-if="dt.items.length">
+            <a href="#/app/msg/{{item.msgid}}" class="item item-icon-right msg-item" ng-repeat="item in dt.items track by item.msgid" >
+                <b>{{item.title}}</b> <br> {{item.add_at*1000 | date : 'yyyy-MM-dd hh:mm'}}
+                <i class="icon iconfont icon-iosarrowright"></i>
+            </a>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-alert gray" style="font-size:64px;"></i>
+             <br /><span class="lh_64">您暂时没有通知信息</span>
+        </div>
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

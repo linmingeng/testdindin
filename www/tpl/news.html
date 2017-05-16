@@ -1,0 +1,20 @@
+<ion-view title="发现" >
+    <ion-content lazy-scroll has-bouncing="true" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list news-list" ng-if="dt.items.length">
+            <a class="item item-image" style="text-align:left;" ng-repeat="news in dt.items track by news.newsid" ng-href="#/app/news/{{news.newsid}}">
+                <img class="bg" ng-if="$index < 6 && news.image" ng-src="{{news.image}}" />
+                <img class="bg" ng-if="$index >= 6 && news.image" image-lazy-src="{{news.image}}" image-lazy-loader="dots" />
+                <div class="txt-bg"></div>
+                <div class="txt">{{news.title}}</div>
+            </a>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-news gray" style="font-size:64px;"></i>
+             <br /><span class="lh_64">暂时没有任何信息</span>
+        </div>
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

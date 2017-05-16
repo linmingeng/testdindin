@@ -1,0 +1,26 @@
+<ion-view title="我的红包" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('account')" >
+            {{ utils.hasHistory()?'返回':'我的'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-clear button-positive" ng-if="showUseful()" ng-click="useCoupon(null,null,null,null);" >不使用</button>
+    </ion-nav-buttons>
+    <ion-content has-header="true" has-bouncing="true" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list square-list" ng-if="dt.items.length">
+            <div class="item hongbao-item" square-item ng-repeat="coupon in dt.items track by coupon.couponid" ng-click="useCoupon(coupon.coupon_type.appid, coupon.couponid, coupon.coupon_typeid, coupon.coupon_type.consume, coupon.coupon_type.money);">
+               <div class="money">￥<span>{{coupon.coupon_type.money}}</span></div>
+            </div>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-iconfonthongbao gray" style="font-size:64px;"></i>
+             <br />
+             <span class="lh_64" >您暂时没有红包</span>
+        </div>
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<ion-view title="设置性别">
+    <ion-content has-header="true" has-bouncing="true">
+        <div class="list my-list">
+            <div ng-click="setSex($index)" ng-if="sex" class="item item-icon-right" ng-repeat="sex in dt.sexArr track by $index">
+                {{sex}}
+                <i class="icon iconfont icon-androiddone" ng-if="$index==dt.sex"></i>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

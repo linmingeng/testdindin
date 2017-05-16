@@ -1,0 +1,194 @@
+@charset "gbk";
+/* 收货地址  */
+
+a:link,a:visited {
+	color:#014ccc;
+	text-decoration:none;
+}
+a:hover,a:active {
+	color:#ff4e00;
+	text-decoration:none;
+}
+
+
+.set_address {
+	padding:0 15px;
+}
+.set_address .list_address {}
+.set_address .list_address li:after {
+	content:"\0020";
+	display:block;
+	height:0;
+	clear:both;
+}
+.set_address .list_address li {
+	zoom:1;
+}
+.set_address .list_address li {
+	position:relative;
+}
+.set_address .list_address li .edit_address {
+	position:absolute;
+	top:12px;
+	right:0;
+	color:#999;
+}
+.set_address .list_address li .radio {
+	margin-left:-16px;
+	vertical-align:middle;
+}
+
+.set_address .add_address {
+	margin:15px 0 0 15px;
+}
+.set_address .view_all {
+	margin:15px 0 0 15px;
+}
+
+
+
+.address_type1 .list_address li {
+	padding:10px 0 15px 21px;
+	border-bottom:1px solid #d4d4d4;
+}
+.address_type1 .view_all {
+	display:none;
+}
+.address_type2 .list_address li {
+	margin:10px 0;
+	padding:5px 0 5px 21px;
+}
+.address_type2 .list_address li .edit_address {
+	display:none;
+}
+.address_type2 .list_address li.current {
+	background-color:#dbf5fe;
+}
+.address_type2 .list_address li.current .edit_address {
+	display:block;
+	top:2px;
+	right:5px;
+}
+.address_type2 .add_address {
+	display:none;
+}
+
+
+
+
+.address_type1 .list_address li a:link,.address_type1 .list_address li a:visited {
+	color:#014ccc;
+	text-decoration:none;
+}
+.address_type1 .list_address li a:hover,.address_type1 .list_address li a:active {
+	color:#ff4e00;
+	text-decoration:underline;
+}
+.address_type2 .list_address li a:link,.address_type2 .list_address li a:visited {
+	color:#014ccc;
+	text-decoration:none;
+}
+.address_type2 .list_address li a:hover,.address_type2 .list_address li a:active {
+	color:#ff4e00;
+	text-decoration:underline;
+}
+
+/* ========== 编辑收货地址 ======== */
+
+/* 组件内容 */
+.bcontent{background-color:#fafdff;}
+.bcontent .tipswarn{height:21px;margin:10px 10px 10px 11px;border:1px solid #f0d692;padding:0 5px 0 25px;background:#ffc url(images/box1.png) no-repeat 5px -110px;line-height:23px;}
+.bcontent .tipsinfo{margin:10px 10px 10px 11px;border:1px solid #aedfff;padding:0 5px 0 25px;background:#f1faff url(images/box1.png) no-repeat 5px -75px;}
+.bcontent .tipssuccbig{margin:10px 10px 10px 11px;padding:0 5px 0 35px;background:url(images/box1.png) no-repeat 5px -211px;line-height:25px;}
+.bcontentlist{margin:3px 0 0 11px;}
+.bcontentlist table{border-collapse:collapse;}
+.bcontentlist table th,.box1 .bcontentlist table td{padding:5px 0;vertical-align:top;border-top:3px solid #fafdff;}
+.bcontentlist table th{width:88px;padding-right:4px;text-align:right;line-height:22px;color:#333333;}
+.bcontentlist table .txterror{visibility:hidden;}
+.bcontentlist table .txterror span{display:none;}
+.bcontentlist table span.remark{display:block;color:#999999;line-height:20px;}
+.bcontentlist table .list_error{background-color:#ffe9e9;}
+.bcontentlist table .list_error th{color:#ff0000;background-image:none;}
+.bcontentlist table .list_error td{background:url(images/box1.png) right -378px no-repeat #ffe9e9;}
+.bcontentlist table .list_error .txterror{visibility:visible;width:120px;padding:8px 4px 5px 5px;background:#fafdff;vertical-align:top;font:700 12px 宋体;color:#ff0000;}
+.bcontentlist table .list_error .txterror span {display:block;}
+.bcontentlist table .list_error .txterror em{display:inline-block;color:#999999;line-height:18px;}
+.bcontentlist table .exception th{border-top:3px solid #ffe9e9;}
+.bcontentlist table .exception td{border-top:3px solid #ffe9e9;background:#ffe9e9;}
+.bcontentlist p.operate{padding:22px 0 20px 90px;}
+.bcontentlist p.operate input{margin-right:30px;}
+
+/* 省市区 */
+.area{position:relative;}
+.area select{margin-left:10px;width:120px;}
+.area .province{
+    font-size: 14px;
+    position: relative;
+    display: inline-block;
+    width: 108px;
+    height: 38px;
+    margin-right: 4px;
+    padding: 3px 0px 0px 6px;
+    cursor: pointer;
+    border: 1px solid #E3E1E1;
+	border-radius: 3px;
+	line-height: 32px;
+	background-image: url('../images/arrow-down.png') !important;
+	background-repeat: no-repeat;
+	background-position: right 50%;
+}
+.area .provinceCity{
+    font-size: 12px;
+    position: relative;
+    display: inline-block;
+    width: 84px;
+    height: 24px;
+    margin-right: 4px;
+    padding: 3px 0px 0px 6px;
+    background: transparent url(images/box1.png) no-repeat 0 -145px;
+    cursor: pointer;
+}
+.area .cityArea{
+    font-size: 12px;
+    position: relative;
+    display: inline-block;
+    width: 84px;
+    height: 24px;
+    margin-right: 4px;
+    padding: 3px 0px 0px 6px;
+    background: transparent url(images/box1.png) no-repeat 0 -145px;
+    cursor: pointer;
+}
+.area .province_hover{position:relative;top:3px;display:inline-block;width:72px;height:23px;margin-right:4px;padding:0 0 0 12px;background:transparent url(images/box1.png) no-repeat 0 -169px;cursor:pointer;}
+.area .maskiframe{position:absolute;top:-1px;left:-1px;width:309px;height:176px;filter:alpha(opacity=0);-moz-opacity:0;z-index:-1;}
+.area .provincelist{position:absolute;width:290px;left:0;top:43px;z-index:-1;padding:8px 3px 15px 14px;line-height:20px;border:1px solid #7f9db9;background-color:#ffffff;}
+.area .provincelist a{display:inline-block;padding:0 4px 0;height:19px;font:400 12px/19px 宋体;border:1px solid #ffffff;}
+.area .provincelist a:hover{border:1px solid #8cc0e7;background-color:#fafdff;color:#014ccc;text-decoration:none;}
+/* 收货地址 */
+.addresslist{width:650px;text-align:left;}
+.addresslist .erroraddressitem{color:#666666;}
+.addresslist .errorinfo{padding:5px;color:#ff0000;background-color:#ffffe7;border:#f7d694 1px solid;}
+.addresslist dt{float:left;width:60px;}
+.addresslist dd{position:relative;float:right;width:597px;margin-bottom:20px;line-height:22px;vertical-align:top;text-align:left;  padding-top:3px; padding-left:3px;}
+.addresslist .status_on{background:#f0faff; border:1px solid #c8f0ff;}
+.addresslist .status_off{ background:none; border:1px solid #fff;}
+.addresslist dd input{vertical-align:top;}
+.addresslist dd input.subbtn{display:block;margin-top:10px;}
+.addresslist dd label{display:inline-block;width:465px;overflow:hidden;padding:0 80px 0 5px;font-family:Monospace,sans-serif;cursor:pointer;}
+.addresslist dd label.nostyle{background-color:'';}
+.addresslist dd label.mousestyle{background-color:#dbf5fe;}
+.addresslist dd label.selected{background-color:#dbf5fe;}
+.addresslist dd label.selectedover{background-color:#dbf5fe;}
+.addresslist dd span{display:none;position:absolute;top:0px;right:10px;}
+.addresslist dd label.mousestyle span{position:absolute;top:0px;right:10px;display:inline;}
+.addresslist dd label.selected span{position:absolute;top:0px;right:10px;display:inline;}
+.addresslist dd label.selectedover span{position:absolute;top:0px;right:10px;display:inline;}
+.addresslist dd label span a{color:#014ccc;}
+.addresslist dd label span a:link,.addresslist dd label span a:visited{color:#014ccc;}
+.addresslist dd label span a:hover,.addresslist dd label span a:active{text-decoration:none;}
+.addresslist dd.linkother {margin-bottom:0;}
+.addresslist dd.linkother label{margin:0;}
+.addresslist dd.linkother a{display:inline-block;color:#014ccc;}
+.addresslist dd.linkother a:hover{text-decoration:none;color:#ff4e00;}
+.addresslist dd.linkother em{float:inherit;display:inline-block;height:4px;width:7px;margin:1px 0 0 3px;vertical-align:middle;background:url(images/box1.png) no-repeat -77px -42px;font-size:1px;}
+/*  |xGv00|ed62fc9eeec48c92f0a8e4ad23d33418 */

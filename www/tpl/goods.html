@@ -1,0 +1,171 @@
+<style>
+    .store img{
+        margin: -0.3rem 0.5rem 0 1rem;
+    }
+    .store div{
+        float: left;
+    }
+    .store .all_product{
+        margin: 0.75rem 0.5rem 0 1rem;
+        float: right;
+    }
+    .store .storelogo{
+        margin: 0.75rem 0.5rem 0 1rem;
+    }
+    .goods_address{
+        color: #666666;
+    }
+    .store_icon{
+        width: 2rem;
+        height: 2rem;
+    }
+</style>
+<ion-view title="商品详细" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack()" >
+            {{ utils.hasHistory()?'返回':'购物'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button ng-if="utils.showShare() " class="button button-small button-clear button-positive icon iconfont icon-share" ng-click="shareIt();"></button> 
+    </ion-nav-buttons>
+    <div class="foot-bar slide-top " ng-class="{'has-tab': !hideTabs}" ng-if="calcTotal().count == 0 && !dt.curItem.tag.btn" >
+        <span class="button button-assertive add_it" ng-click="addQuantity(dt.curItem);" ng-class="{'gray-dom': dt.curItem.store == 0}">加入购物车</span>
+        <span class="button button-balanced buy_it" ng-click="orderIt(dt.curItem);" ng-class="{'gray-dom': dt.curItem.store == 0}">立即购买</span>    
+    </div>
+    <div class="foot-bar slide-top" ng-class="{'has-tab': !hideTabs}" ng-if="calcTotal().count">
+        <i class="icon iconfont icon-shoppingcart" ng-click="goCart()"></i>
+        <div class="badge badge-assertive" ng-bind="calcTotal().count" ng-click="goCart()"></div>
+        <div class="price" ng-click="goCart()">
+            <span ng-bind="calcTotal().totalPrice | currency: '￥'" ></span>
+            <!--span class="delivery_fee" ng-if="ifNeedDeliveryFee()" ng-bind="'+运费￥'+dt.app.delivery_fee"> </span -->
+            <span class="return_money" ng-if="calcTotal().return_money" ng-bind="'可返￥'+calcTotal().return_money"> </span>
+        </div>
+        <div class="button button-assertive pay-button" ng-click="goPay()">选好了</div>
+    </div>
+    
+    <ion-content lazy-scroll has-bouncing="true" delegate-handle="goodsScroll has-foot-bar" >
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="goods-cont full-height" ng-if="dt.items.length > 0">
+            <div class="tag big" ><div class="left color{{dt.curItem.tag.status}}" ng-if="dt.curItem.tag.txt">{{dt.curItem.tag.txt}}</div> <div class="right color-1" ng-if="dt.curItem.tag.show_limit">限购</div> <div class="right color-2" ng-if="dt.curItem.store == 0">{{dt.conf.no_goods_txt || '无货'}}</div></div>
+            <div class="goods-img">
+                <ion-slide-box auto-play="true" does-continue="true" ng-if="dt.curItem.imgs.length > 0" slide-produce="1" >
+                  <ion-slide ng-repeat="img in dt.curItem.imgs">
+                    <img class="bg img" style="width:100%" ng-src="{{img}}" >
+                  </ion-slide>
+                </ion-slide-box>
+            </div>
+            <div class="goods-info">
+                <div class="goods_cd">
+                    <div class="count_down goods" ng-if="dt.curItem.tag.show_cd >= 1 && cds[dt.curItem.goodsid]" ng-class="{'ing': dt.curItem.tag.ing == 1}">
+                        <span ng-if="dt.curItem.tag.ing == 0">{{dt.tagsConf[dt.curItem.tag.status].txt || '促销活动'}}将于{{cds[dt.curItem.goodsid].cd}}</span>
+                        <span ng-if="dt.curItem.tag.ing == 1">离{{dt.tagsConf[dt.curItem.tag.status].txt || '促销活动'}}结束{{cds[dt.curItem.goodsid].cd}}</span>
+                    </div>
+                </div>
+                <div class="info" >
+                    <div ng-bind="dt.curItem.name"></div>
+                    <span class="goods_price cart" >
+                        <span class="rmb" ng-if="dt.curItem.tag.status != 10">￥</span><span class="pr">{{dt.curItem.tag.prices.pr}}</span> <span class="dis" ng-if="dt.curItem.tag.status == 10">{{dt.memberConf.score_txt || '积分'}}</span>
+                        <span class="dis" ng-if="dt.curItem.tag.prices.dis">{{dt.curItem.tag.prices.dis}}折</span>
+                        <span class="prt" ng-if="dt.curItem.tag.prices.prt">{{dt.curItem.tag.prices.prt}}</span>
+                        <span class="rt" ng-if="dt.curItem.tag.prices.rt">返￥{{dt.curItem.tag.prices.rt}}</span>
+                        <span class="less" ng-if="dt.curItem.store < 5">(数量不多啦)</span>
+                    </span>
+                </div>
+                <div class="buy-step" ng-class="{'gray-dom': dt.curItem.store == 0}">
+                    <span class="step-btns">
+                        <div ng-if="dt.curItem.tag.btn" class="btn" ng-click="orderIt(dt.curItem);">{{dt.curItem.tag.btn}}</div>
+                        <button ng-if="!dt.curItem.tag.btn" class="icon iconfont icon-iosminusoutline" ng-click="subQuantity(dt.curItem);"></button>
+                        <em ng-if="!dt.curItem.tag.btn" ng-bind="dt.curItem.quantity || '0'"></em>
+                        <button ng-if="!dt.curItem.tag.btn" class="icon iconfont icon-iosplusoutline" ng-click="addQuantity(dt.curItem);"></button>
+                    </span>
+                </div>
+                <div class="group-list">
+                    <div class="row" >
+                        <div class="col goods_address">
+                            原产地： {{dt.curItem.origin_place}}
+                        </div>
+                        <div class="col goods_address">
+                            所在地：{{dt.curItem.store_place}}
+                        </div>
+                        <div class="col goods_address">
+                            销量： {{dt.curItem.sales}}笔
+                        </div>
+                    </div>
+                </div>
+                <!--div class="goods_tip">
+                    库存 {{dt.curItem.store}} &nbsp; 销量 {{dt.curItem.sales}}
+                </div-->
+            </div>
+            
+            <div class="goods-bar" ng-if="dt.curItem.slogan"></div>
+            <div class="store">
+                <div class="storelogo" ng-click="toStore()">
+                    <div>
+                        <img class="bg store_icon" ng-src="{{dt.store.icon}}">
+                    </div>
+                    <div>
+                        <span>{{dt.store.name}}</span>
+                    </div>
+                </div>
+                <div class="all_product" ng-click="toStoreGoods()">
+                    全部商品<em class="iconfont icon-iosarrowright"></em>
+                </div>
+            </div>
+
+            <div class="goods-bar" ng-if="dt.curItem.slogan"></div>
+            <div style="display:flex;width:100%;" ng-if="dt.curItem.slogan" class="row">
+                <div class="col-25 center">
+                    <img class="bg img" style="width:80px;" ng-src="{{dt.conf.guider_avatar || utils.getAppLogo()}}" >
+                </div>
+                <div style="font-size:10pt;line-height: 20px;padding:4px;white-space:normal;" class="col-75">
+                    <b>{{dt.conf.guider_name?dt.conf.guider_name+'说：':'卖点：'}}</b><br>
+                    {{dt.curItem.slogan}}
+                </div>    
+            </div>
+            <div class="goods_middle" compile="dt.goods_middle"></div>
+            
+            <div class="goods-bar" ng-if="dt.curItem.base_info">
+                基本信息
+            </div>
+            <div class="goods-txt" ng-if="dt.curItem.base_info" compile="dt.curItem.base_info"></div>
+            
+            <div class="goods-bar" ng-if="dt.curItem.info">
+                详细信息
+            </div>
+            <div class="info-img" ng-if="dt.curItem.info" compile="dt.curItem.info" ></div>
+            
+            <div class="goods-bar" ng-if="dt.items.length > 1">
+                推荐商品
+            </div>
+            <div ng-if="dt.items.length > 1" style="display:flex;width:100%;padding: 4px 0;">
+                <ul class="list goods-ul">
+                    <li class="item" goods-item ng-repeat="item in dt.items track by item.goodsid" ng-if="item.goodsid != dt.curItem.goodsid">
+                        <div class="goods-div">
+                            <div class="img hasTag">
+                               <div class="tag"><div class="left color{{item.tag.status}}" ng-if="item.tag.txt">{{item.tag.txt}}</div> <div class="right color-1" ng-if="item.tag.show_limit">限购</div> <div class="right color-2" ng-if="item.store == 0">{{dt.conf.no_goods_txt || '无货'}}</div></div>
+                                <img class="bg" image-lazy-src="{{item.image}}" image-lazy-loader="dots" ng-click="goGoods(item.goodsid)"/>
+                                <div class="count_down" ng-class="{'ing': item.tag.ing == 1}" ng-if="item.tag.show_cd == 1 && cds[item.goodsid]">{{cds[item.goodsid].cd}}</div>
+                            </div>
+                            <div class="name">
+                                {{item.name}}
+                            </div>
+                            <div class="stepper" ng-class="{'gray-dom': item.store == 0}">
+                                <div ng-if="item.tag.btn" class="btn" ng-click="orderIt(item);">{{item.tag.btn}}</div>
+                                <div ng-if="!item.tag.btn" class="addCart icon iconfont icon-cartplus" ng-click="addQuantity(item);"></div>
+                            </div>
+                            <span class="goods_price" ng-class="{'hasCD': item.tag.show_cd == 1}" >
+                                <span class="rmb" ng-if="item.tag.status != 10">￥</span><span class="pr">{{item.tag.prices.pr}}</span> <span class="dis" ng-if="item.tag.status == 10">{{dt.memberConf.score_txt || '积分'}}</span>
+                                <span class="dis" ng-if="item.tag.prices.dis">{{item.tag.prices.dis}}折</span>
+                                <span class="prt" ng-if="item.tag.prices.prt">{{item.tag.prices.prt}}</span>
+                                <span class="rt" ng-if="item.tag.prices.rt">返￥{{item.tag.prices.rt}}</span>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="blank-float white-bg"></div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view title="收入明细" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('trader')" >
+            {{ utils.hasHistory()?'返回':'我是'+(dt.traderConf.txt || '分销商')}}
+       </button>
+    </ion-nav-buttons>
+    <div class="foot-bar">
+        <div class="txt" >
+            未提现：{{dt.trader?dt.trader.money:0 | currency: '￥'}}<br>
+            累计收入：{{dt.trader?dt.trader.income:0 | currency: '￥'}}
+        </div>
+        <div class="button button-assertive pay-button" ng-click="utils.goUrl('trader/withdraw')">提 现</div>
+    </div>
+    <ion-content class="has-foot-bar" has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="my-table" ng-if="dt.items.length">
+            <div class="row header">
+                <div class="col">日期</div>
+                <div class="col">金额</div>
+                <div class="col col-50">备注</div>
+            </div>
+            <div class="row" ng-repeat="item in dt.items track by item.incomeid" >
+                <div class="col">{{item.add_at*1000 | date : 'yyyy-MM-dd'}}</div>
+                <div class="col">{{item.money>0?'￥'+item.money:'-￥'+item.money*-1}}</div>
+                <div class="col col-50">{{utils.config.incomeType[item.type] || ''}} <span class="assertive" ng-if="item.status == 0">(待发放)</span></div>
+            </div>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-alert gray" style="font-size:64px;"></i>
+             <br /><span class="lh_64">您暂时没有任何收入</span>
+        </div>
+        <div class="no_more_data" ng-if="dt.curPage > 1 && !dt.hasMore && !dt.isEmpty">没有更多数据啦！</div>
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="dt.hasMore" >
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

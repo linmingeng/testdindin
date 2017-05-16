@@ -1,0 +1,43 @@
+<ion-view title="商品分类" hide-back-button="true">
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="row" style="background-color: #ffffff;">
+            <div class="col-33 colstyle">
+                <ion-scroll ng-style="winHeight">
+                    <div class="col-demo" >
+                        <ul class="list listdemo"   id="choiceturn" style="margin-bottom: 0px">
+                            <li class="item item-style" ng-repeat="v in listgroup track by $index"  ng-class='{selected:$index==selectedRow}' ng-click='selectedWhich($index)'>
+
+                                <a ng-click="demo('{{v.groupid}}')" ng-class='{selectedd:$index==selectedRow}' ng-click='selectedWhich($index)' >
+                                {{v.name}}
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </ion-scroll>
+            </div>
+            <div class="col-66">
+                <ion-scroll ng-style="winHeight">
+                    <div class="row colmatch"><img src="img/0101.png"></div>
+
+                    <div  ng-repeat="x in listgroup" id="{{x.groupid}}">
+                        <div  ng-repeat="y in x.sub_groups">
+                            <div class=" row leftfont" >
+                                {{y.name}}
+                            </div>
+                            <div class="row row-wrap">
+                                <div  class="col col-33" ng-repeat="z in y.end_groups">
+                                    <img class="imgwidth" src="{{z.image}}">
+                                    <li class="listyle">
+                                        {{z.name}}
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-scroll>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

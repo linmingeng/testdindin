@@ -1,0 +1,22 @@
+<ion-view title="新闻详情" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack()" >
+            {{ utils.hasHistory()?'返回':'购物'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        {{dt.data.title}}
+    </ion-nav-title>
+    
+    <ion-content lazy-scroll has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="news-container ">
+            <div class="news-image" >
+                <img ng-src="{{dt.data.image}}" />    
+            </div>
+            <div class="news-title" ng-bind="dt.data.title"></div>
+            <div class="news-basic-info">发布时间: {{ dt.data.add_at }}</div>
+        </div>
+        <div class="news-content full-height" compile="dt.data.content" ></div>
+    </ion-content>
+</ion-view>

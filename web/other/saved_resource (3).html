@@ -1,0 +1,1763 @@
+
+
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0073)http://velikorodnov.com/opencart/shopme/demo6/index.php?route=common/home -->
+<html dir="ltr" lang="en"><!--<![endif]-->
+<head>
+<meta charset="GBK">
+<TITLE>叮叮网 -全球购物平台 限时抢购 特价秒杀【100%原装进口】</TITLE>
+<meta name="360-site-verification" content="b5de4bc84b84613960128b8c6002eb67" />
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<link rel="icon" href="../dindinv2Images/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="../dindinv2Images/favicon.ico"	type="image/x-icon" />
+<META name=Description content=叮叮网限时抢购专栏,全球正品特价秒杀，打折优惠都汇聚在这里，全网超低价。>
+<META name=Keywords content=叮叮网限时抢购,特价秒杀,打折优惠>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script src="./js/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+<link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="./js/bootstrap.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
+<link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" type="text/css" href="./css/responsive.css">
+
+
+
+<script type="text/javascript" src="./js/owl.carousel.min.js"></script>
+<script src="./js/jquery.matchHeight.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="./js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="./js/shopme_common.js"></script>
+
+<script type="text/javascript" src="./js/jquery.countdown_en.js"></script>
+<script type="text/javascript" src="./js/tweetfeed.min.js"></script>
+<script type="text/javascript" src="./js/seckill.js?date=1491809376725"></script>
+
+
+<style type="text/css">
+	#content .owl-item{border-bottom: 1px solid #E3E3E3;}
+	#content .list_countdown{position: absolute;right: 15px;top: -10px;}
+	.list_countdown .countdown div{background-color: #fff;}
+	.list_countdown .countdown div p{border-bottom: 1px solid #f8f8f8;font-size: 24px;}
+	.list_countdown .countdown div{font-weight: bold;}
+	.time-flg{position: absolute;right: 18px;top: 12px;color: red;}
+	.product-info h1, .deals_module .product-info h2 a{color:#666;font-size:15px;font-weight:bold;}
+	@media screen and (max-width:370px){
+	.deals_module .extended_offer .price-new, .deals_module .extended_offer .price-old, .deals_module .extended_offer .price-save,
+	 .deals_module .extended_offer .price-regular{padding: 14px 1px 10px;}
+	}
+	.zhengpin{width:100%;max-width:610px;margin:0 auto;margin-top:40px;margin-bottom:40px;}
+	.zhengpin ul{overflow:hidden;}
+	.zhengpin ul li{width:33.33%;float:left;line-height:22px;min-width:149px;}
+	.zhengpin ul li .imgs{float:left;margin-right:5px;height: 44px;line-height: 44px;}
+	.zhengpin ul li .text-desc{color:#8a8a8a;font-size: 13px;}
+	.zhengpin ul li:nth-child(1) .text-title{color:#009de0;}
+	.zhengpin ul li:nth-child(2) .text-title{color:#86b301;}
+	.zhengpin ul li:nth-child(3) .text-title{color:#e59104;}
+	.seckill-timer{margin:20px 0;border-bottom:2px solid #35befb;position:relative;}
+	.seckill-timer .seckill-ing{width:165px;height:35px;line-height:35px;margin:0 auto;background-color:#35befb;color:#fff;text-align:center;font-size:16px;}
+	.seckill-time{position:absolute;right:5px;bottom:5px;}
+	.seckill-time .times span{display:inline-block;width:20px;height:30px;line-height:30px;background-color:#003044;color:#fff;
+	text-align:center;font-size: 21px;}
+	.seckill-more{width:280px;border-bottom:1px solid #ccc;text-align:center;color:#757575;margin:0 auto;height:34px;line-height:34px;margin-bottom:26px;}
+	.owl-wrapper1 .owl-item{background-color:#fff;width:47%;border:1px solid #ccc;position:relative;margin-bottom:25px;}
+	#content1 .owl-wrapper1 .owl-item:hover img{-webkit-filter: grayscale(0%);-moz-filter: grayscale(0%);-o-filter: grayscale(0%);-ms-filter: grayscale(0%);}
+	.owl-wrapper1 .owl-item:nth-child(odd){margin-right:6%;}
+	.owl-wrapper1 .owl-item .prices{font-family: arial;}
+	.owl-wrapper1 .owl-item .prices .nowprice{color:#F73E3E;font-size:25px;font-weight:bold;}
+	.owl-wrapper1 .owl-item .prices del{color: #757575;font-size:19px;}
+	.owl-wrapper1 .owl-item  .btn.btn-primary.qg{padding: 2px 15px;background: #ff0000;}
+	.owl-wrapper1 .owl-item  .btn.btn-primary.gotostore{padding: 2px 15px;background: #f39b09;}
+	.owl-wrapper1 .owl-item .sold_out{-webkit-transform:rotate(-23deg);-o-transform:rotate(-23deg);-moz-transform:rotate(-23deg);-ms-transform:rotate(-23deg);
+	transform:rotate(-23deg);position:absolute;left:50%;top:50%;margin:-42px 0 0 -113px;z-index:99;}
+	.owl-wrapper1 .owl-item .discount{width:51px;height:54px;background:url(./images/sckill_discount.png) no-repeat;position:absolute;left:10px;top:-8px;
+	text-align:center;color:#fff;padding-top:5px;font-size:20px;z-index:3;padding-right: 5px;}
+	.owl-wrapper1 .owl-item .member_only{position:absolute;right:20px;bottom:25px;z-index:99;}
+	.owl-wrapper1 .owl-item .left{width:40%;position:relative;}
+	.seckill-timer.seckill-future .times span{background-color:#b0b0b0;}
+	.seckill-timer.seckill-future .times{color:#b0b0b0;}
+	.time-line{margin:30px 0;}
+	.time-line .grey_bg{position:relative;background-color:#f1f1f1;height:65px;z-index: 99;}
+	/*.time-line .grey_bg:before{width:38px;height:38px;display:inline-block;content:'';background:url(./images/seckill_clock.png) no-repeat;}*/
+	.time-line .grey_bg .time-item{position:absolute;width:100%;left:8%;top:4px;z-index:999;overflow:hidden;}
+	.time-line .grey_bg .time-item>div{width:80px;float:left;line-height: 26px;color:#afafaf;margin-right: 12%;cursor: pointer;}
+	.time-line .grey_bg .img-line{}
+	.time-line .grey_bg .img-line .img{position:absolute;left:10px;top:50%;margin-top: -19px;z-index:1002;}
+	.time-line .grey_bg .img-line .line{height:1px;background:#afafaf;position:absolute;left:38px;top:50%;right: 0;}
+	.time-line .grey_bg .time-item .yuan{width:7px;height:7px;border-radius:110px;background-color:#afafaf;margin-left:24px;}
+	.time-line .grey_bg .time-item .time-clock{font-size:22px;}
+	.time-line .grey_bg .time-item .time-text{font-size:13px;}
+	.time-line .grey_bg .time-item .ing{color:#ff4150;}
+	.time-line .grey_bg .time-item .ing .yuan{background-color:#ff4150;}
+	.time-line .grey_bg .time-item .soon{color:#28cab3;}
+	.time-line .grey_bg .time-item .soon .yuan{background-color:#28cab3;}
+	.product-info .image img{width:100%;min-width:100px;max-width:300px;}
+	#content1 .product-info .image img{-webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-o-filter: grayscale(100%);-ms-filter: grayscale(100%);
+	-webkit-transition:all 1s ease;-o-transition:all 1s ease;-moz-transition:all 1s ease;-ms-transition:all 1s ease;transition:all 1s ease;}
+	.tuijian-img{position:relative;color:#fff;}
+    .tuijian-number{position: absolute;
+		right: 27%;
+		top: 12%;
+		font-size: 18px;
+		font-weight: bold ;}
+    .tuijian-number span{display:inline-block;width:21px;height:21px;line-height:21px;border:1px solid #fff;margin-right:5px;text-align:center;}
+    .product-desc{font-size: 13px;line-height: 18px;color: #777777;min-height: 50px;}
+    .product-info  .seckill-time .times span{width:16px;height:25px;line-height:25px;font-size:18px;}
+    .product-info  .seckill-time{right:25px;top:13px;height:25px;}
+    .buy-num{margin-top: 5px;}
+    .buy-num .buy-text{color: #777777;font-size: 13px;}
+    .buy-num .line{border: 1px solid rgb(252, 141, 87);width: 100%;height: 12px;border-radius: 3px;margin-top:2px;position:relative;}
+    .buy-num .line .bg-line{background:rgb(252, 173, 106);position:absolute;left:0;top:0;height:100%;}
+    .deals_module .product-info .right{width:56%;float:left;padding-left:0;}
+	@media screen and (max-width: 1260px) {
+		.tuijian-number{right:18%;}
+	}
+	@media screen and (max-width: 1015px) {
+		.tuijian-number{right:0;}
+	}
+	
+	@media screen and (max-width: 767px) {
+		.deals_module .product-info .right{width:100%;}
+		.tuijian-img{display:none;}
+	}
+	@media only screen and (max-width: 1199px) and (min-width: 992px){
+		.product-info .right {
+		margin-left: 0 !important;
+		}
+		.time-line .grey_bg .time-item>div{margin-right:11%;}
+	}
+	@media only screen and (max-width: 991px) {
+		.product-info .right {
+			margin-left: 0 !important;
+		}
+		.seckill-timer .seckill-ing{margin:0;}
+		.product-info .image{width:100%!important;}
+		.time-line .grey_bg .time-item>div{margin-right:9%;}
+	}
+	@media only screen and (max-width: 767px) {
+		.time-line .grey_bg .time-item>div{margin-right:8%;}
+		.zhengpin ul li{width:163px;float:none;margin:15px auto;}
+	}
+	@media only screen and (max-width: 688px) {
+		.time-line .grey_bg .time-item>div{margin-right:6%;}
+	}
+	@media only screen and (max-width: 594px) {
+		.time-line .grey_bg .time-item>div{margin-right:4%;}
+		.time-line .grey_bg .time-item{left:9%;}
+	}
+	@media only screen and (max-width: 540px) {
+		.seckill-time{bottom:-35px;}
+		.seckill-more,.time-line{margin-top:49px;}
+		.seckill-time .times span{width: 16px;height: 24px;line-height: 24px;font-size: 17px;}
+	}
+	@media only screen and (max-width: 517px) {
+		.owl-wrapper1 .owl-item .left{width:100%;}
+		.time-line .grey_bg .time-item>div{margin-right:3%;width:62px;}
+		.time-line .grey_bg .time-item .time-clock{font-size:17px;}
+		.time-line .grey_bg .time-item .time-text{font-size:12px;}
+		.time-line .grey_bg .time-item{left:11%;}
+	}
+	@media only screen and (max-width: 600px) {
+		.owl-wrapper1 .owl-item{width:100%;}
+		.time-line .grey_bg .img-line .img{display:none;}
+		.time-line .grey_bg .time-item{left:0;}
+	}
+	@media only screen and (max-width: 382px) {
+		.time-line .grey_bg .time-item>div{margin-right:0;width:60px;}
+	}
+</style>
+</head>
+<body class="product-category-65 style-1 ">
+<!-- 悬浮购物车 -->
+<div class="cart-fixed"><a href="./shopping_cart.jsp"><i></i><span class="cartNum"></span></a></div>
+<!-- Cookie Control -->
+<div class="tuijian-img">
+	<img src="./images/head_top_img.jpg" width="100%"/>
+	<div class="tuijian-number">
+		<img src="./images/head_top_img_03.png"/><a href="http://www.dindin.com/exchange_integral.jsp" target="_blank">查看可兑换的礼品>></a>
+	</div>
+	<div class="tuijian-number" style="right:23.5%;top:62%;margin-top: 3px;">
+		<a href="http://www.dindin.com/integral_rule.jsp" target="_blank">查看如何获取更多积分>></a>
+	</div>
+</div>
+
+<!-- Old IE Control -->
+<div class="outer_container" id="cont-container">
+<!-- header 部分 -->
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    
+    <title>My JSP 'header.jsp' starting page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?63dc04777ecd9e2bbc85fa861ce7a9ca";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<link href="./css/common_style.css" rel="stylesheet" media="screen">
+<style type="text/css">
+/*悬浮购物车样式*/
+.cart-fixed {width:45px;height:45px;position:fixed;bottom:10px;left:10px;background:rgb(246, 68, 99);border-radius:100%;display:none;z-index:99;}
+.cart-fixed i{display: block;background: url(./images/shop_cart_img.png) no-repeat;width: 30px;height: 30px;margin: 0 auto;background-size: 30px 30px;
+	position: absolute;left: 50%;top: 50%;margin: -15px 0 0 -15px;}
+	.cart-fixed a{display:block;width:100%;height:100%;}
+	.cart-fixed .cartNum{font-size: 13px;color: #67850E;background: #fff;border-radius: 100%;font-weight: bold;position: absolute;right: 7px;bottom: 4px;
+display: block;padding: 2px;min-width: 20px;min-height: 20px;text-align:center;}
+.nameEllipsis{TEXT-OVERFLOW: ellipsis;WHITE-SPACE: nowrap;OVERFLOW: hidden;}
+  .cart_holder i.fa-shopping-cart,.icon_holder .fa-star{color:#4ac4fa;}
+  .menu_cell nowrap .fa-sort-desc,.main_menu .fa-sort-desc{position: absolute;right: 4px;top: 12px;color: #A3A1A1;}
+  .menu_wrapper .categories.vertical.megamenu .fa-sort-desc,.vertical .sub_trigger .fa-sort-desc{position: absolute;top: 17px;right: 20px;-webkit-transform: rotate(-94deg);-o-transform: rotate(-94deg);-moz-transform: rotate(-94deg);-ms-transform: rotate(-94deg);}
+.has-sub>ul li .wrapper{/*position: absolute;
+z-index: 2;
+left: -1px;
+top: 55px;
+background: #ffffff;
+border: 1px solid #eaeaea;
+padding: 10px 17px;
+margin-top: 15px;
+display: table;
+opacity: 0;
+visibility: hidden;
+height: 0;
+transition: margin-top 300ms, opacity 200ms, visibility 200ms;
+white-space: normal;
+max-width: 1139px !important;*/} 
+.wrapper ul{position: static;border:none;}
+ .has-sub>ul{width: 800px;}
+ #top-menu .ul2 li a,#top-menu .ul2 li{padding: 4px;}
+ .main_menu > ul.horizontal > li > a {
+
+}
+#cont-container{overflow: hidden;}
+#seckillLi img:nth-child(1){width:68px;position:absolute;right:0;top:-22px;}
+#pifa a img{position:absolute;transform:rotate(90deg);width:44px;height:82px!important;z-index:99;left:20px;top:-20px;}
+.seckill_hot{position:absolute;display:none;width: 28px;top: 2px;left: 80px;}
+ @media screen and (min-width: 992px){
+  #top-menu .has-sub>ul{width: 800px;}
+}
+@media screen and (max-width: 991px){
+  #top-menu .has-sub>ul{width: 600px;}
+  #seckillLi img:nth-child(1){display:none;}
+  .seckill_hot{display:block;}
+}
+@media screen and (max-width: 640px){
+  #top-menu .has-sub>ul{width: 100%;}
+}
+@media only screen and (max-width: 1199px) and (min-width: 992px){
+.main_menu > ul.horizontal > li > a {
+padding-left: 8px;
+padding-right: 18px;
+}
+}
+.megamenu .hover-menu .sec-cate{font-weight:bold;}
+.megamenu .three-cate{overflow:hidden;}
+.megamenu .three-cate li{float:left;width: auto!important;min-width: 57px;margin-right: 11px;height:20px;line-height:20px;margin-bottom:5px;}
+.megamenu .three-cate li a{font-size:12px;color:#428bca;}
+.megamenu .three-cate li a:hover{text-decoration: underline;}
+.megamenu .hover-menu .menu>ul>li{margin-bottom:5px;}
+.username.error-msg,.userpwd.error-msg,.verifycode.error-msg{border:1px solid rgb(243, 170, 170);}
+.active_caizhuang{background:#F72AC6;}
+.active_select{background:#018bc8;}
+.active_select>a,.active_select i.fa-sort-desc,.active_caizhuang>a,.active_caizhuang i.fa-sort-desc{color:#fff;}
+.namesubstr{font-size:13px;}
+.shopping-cart{-webkit-transition: all 200ms ease-in-out;-moz-transition: all 200ms ease-in-out;-ms-transition: all 200ms ease-in-out;-o-transition: all 200ms ease-in-out;
+position: absolute;left: 7px;background:url(./images/shop_cart_img.png) no-repeat;width:35px;height:35px;top:2px;}
+
+
+#cart .cart_holder .total{color:#fff;}
+.outer_container .menu_table .menu_cell .main_menu ul#top-menu li a{border:none;}
+#cart .cart_holder .count{top: 11px;color: #fff;width: 21px;height: 21px;left: 22px;border-radius: 100%;line-height: 21px;}
+#main-category .first-cate{padding-left:20px;}
+#main-category .first-cate img{margin-right:5px;}
+#ajax_search_results .search_word_item{height:30px;line-height:30px;}
+
+.my-dindin{position:relative;padding-left: 10px!important;}
+.my-dindin>a{color:rgb(14, 162, 205);}
+.my-dindin:hover{background:#fff;border-left:1px solid #BAB8B8;cursor:pointer;}
+.my-dindin i{width:7px;height:7px;display:inline-block;border-top:1px solid rgb(14, 162, 205);border-right:1px solid rgb(14, 162, 205);vertical-align: text-top;
+transition:all .5s ease;transform:rotate(132deg);-wibkit-transform:rotate(132deg);-o-transform:rotate(132deg);-ms-transform:rotate(132deg);-moz-transform:rotate(132deg);}
+.my-dindin i.on{transform: rotate(-44deg);-wibkit-transform:rotate(-44deg);-o-transform:rotate(-44deg);-ms-transform:rotate(-44deg);-moz-transform:rotate(-44deg);margin-top: 5px;}
+.my-dindin .a-sub-menu{position:absolute;left:-1px;top:21px;width:87px;z-index: 9999;background: #fff;border: 1px solid #BAB8B8;border-top:none;padding-top:5px;text-align: left;
+display:none;}
+.my-dindin .a-sub-menu a{padding-left: 10px;}
+.my-dindin .a-sub-menu>div{height:30px;line-height:30px;}
+.my-dindin .a-sub-menu>div:hover{background:#F7F7F7;}
+.inputsr{padding-top:18px;}
+.downApp{color:rgb(14, 162, 205);display:none;margin-left:10px;}
+@media screen and (max-width:767px){
+	.inputsr{padding-top:0;}
+	.downApp{display:inline-block;}
+	.gifimg{display:none;}
+}
+
+</style>
+
+  </head>
+  
+  <body>
+    <script src="./js/jquery.md5.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var _mvq = _mvq || [];
+		_mvq.push(['$setAccount', 'm-199926-0']);
+		
+		_mvq.push(['$logConversion']);
+		(function() {
+		var mvl = document.createElement('script');
+		mvl.type = 'text/javascript'; mvl.async = true;
+		mvl.src = ('https:' == document.location.protocol ? 'https://static-ssl.mediav.com/mvl.js' : 'http://static.mediav.com/mvl.js');
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(mvl, s);
+		})();
+		
+		</script> 
+<div class="main-bgs">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="cont-left">
+						<div id="nologin" style="display:none;">您好，欢迎光临！请
+							<a id="popup_login1" href="javascript:void(0)" style="color:#009de0">登录</a> 
+							<a class="gifimg" href="./register.jsp" style="color:#009de0">免费注册<img src="./images/songjifen.gif" style="vertical-align: bottom;width:80px;"/></a>
+							<a class="downApp" href="http://service.dindin.com/downAPP.html">APP下载</a>
+						</div>
+						<div id="user_login" style="display:none;">
+							<a href="javascript:void(0)" id="merber-go"><span id="user_nick" style="overflow:hidden;text-overflow: ellipsis;white-space: nowrap;display: inline-block;max-width: 100px;vertical-align: sub;"></span> </a>
+							<span>欢迎来到叮叮网！</span>
+							<a href="javascript:void(0)" id="loginout" class="cboxElement2">退出</a>
+							<a class="downApp" href="http://service.dindin.com/downAPP.html">APP下载</a>
+						</div>
+						
+					</div>
+					<div class="cont-right">
+						<ul>
+							<li class="my-dindin">
+								<a href="./memberIndex.go">我的叮叮 <i></i></a>
+								<div class="a-sub-menu">
+									<div><a href="./order_history.jsp">我的订单</a></div>
+									<div><a href="./receiveAddressAction!getAddressList.go">地址管理</a></div>
+									<div><a href="./score.go">我的积分</a></div>
+								</div>
+							</li>
+
+							<!-- <li class="webchat"><a href="javascript:void(0)">手机版</a>-->
+							<li class="webchat"><a href="javascript:void(0)">手机APP</a>
+								<div class="webchatimg"><img src="./images/dindin.png"/></div>
+							</li>
+							<li class="service">客服热线：<span>400-0591-576</span></li>
+							<li><a href="./join_us.jsp" target="_blank" style="color:red;">商城招商</a></li>
+
+							<li><a href="http://mer.dindin.com/">我是卖家</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.my-dindin').hover(function(){$('.a-sub-menu').show();$('.my-dindin i').addClass('on');},function(){$('.a-sub-menu').hide();$('.my-dindin i').removeClass('on')})
+	</script>
+<div class="header_wrapper sticky_menu header5">
+<div class="container">
+<div class="row header" style="padding-top: 10px;">
+<!-- logo -->
+<div class="col-md-3 col-xs-5 col-sm-3 tablet_center mobile_center logos" style="padding: 0;">
+<div class="logo "><a href="./index.html"><img src="http://www.dindin.com/images/dindin_logo.png?1" alt="叮叮网" class="logo" ></a></div>
+</div>
+<div class="col-sm-3 col-xs-6 baoyou" style="padding-top:8px;padding-left:0;">
+	<ul>
+		<li><a href="./activity/surprise.jsp"><img src="./images/baoyou/zheng.jpg"/></a></li>
+
+		<li><a href="./activity/surprise.jsp"><img src="./images/baoyou/mian.jpg"/></a></li>
+
+		<li><a href="./register.jsp"><img src="./images/baoyou/jifen.jpg"/></a></li>
+
+	</ul>
+</div>
+<!-- promo -->
+<!-- language / currency -->
+<!-- search -->
+<div class="col-sm-4 col-md-2 col-lg-2 col-xs-4 chongzhi" style="padding-top: 10px;">
+	<a href="http://www.dinlife.com" target="_blank"><img src="./images/phone-chongzhi.gif"/></a>
+</div>
+<div class="col-sm-12 col-md-5 col-lg-5 col-xs-12 input-search pull-right inputsr">
+<div class="search_wrapper">
+<i class="fa fa-search" style="position: absolute;right: 0;top:0;font-size: 24px;color: #fff;width: 74px;height: 33px;line-height: 32px;text-align: center;cursor:pointer;background: #009de0;" onclick="gotoSearch()"></i>
+<div id="search">
+<input type="text" name="search" class="search_input" placeholder="输入关键字" id="search_input">
+</div>
+</div>
+<div style="margin-top: 5px;">
+	<span>热搜：<a href="./all_country.jsp?ycdId=7100201" target="_blank" style="color: #35bef9;">马来西亚</a>&nbsp;&nbsp;<a href="./activity/milk.jsp" target="_blank" style="color: #35bef9;">婴儿辅食</a>&nbsp;&nbsp;<a href="http://www.dindin.com/search.jsp?classId=951&subClassId=%25E9%2585%258D%25E6%2596%25B9%25E5%25A5%25B6%25E7%25B2%2589&PTAG=20051.15.1" target="_blank">奶粉</a>&nbsp;&nbsp;<a class="mobile_hide" href="http://www.dindin.com/search.jsp?q_show=%25E7%25BA%25A2%25E9%2585%2592&q=%25E7%25BA%25A2%25E9%2585%2592&PTAG=20051.15.1" target="_blank">红酒</a>&nbsp;&nbsp;<a class="mobile_hide" href="http://www.dindin.com/search.jsp?q_show=%25E9%259D%25A2%25E8%2586%259C&q=%25E9%259D%25A2%25E8%2586%259C&PTAG=20051.15.1" target="_blank">面膜</a>&nbsp;&nbsp;<a class="mobile_hide" href="http://www.dindin.com/search.jsp?q_show=Swisse&q=Swisse&PTAG=20051.15.1" target="_blank">Swisse</a></span>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div> <!-- container ends -->
+
+<div class="menu_wrapper">
+<div class="sticky_wrapper sticky">
+<div class="outer_container" style="background: #444444;height:40px;">
+<div class="container nopaddings">
+<div class="menu_table">
+  
+  <div class="menu_cell nowrap">
+  <div class="main_menu">
+     <ul>
+      	<li class="trigger"><a class="v_menu_trigger light_bg_color"><i class="fa fa-reorder" style="font-size:23px;margin-right:5px;vertical-align: middle;"></i><font>商品分类<i class="fa fa-sort-desc" style="color: #E7E7F3;"></i></font></a></li>            
+     </ul>
+      
+<ul class="categories vertical megamenu" id="main-category">
+    
+</ul>      
+   <script type="text/javascript">
+  
+   	
+   </script>
+  </div>
+  </div>
+  
+      <div class="menu_cell menu_holder fill">
+      <a class="mini_menu_trigger visible-xs visible-sm"><i class="fa fa-list"></i></a>
+      <div class="main_menu links">
+          
+<ul class="links_holder horizontal  white_color" id="top-menu" style="display: none;">
+            <li class="has-sub top">
+        <a href="./index.html">首页</a>
+        
+        </li>
+     
+            <li class="has-sub top" id="allCountry">
+                <a href="javascript:;" class="sub_trigger">全部国家<i class="fa fa-sort-desc"></i></a>
+                <ul style="padding: 13px 15px 5px 15px;overflow: hidden;">
+                    <li>
+                    <div class="wrapper">
+                        <div class="row">
+                          <div class="col-sm-3  mobile-enabled">
+                            <div class="row">
+                              <div class="col-sm-12 hover-menu">
+                                <div class="menu">
+                                  <ul class="ul1" style="position:static;border:none;width:100%;">
+	                                <li><a href="./all_country.jsp?ycdId=7300101" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/baxi.jpg"/>&nbsp;&nbsp;巴西</a></li>
+	                                <li><a href="./all_country.jsp?ycdId=7200102" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/deguo.jpg"/>&nbsp;&nbsp;德国</a></li>
+	                                <li><a href="./all_country.jsp?ycdId=7200103" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/faguo.jpg"/>&nbsp;&nbsp;法国</a></li>
+	                                <li><a href="./all_country.jsp?ycdId=7200104" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/helan.jpg"/>&nbsp;&nbsp;荷兰</a></li>
+	                                <li><a href="./all_country.jsp?ycdId=7100102" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/hanguo.jpg"/>&nbsp;&nbsp;韩国</a></li>
+	                                <li><a href="./all_country.jsp?ycdId=7400102" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/meiguo.jpg"/>&nbsp;&nbsp;美国</a></li>
+                                  </ul>
+                                </div></div></div></div>
+                           <div class="col-sm-3  mobile-enabled">
+	                         <div class="row">
+		                        <div class="col-sm-12 hover-menu">
+		                           <div class="menu">
+		                           <ul class="ul1" style="position:static;border:none;width:100%;">
+			                        <li><a href="./all_country.jsp?ycdId=7100201" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/malaixiya.jpg"/>&nbsp;&nbsp;马来西亚</a></li>
+			                        <li><a href="./all_country.jsp?ycdId=7100202" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/taiguo.jpg"/>&nbsp;&nbsp;泰国</a></li>
+			                        <li><a href="./all_country.jsp?ycdId=7200101" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/yingguo.jpg"/>&nbsp;&nbsp;英国</a></li>
+			                        <li><a href="./all_country.jsp?ycdId=7200105" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/yidali.jpg"/>&nbsp;&nbsp;意大利</a></li>
+			                        <li><a href="./all_country.jsp?ycdId=7500101" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/aodaliya.jpg?1"/>&nbsp;&nbsp;澳大利亚</a></li>
+			                        <li><a href="./all_country.jsp?ycdId=7100302" class="main-menu with-submenu" style="padding-left:5px;"><img src="./images/countryImg/hongkong.jpg"/>&nbsp;&nbsp;中国香港</a></li>
+		                       	</ul>
+		                    </div></div></div></div>
+							<div class="col-sm-6" style="padding-top: 20px;">
+								<a href="http://www.dindin.com/shop/shop_id_587.htm"><img src="./images/countryImg/country-img-587.jpg"/></a>
+							</div>
+                          </div></div></li>
+                    
+                </ul>
+            </li>       
+     
+            <li class="has-sub top" id="hotSaleLi">
+              <a href="hotSaleAction!newFindHotSaleGoods.go" >畅销排行</a>
+            </li>       
+     
+            <li class="has-sub top" id="seckillLi">
+              <a href="seckillAction!findxgGood.go" >限时抢购<img src="./images/lower.png"/><img class="seckill_hot" src="./images/seckill_hot.png"/></a>
+            </li>      
+                
+
+
+
+     
+
+
+        	<!--<li class="top" id="malai"><a href="./all_country.jsp?ycdId=7500101">澳大利亚</a></li>-->
+        	<li class="top" id="malai"><a href="./all_country.jsp?ycdId=7100201">马来西亚</a></li>
+        	<li class="top" id="pifa"><a href="./b2b/index.html">叮叮批发<img src="./images/pifa_1.gif"/></a></li>   
+        	<li class="top" id="legou"><a target="_blank" href="http://www.dindin.com/shop/shop_id_318.htm">美国直邮</a></li>   	
+        	<!--  <li class="top" id="mother"><a href="./mother_channel.jsp">母婴</a></li>
+        	<li class="top" id="caizhuang"><a href="./cosmetics.jsp">美妆</a></li>
+        	<li class="top" id="luxury"><a href="./luxury.jsp">奢侈品</a></li>
+        	<li class="top" id="care"><a href="./care.jsp">美食保健</a></li>
+        --></li>     
+ <!-- foreach sections ends -->
+</ul>
+ <!-- if sections ends -->      </div>
+      </div>
+      
+            <div class="menu_cell right nowrap">
+      
+<div id="cart">
+<a href="./shopping_cart.jsp" id="cart-total">
+<div class="mini_cart hover_icon">
+<div class="cart_holder">
+<i class="shopping-cart"></i>
+购物车&nbsp;&nbsp;<i class="fa fa-sort-desc"></i>&nbsp;
+<span class="count" style="background: #90ba13!important;">0</span> <span class="total"></span></div>
+</div>
+</a>
+  <div class="content" style="max-height:620px;overflow-y: scroll;">
+        <div class="mini-cart-info">
+      <table id="cartinfo">
+                <tbody>
+                      
+                      </tbody></table>
+    </div>
+    <div class="mini-cart-total">
+      <table>
+                <tbody>
+                <tr>
+          <td class="left titles ">总计:</td>
+          <td class="left total">$40.00</td>
+        </tr>
+              </tbody></table>
+    </div>
+    <div class="checkoutbuttons">
+<!--    <a class="btn btn-default btn-sm" href="./shopping_cart.jsp">查看更多</a>-->
+    <a class="btn btn-primary btn-sm" href="./shopping_cart.jsp">去购物车结算</a>
+    </div>
+      </div>
+<!--      <div class="empty-cart" style="display:none;">-->
+<!--      	<p>您的购物车是空的！</p>-->
+<!--      </div>-->
+  </div>      </div>
+        
+</div>
+</div> 
+</div>
+</div>
+</div>
+ <!-- menu_wrapper ends --></div>
+<!-- <div class="menu_wrapper"></div> -->
+
+<script type="text/javascript">
+isNextObj = false; //是否跳到下一步标识
+//登录
+  $('#popup_login1').click(function(){
+	  isNextObj = false;
+	  //$('.loginbox .username').focus();
+	  $('.loginbox').fadeIn();
+	  $('#cboxOverlay').css('opacity','0.9').fadeIn('slow');
+ })
+   $('.v_menu_trigger').click(function() {
+        $('.menu_wrapper .mini_menu_trigger').removeClass('active');
+        $('.menu_wrapper ul.links_holder').hide();
+        $(this).toggleClass('active')
+        //$('.menu_wrapper ul.categories').toggleClass('active');
+    });
+// Mobile Mini Menu  //
+$('.mini_menu_trigger').click(function() {
+$('.v_menu_trigger').removeClass('active');
+$('ul.categories').removeClass('active');
+$('ul.links_holder').slideToggle(500);
+$('.mini_menu_trigger').toggleClass('active');
+});           
+
+$('.header .sub_trigger, .header_top_line_wrapper .sub_trigger').click(function(e) {
+if ($(window).width() < 767) {
+e.preventDefault();
+$(this).parent().find('>ul').stop(true, true).slideToggle(350)
+.end().siblings().find('>ul').slideUp(350);
+}
+});
+
+$('.main_menu .sub_trigger').click(function(e) {
+if ($(window).width() < 991) {
+e.preventDefault();
+$(this).parent().find('>ul').stop(true, true).slideToggle(350)
+.end().siblings().find('>ul').slideUp(350);
+}
+});
+
+$('ul.categories .sub_trigger').click(function(e) {
+if ($(window).width() < 991) {
+e.preventDefault();
+$(this).parent().find('>ul').stop(true, true).slideToggle(350)
+.end().siblings().find('>ul').slideUp(350);
+$(this).parent().find('.wrapper').stop(true, true).slideToggle(350)
+.end().siblings().find('.wrapper').slideUp(350);
+}
+});
+
+// Sticky menu
+var menu_to_top = $('.menu_wrapper').offset().top;
+var stickymenu = function(){
+var window_to_top = $(window).scrollTop();
+if (window_to_top > menu_to_top) { 
+$('.sticky').addClass('active');
+} else {
+$('.sticky').removeClass('active'); 
+}};
+$(window).scroll(function() {
+stickymenu();
+});
+$('#cart .content').get(0).onscroll=function(e){
+	 if(e&&e.stopPropagation){ 
+		 e.stopPropagation(); 
+	 }else{
+		 window.event.cancelBubble = true; 
+	 }
+} 
+$('#user_nick').click(function(){
+	var flag = userLogin.isLogin();
+	if(!flag){
+		 $('#changeimg_link').click();//弹出框之前刷新验证码
+		 alert("您尚未登录,请登录！");
+		 userLogin.loginAlert({action:function(){
+				location.reload(true);
+			}}
+		);
+	}else{
+		location.href="./memberIndex.go";
+	}
+})
+</script>
+
+
+
+<!-- 登录弹框 -->
+<div id="colorbox" class="login loginbox" role="dialog" tabindex="-1" style="">
+	<div id="cboxWrapper" style="min-height: 319px; max-width: 370px;width:100%;">
+		<div>
+			<div id="cboxTopLeft" style="float: left;"></div>
+			<div id="cboxTopCenter" style="float: left; max-width: 370px;"></div>
+			<div id="cboxTopRight" style="float: left;"></div>
+		</div>
+		<div style="clear: left;">
+			<div id="cboxMiddleLeft" style="float: left; min-height: 319px;"></div>
+			<div id="cboxContent" style="float: left; max-width: 370px; min-height: 319px;width:100%;">
+				<div id="cboxLoadedContent" style="max-width: 370px; overflow: auto; min-height: 319px;">
+
+					<div class="popup_login_holder">
+						<div class="top">
+							<div class="heading">
+								<a href="./register.jsp" class="btn btn-default pull-right regis">注册</a>
+								<h2>登录</h2> 
+							</div>
+							<form action="http://www.dindin.com/loginAction!login.go" method="post" enctype="multipart/form-data">
+								<div class="form-group">
+									<div class="error-message" style="color:red;margin-bottom:8px;"></div>
+									<label class="control-label">手机号或邮箱</label>
+									<input type="text" name="u" class="form-control username" value="">
+								</div>
+								<div class="form-group">
+									<label class="control-label">密码</label>
+									<input type="password" name="p" class="form-control userpwd" value="">
+<!--<img class="safe-info" src="./images/safe_1.png" style="display:none;"/>-->
+								</div>
+
+
+
+
+
+
+
+								<input id="login-button" type="button" value="登录" class="btn btn-primary">
+								<a href="./register_forgot.jsp" class="forgotten">忘记密码？</a>
+							</form>
+						</div>
+
+</div></div><div id="cboxTitle" style="float: left; display: block;"></div><div id="cboxCurrent" style="float: left; display: none;"></div><a id="cboxPrevious" style="display: none;"></a><a id="cboxNext" style="display: none;"></a><button id="cboxSlideshow" style="display: none;"></button><div id="cboxLoadingOverlay" style="float: left; display: none;"></div><div id="cboxLoadingGraphic" style="float: left; display: none;"></div><div id="cboxClose" class="loginclose">close</div></div><div id="cboxMiddleRight" style="float: left; height: 390px;"></div></div><div style="clear: left;"><div id="cboxBottomLeft" style="float: left;"></div><div id="cboxBottomCenter" style="float: left; width: 370px;"></div><div id="cboxBottomRight" style="float: left;"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; max-width: none; display: none;"></div></div>
+<script type="text/javascript" src="./js/login.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("#search_input").bind('keydown', function(ev) {
+		try {
+			if(ev.keyCode == 13) {
+				gotoSearch();
+			}
+		}
+		catch(e) {}
+	});
+	$(document).bind('keydown', function(ev) {
+		try {
+			if(ev.keyCode == 13) {
+				var verifycode =$.trim($("#verifycode").val());
+				if(verifycode!=null && verifycode!=""){
+					login();
+				}
+			}
+		}
+		catch(e) {}
+	});
+})
+//isNextObj = '';
+ 
+ //登录事件
+$('#login-button').click(function(){
+	login();
+})
+function login(){
+	if($('.username').val()!=''&&$('.userpwd').val()!=''&&$('.verifycode').val()!=''){
+		userLogin.getLogin({username:$('.username').val(),userpwd:$('.userpwd').val(),verifycode:$('.verifycode').val()});
+		//$('.error-message').text('');
+	}else{
+		$('.error-message').text('各项不能为空');
+		$('#changeimg_link').click();
+	}
+}
+$('.username,.userpwd,.verifycode').blur(function(){
+	if($(this).val()==''||$(this).val()==null){
+		$(this).addClass('error-msg');
+	}else{
+		$(this).removeClass('error-msg');
+	}
+})
+$('.username').blur(function(){
+	var tex = $(this).val();
+	if(tex!=''){
+		if(!isNaN(tex)){ //表示是全数字
+			//if(!(/^1[3|4|5|8][0-9]\d{4,9}$/.test(tex))){ //如果不是手机,则表示是QQ号
+				if(tex.length>12){ 
+					$('.error-message').text('请输入正确的叮叮号');
+				}else{
+					$('.error-message').text('');
+				}
+			//}else{
+				//alert(0)
+				//if(tex.length!=11){ 
+					//alert('请输入正确的手机号');
+				//}
+			//}
+		}else{//email
+			var str =  /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			if(!str.test(tex)){
+				$('.error-message').text('请输入正确的叮叮号');
+			}else{
+				$('.error-message').text('');
+			}
+		}
+	}
+})
+$('.userpwd').blur(function(){
+	var pwd = $(this).val();
+	if(pwd!=''){
+		if(pwd.length<6){
+			$('.error-message').text('密码长度不够');
+		}
+//		else if(pwd.length<10){
+//			$('.safe-info').attr('src','./images/safe_1.png').show();
+//			$('.error-message').text('');
+//		}else if(pwd.length<15){
+//			$('.safe-info').attr('src','./images/safe_2.png').show();
+//			$('.error-message').text('');
+//		}else if(pwd.length<50){
+//			$('.safe-info').attr('src','./images/safe_3.png').show();
+//			$('.error-message').text('');
+//		}
+		else{
+			$('.error-message').text('');
+		}
+	}
+})
+
+//刷新验证码
+$('#changeimg_link').click(function(){
+	$('#imgVerify').attr('src','./createParityImage.jsp?'+Math.random());
+})
+
+$('#loginout').click(function(){
+	//isNextObj = true;
+	//isNextObj = true;
+	userLogin.logout();
+	//var u = new userLogin();
+	//u.isNext = true;
+	//userLogin.isNext = true;
+	//userLogin.loginAlert();
+})
+$('.goodsname').each(function(){
+	var goodname = $(this).text();
+	if(goodname.length>30){
+		$(this).text(goodname.substr(0,30)+'...');
+	}
+})
+// Sticky header
+var header_to_top = $('.row.header .logo').offset().top;
+var stickyheader = function(){
+var window_to_top = $(window).scrollTop();
+if (window_to_top > header_to_top) { 
+$('.header_sticky').addClass('active');
+} else {
+$('.header_sticky').removeClass('active'); 
+}};
+$(window).scroll(function() {
+stickyheader();
+});
+
+function gotoSearch(){
+	var val = $.trim($("#search_input").val());
+	if(val!=null && val!=""){
+		val = encodeURI(encodeURI(val));
+		window.location="search.jsp?q_show="+val+"&q="+val+"&PTAG=20051.15.1";
+	}
+}
+</script>
+
+
+
+<style type="text/css">
+#colorbox1 .product img {
+float: left;
+margin-right: 20px;
+}
+#colorbox1 .cart_notification .product {
+padding: 19px 20px;
+display: table;
+width: 100%;
+}
+#colorbox1 .cart_notification .bottom {
+position: absolute;
+bottom: 0;
+right: 0;
+left: 0;
+}
+#colorbox1 .bottom {
+padding: 20px 19px;
+border-top: 1px solid #eaeaea;
+}
+#colorbox1{visibility: visible;
+top: 50%;
+left: 50%;
+position: fixed;
+width: 384px;
+height: 200px;
+z-index: 10000;
+margin-left: -150px;
+margin-top: -100px;
+display: none;}
+#colorbox1 #cboxWrapper{width:100%;}
+#colorbox1 #cboxContent{height:200px;}
+@media screen and (max-width:380px){
+	#colorbox1 {width:310px;margin-left:-155px;}
+}
+#colorbox{}
+</style>
+ <div id="colorbox1" class="login" role="dialog" tabindex="-1" style="display: none;">
+ 	<div id="cboxWrapper">
+ 		<div>
+ 			<div id="cboxTopLeft" style="float: left;"></div>
+ 			<div id="cboxTopCenter" style="float: left; width: 400px;"></div>
+ 			<div id="cboxTopRight" style="float: left;"></div>
+ 		</div>
+ 		<div style="clear: left;">
+ 			<div id="cboxContent" >
+ 				<div id="cboxLoadedContent">
+ 					<div class="cart_notification">
+ 						<div class="product">
+ 							<img src="./images/dindin-logo.png" width="80" style="height:80px!important;">
+ 							<span>您已成功添加 到您的 <a href="./shopping_cart.jsp" target="_blank">购物车</a>!</span>
+ 						</div>
+ 						<div class="bottom success" style="text-align: center;">
+ 							<a class="btn btn-primary" href="./shopping_cart.jsp" onclick="$('#colorbox1').hide();$('#cboxOverlay').fadeOut('slow');" target="_blank">去购物车</a>
+ 							<a class="btn btn-primary" onclick="$('#colorbox1').hide();$('#cboxOverlay').fadeOut('slow');">继续购物</a>
+ 						</div>
+ 						<div class="bottom same" style="display:none;text-align: center;" >
+ 							<a class="btn btn-primary" href="javascript:$('#colorbox1').hide();$('#cboxOverlay').fadeOut('slow');">不要添加</a>
+ 							<a class="btn btn-primary" href="./shopping_cart.jsp" onclick="$('#colorbox1').hide();$('#cboxOverlay').fadeOut('slow');" target="_blank">去购物车</a>
+ 						</div>
+ 						<div class="bottom gotodetail abc" style="display:none;text-align: center;">
+ 							<a class="btn btn-primary" href="">去宝贝详情页面</a>
+ 							<a class="btn btn-primary" onclick="$('#colorbox1').hide();$('#cboxOverlay').fadeOut('slow');">继续购物</a>
+ 						</div>
+ 					</div>
+ 				</div>
+ 				<div id="cboxTitle" style="float: left; display: block;"></div>
+ 				<div id="cboxCurrent" style="float: left; display: none;"></div>
+ 				<a id="cboxPrevious" style="display: none;"></a>
+ 				<a id="cboxNext" style="display: none;"></a>
+ 				<button id="cboxSlideshow" style="display: none;"></button>
+ 				<div id="cboxLoadingOverlay" style="float: left; display: none;"></div>
+ 				<div id="cboxLoadingGraphic" style="float: left; display: none;"></div>
+ 				<div id="cboxClose" class="loginclose">close</div>
+ 			</div>
+
+ 		</div>
+ 		<div style="clear: left;">
+ 			<div id="cboxBottomLeft" style="float: left;"></div>
+ 			<div id="cboxBottomCenter" style="float: left; width: 400px;"></div>
+ 			<div id="cboxBottomRight" style="float: left;"></div>
+ 		</div>
+ 	</div>
+ 	<div style="position: absolute; width: 9999px; visibility: hidden; max-width: none; display: none;"></div>
+ </div>
+ <script type="text/javascript" src="./js/load_data.js?v=20170407"></script>
+ <script>
+ $('.loginclose').click(function(){
+    $('.loginbox').fadeOut('slow');
+    $('#cboxOverlay').fadeOut('slow');
+    $('#colorbox1').fadeOut('slow');
+    //$('#cboxOverlay').fadeOut('slow');
+ })
+ </script>
+  </body>
+</html>
+
+<a href="http://www.dindin.com/shop/shop_id_325.htm" target="_blank"><img src="./images/sckill_banner.jpg" width="100%"/></a>
+<div id="notification" class="container"></div>
+<div class="container">
+  
+  <div class="row">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+  	<div class="seckill-timer" >
+  		<div class="seckill-ing"><strong>正在疯抢中...</strong></div>
+  		<div class="seckill-time">
+  			<span style="color:#757575;">距本场结束仅剩</span>
+  			<span class="times">
+	  			<span>0</span>
+	  			<span>0</span>
+	  			:
+	  			<span>0</span>
+	  			<span>0</span>
+	  			:
+	  			<span>0</span>
+	  			<span>0</span><!--
+	  			:
+	  			<span>0</span>
+	  			<span>0</span>
+	  		--></span>
+  		</div>
+  	</div>
+  	
+     <div class="seckill-more">精选好货，折扣多多</div>       	
+    <div id="content" class="col-md-12 col-sm-12 grid3" style="padding-left: 0;padding-right: 0;">
+      
+<div class="bordered_content1 box deals_module"  
+     
+     	style="border:none;"
+     
+     >
+  <div class="deals_module_wrapper owl-carousel owl-theme" style="opacity: 1; display: block;">
+    
+  <div class="owl-wrapper-outer autoHeight clearfix" style="overflow: visible;">
+     <div class="owl-wrapper1"  >
+     
+   			 <div class="owl-item"><div class="product-info">
+                <div class="left">
+        <div class="image" style="max-width:360px;text-align:center;">
+        <a href="goodsDetail_id_16961.htm" target="_blank"><img src="http://www.dindin.com:80/upFile/spPic/16961.png" alt="" title="JAY JUN水光面膜三部曲"></a>
+              
+                       
+        <script type="text/javascript">
+		$('.countdown.50').countdown({
+		until: 12139986, 
+		layout: '<div><p>{dn}</p>{dl}</div> <div><p>{hn}</p>{hl}</div> <div><p>{mn}</p>{ml}</div> <div><p>{sn}</p>{sl}</div>'});
+		</script>
+		        </div>
+		     
+      	</div>
+        <div class="right">       
+        		
+                <div style="color: #757575;font-size:16px;"><img src="./countryFlag/韩国.jpg" width="30" style="height: 20px!important;vertical-align: bottom;"/> 韩国品牌</div>
+				
+        <h2 style="max-width:328px;" class="nameEllipsis"><a href="goodsDetail_id_16961.htm" target="_blank" title="JAY JUN水光面膜三部曲">JAY JUN水光面膜三部曲</a></h2>
+		<div class="product-desc namesubstr">不用打针无风险，白嫩光泽三部曲，轻松拥有水光婴儿般肌肤</div>
+		
+			<div style="margin: 5px 0 15px 0;"><strong>最后疯抢中，再不抢就没了~</strong></div>
+		
+		<div class="prices">
+			<span><span class="nowprice">￥99.0</span> <del>￥139.0</del></span>
+		</div>
+		<div style='margin: 5px 0 10px 0;color: #666;font-weight:bold;position:relative;'>
+			仅剩：<span style="">2</span> &nbsp;&nbsp;限量：2件
+			<div class="btn-holder" style="margin-top:0;position: absolute;top: -8px;right: 0;">
+		        
+		        
+		        	<a type="button" onclick="buyItem(16961)" class="btn btn-primary qg" href="javascript:void(0)">立即抢购</a>
+		        
+		    </div> 
+		</div>
+		<div class="buy-num" style="display: none;">
+			<div class="buy-text">已抢购90%</div>
+			<div class="line"><div class="bg-line" style="width:90%;"></div></div>
+		</div>       
+                       <!-- if price ends -->
+        
+
+        </div>
+      </div>
+      <div class="discount" >
+      	
+      7.1</div>
+      
+      
+      </div>
+     	
+   			 <div class="owl-item"><div class="product-info">
+                <div class="left">
+        <div class="image" style="max-width:360px;text-align:center;">
+        <a href="goodsDetail_id_16915.htm" target="_blank"><img src="http://www.dindin.com:80/upFile/spPic/16915.png" alt="" title="纳益其尔芦荟舒缓保湿凝胶"></a>
+              
+                       
+        <script type="text/javascript">
+		$('.countdown.50').countdown({
+		until: 12139986, 
+		layout: '<div><p>{dn}</p>{dl}</div> <div><p>{hn}</p>{hl}</div> <div><p>{mn}</p>{ml}</div> <div><p>{sn}</p>{sl}</div>'});
+		</script>
+		        </div>
+		     
+      	</div>
+        <div class="right">       
+        		
+                <div style="color: #757575;font-size:16px;"><img src="./countryFlag/韩国.jpg" width="30" style="height: 20px!important;vertical-align: bottom;"/> 韩国品牌</div>
+				
+        <h2 style="max-width:328px;" class="nameEllipsis"><a href="goodsDetail_id_16915.htm" target="_blank" title="纳益其尔芦荟舒缓保湿凝胶">纳益其尔芦荟舒缓保湿凝胶</a></h2>
+		<div class="product-desc namesubstr"></div>
+		
+			<div style="margin: 5px 0 15px 0;"><strong>最后疯抢中，再不抢就没了~</strong></div>
+		
+		<div class="prices">
+			<span><span class="nowprice">￥25.0</span> <del>￥33.0</del></span>
+		</div>
+		<div style='margin: 5px 0 10px 0;color: #666;font-weight:bold;position:relative;'>
+			仅剩：<span style="">2</span> &nbsp;&nbsp;限量：2件
+			<div class="btn-holder" style="margin-top:0;position: absolute;top: -8px;right: 0;">
+		        
+		        
+		        	<a type="button" onclick="buyItem(16915)" class="btn btn-primary qg" href="javascript:void(0)">立即抢购</a>
+		        
+		    </div> 
+		</div>
+		<div class="buy-num" style="display: none;">
+			<div class="buy-text">已抢购90%</div>
+			<div class="line"><div class="bg-line" style="width:90%;"></div></div>
+		</div>       
+                       <!-- if price ends -->
+        
+
+        </div>
+      </div>
+      <div class="discount" >
+      	
+      7.6</div>
+      
+      
+      </div>
+     	
+   			 <div class="owl-item"><div class="product-info">
+                <div class="left">
+        <div class="image" style="max-width:360px;text-align:center;">
+        <a href="goodsDetail_id_19028.htm" target="_blank"><img src="http://www.dindin.com:80/upFile/spPic/19028.png" alt="" title="SHOOSHA 有机乳头治疗及保护软膏 (北美制造)"></a>
+              
+                       
+        <script type="text/javascript">
+		$('.countdown.50').countdown({
+		until: 12139986, 
+		layout: '<div><p>{dn}</p>{dl}</div> <div><p>{hn}</p>{hl}</div> <div><p>{mn}</p>{ml}</div> <div><p>{sn}</p>{sl}</div>'});
+		</script>
+		        </div>
+		     
+      	</div>
+        <div class="right">       
+        		
+                <div style="color: #757575;font-size:16px;"><img src="./countryFlag/加拿大.jpg" width="30" style="height: 20px!important;vertical-align: bottom;"/> 加拿大品牌</div>
+				
+        <h2 style="max-width:328px;" class="nameEllipsis"><a href="goodsDetail_id_19028.htm" target="_blank" title="SHOOSHA 有机乳头治疗及保护软膏 (北美制造)">SHOOSHA 有机乳头治疗及保护软膏 (北美制造)</a></h2>
+		<div class="product-desc namesubstr">-北美制造，纯有机植物配方 -获最高级别的美国USDA有机认证，有机成份达99.6% -不含防腐剂，不含任何人工化学成份 - 低致敏原，适合敏感皮肤人士使用</div>
+		
+		<div class="prices">
+			<span><span class="nowprice">￥206.0</span> <del>￥258.0</del></span>
+		</div>
+		<div style='margin: 5px 0 10px 0;color: #666;font-weight:bold;position:relative;'>
+			仅剩：<span style="">10</span> &nbsp;&nbsp;限量：10件
+			<div class="btn-holder" style="margin-top:0;position: absolute;top: -8px;right: 0;">
+		        
+		        
+		        	<a type="button" onclick="buyItem(19028)" class="btn btn-primary qg" href="javascript:void(0)">立即抢购</a>
+		        
+		    </div> 
+		</div>
+		<div class="buy-num" style="display: none;">
+			<div class="buy-text">已抢购90%</div>
+			<div class="line"><div class="bg-line" style="width:90%;"></div></div>
+		</div>       
+                       <!-- if price ends -->
+        
+
+        </div>
+      </div>
+      <div class="discount" >
+      	
+      8.0</div>
+      
+      
+      </div>
+     	
+   			 <div class="owl-item"><div class="product-info">
+                <div class="left">
+        <div class="image" style="max-width:360px;text-align:center;">
+        <a href="goodsDetail_id_19031.htm" target="_blank"><img src="http://www.dindin.com:80/upFile/spPic/19031.png" alt="" title="SHOOSHA 有机袪除妊娠纹精华油 (北美制造)"></a>
+              
+                       
+        <script type="text/javascript">
+		$('.countdown.50').countdown({
+		until: 12139986, 
+		layout: '<div><p>{dn}</p>{dl}</div> <div><p>{hn}</p>{hl}</div> <div><p>{mn}</p>{ml}</div> <div><p>{sn}</p>{sl}</div>'});
+		</script>
+		        </div>
+		     
+      	</div>
+        <div class="right">       
+        		
+                <div style="color: #757575;font-size:16px;"><img src="./countryFlag/加拿大.jpg" width="30" style="height: 20px!important;vertical-align: bottom;"/> 加拿大品牌</div>
+				
+        <h2 style="max-width:328px;" class="nameEllipsis"><a href="goodsDetail_id_19031.htm" target="_blank" title="SHOOSHA 有机袪除妊娠纹精华油 (北美制造)">SHOOSHA 有机袪除妊娠纹精华油 (北美制造)</a></h2>
+		<div class="product-desc namesubstr">-北美制造，纯有机植物配方 -获最高级别的美国USDA有机认证，有机成份达99.8% -不含防腐剂，不含任何人工化学成份 - 低致敏原，适合敏感皮肤人士使用</div>
+		
+		<div class="prices">
+			<span><span class="nowprice">￥262.0</span> <del>￥328.0</del></span>
+		</div>
+		<div style='margin: 5px 0 10px 0;color: #666;font-weight:bold;position:relative;'>
+			仅剩：<span style="">10</span> &nbsp;&nbsp;限量：10件
+			<div class="btn-holder" style="margin-top:0;position: absolute;top: -8px;right: 0;">
+		        
+		        
+		        	<a type="button" onclick="buyItem(19031)" class="btn btn-primary qg" href="javascript:void(0)">立即抢购</a>
+		        
+		    </div> 
+		</div>
+		<div class="buy-num" style="display: none;">
+			<div class="buy-text">已抢购90%</div>
+			<div class="line"><div class="bg-line" style="width:90%;"></div></div>
+		</div>       
+                       <!-- if price ends -->
+        
+
+        </div>
+      </div>
+      <div class="discount" >
+      	
+      8.0</div>
+      
+      
+      </div>
+     	
+   			 <div class="owl-item"><div class="product-info">
+                <div class="left">
+        <div class="image" style="max-width:360px;text-align:center;">
+        <a href="goodsDetail_id_10849.htm" target="_blank"><img src="http://www.dindin.com:80/upFile/spPic/10849.png" alt="" title="澳洲  Blackmores Vitamin E Cream维E霜 50g 范冰冰推荐 VE面霜"></a>
+              
+                       
+        <script type="text/javascript">
+		$('.countdown.50').countdown({
+		until: 12139986, 
+		layout: '<div><p>{dn}</p>{dl}</div> <div><p>{hn}</p>{hl}</div> <div><p>{mn}</p>{ml}</div> <div><p>{sn}</p>{sl}</div>'});
+		</script>
+		        </div>
+		     
+      	</div>
+        <div class="right">       
+        		
+                <div style="color: #757575;font-size:16px;"><img src="./countryFlag/澳大利亚.jpg" width="30" style="height: 20px!important;vertical-align: bottom;"/> 澳大利亚品牌</div>
+				
+        <h2 style="max-width:328px;" class="nameEllipsis"><a href="goodsDetail_id_10849.htm" target="_blank" title="澳洲  Blackmores Vitamin E Cream维E霜 50g 范冰冰推荐 VE面霜">澳洲  Blackmores Vitamin E Cream维E霜 50g 范冰冰推荐 VE面霜</a></h2>
+		<div class="product-desc namesubstr">Blackmores旗下只生产一款的面霜、天然维他命E霜，这个VE的面霜不知道是不是范冰冰这个大明星推荐过，所以推荐到现在药房一度的断货。主要成份比较简单就是维他命E，A 还有牛油果油、蔬菜提取物、感觉滋润不油腻！无添加色和香料，就一股淡淡牛油果的味道！这个是Blackmores天然维生素E面霜，孕妇儿童可用，有客户还说可做面霜隔离霜，真的非常轻薄好推，吸收快，保湿度满分！</div>
+		
+		<div class="prices">
+			<span><span class="nowprice">￥69.0</span> <del>￥79.0</del></span>
+		</div>
+		<div style='margin: 5px 0 10px 0;color: #666;font-weight:bold;position:relative;'>
+			仅剩：<span style="">0</span> &nbsp;&nbsp;限量：2件
+			<div class="btn-holder" style="margin-top:0;position: absolute;top: -8px;right: 0;">
+		        
+		        <!-- 注：下面一行为商品抢完时显示，上面的立即抢购则不显示  -->
+		        <a style="display:block;" type="button" class="btn btn-primary gotostore" href="./shop/shop_id_324.htm">进入店铺</a>
+		        
+		        
+		    </div> 
+		</div>
+		<div class="buy-num" style="display: none;">
+			<div class="buy-text">已抢购90%</div>
+			<div class="line"><div class="bg-line" style="width:90%;"></div></div>
+		</div>       
+                       <!-- if price ends -->
+        
+
+        </div>
+      </div>
+      <div class="discount" >
+      	
+      8.7</div>
+      
+      
+	      <!-- 注：下面一行为商品抢完时显示已抢光  -->
+	      <div class="sold_out" style="display:block;background:rgba(255,255,255,0);border:1px solid #a7a7a7;-webkit-border-radius: 5px;-moz-border-radius: 5px;-ms-border-radius: 5px;-o-border-radius: 5px;border-radius: 5px;padding:6px;><!--<img src="./images/sold_out.png"/><span style="background:rgba(167,167,167,0.5);display:block;padding:20px 55px;-webkit-border-radius: 10px;-moz-border-radius: 10px;-ms-border-radius: 10px;-o-border-radius: 10px;border-radius: 10px;color:#fff;font-size:22px;">已经抢光</span> </div>
+      
+      </div>
+     	
+     </div>
+ </div> 
+ 
+      
+ 
+      
+
+
+</div>
+<script type="text/javascript">
+
+</script>   
+  
+ 
+      <!-- .bordered ends -->
+   <!-- if products ends -->
+  
+  
+  
+  </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="seckill-timer seckill-future" style="border-bottom:2px solid #28cab3;">
+  		<div class="seckill-ing" style="background-color: #28cab3;"><strong>即将开始...</strong></div>
+  		<div class="seckill-time">
+  			<span style="color:#757575;" id="xsLabel">距本场开始仅剩</span>
+  			<span class="times">
+	  			<span>0</span>
+	  			<span>0</span>
+	  			:
+	  			<span>0</span>
+	  			<span>0</span>
+	  			:
+	  			<span>0</span>
+	  			<span>0</span><!--
+	  			:
+	  			<span>0</span>
+	  			<span>0</span>
+	  		--></span>
+  		</div>
+  	</div>
+  	<div class="time-line">
+  		<div class="grey_bg">
+  			<div class="img-line">
+  				<div class="img"><img src="./images/seckill_clock.jpg"/></div>
+  				<div class="line"></div>
+  			</div>
+  			<div class="time-item">
+  				
+		  			<div 
+		  				
+		  				
+		  				
+		  					class="grey"	
+		  					onclick="xsqgGoodsListFun(2898,'grey',this)" 	
+		  				
+		  				
+		  				>
+		  				<div class="time-clock">10:00</div>
+		  				<div class="yuan"></div>
+		  				<div class="time-text">
+			  				
+			  				
+			  				
+			  					抢购已结束	
+			  				
+			  				
+		  				</div>
+		  			</div>
+	  			
+		  			<div 
+		  				
+		  					class="ing"	 
+		  					onclick="xsqgGoodsListFun(2899,'ing',this)" 
+		  				
+		  				
+		  				
+		  				
+		  				>
+		  				<div class="time-clock">14:00</div>
+		  				<div class="yuan"></div>
+		  				<div class="time-text">
+			  				
+			  					抢购进行中
+			  					<input type="hidden" id="startingEnd" value="1491814800000"/>
+			  				
+			  				
+			  				
+			  				
+		  				</div>
+		  			</div>
+	  			
+		  			<div 
+		  				
+		  				
+		  					class="soon"	
+		  					onclick="xsqgGoodsListFun(2900,'grey',this)" 	
+		  				
+		  				
+		  				
+		  				>
+		  				<div class="time-clock">17:00</div>
+		  				<div class="yuan"></div>
+		  				<div class="time-text">
+			  				
+			  				
+			  					即将开始
+			  					<input type="hidden" id="startingBegin" value="1491814800000"/>
+			  					<script type="text/javascript">
+			  						<!--初始化下个抢购产品-->
+			  						xsqgGoodsListFun(2900,'grey');
+			  					</script>
+			  				
+			  				
+			  				
+		  				</div>
+		  			</div>
+	  			
+		  			<div 
+		  				
+		  				
+		  				
+		  				
+		  					class="grey" 
+		  					onclick="xsqgGoodsListFun(2901,'grey',this)" 	
+		  				
+		  				>
+		  				<div class="time-clock">20:00</div>
+		  				<div class="yuan"></div>
+		  				<div class="time-text">
+			  				
+			  				
+			  				
+			  				
+			  					即将开始	
+			  				
+		  				</div>
+		  			</div>
+	  			
+		  			<div 
+		  				
+		  				
+		  				
+		  				
+		  					class="grey" 
+		  					onclick="xsqgGoodsListFun(2902,'grey',this)" 	
+		  				
+		  				>
+		  				<div class="time-clock">22:00</div>
+		  				<div class="yuan"></div>
+		  				<div class="time-text">
+			  				
+			  				
+			  				
+			  				
+			  					即将开始	
+			  				
+		  				</div>
+		  			</div>
+	  			
+	  			<!--
+  				<div class="ing">
+	  				<div class="time-clock">08:00</div>
+	  				<div class="yuan"></div>
+	  				<div class="time-text">抢购进行中</div>
+	  			</div>
+	  			<div class="soon">
+	  				<div class="time-clock">10:00</div>
+	  				<div class="yuan"></div>
+	  				<div class="time-text">即将开始</div>
+	  			</div>
+	  			<div class="grey">
+	  				<div class="time-clock">16:00</div>
+	  				<div class="yuan"></div>
+	  				<div class="time-text">即将开始</div>
+	  			</div>
+	  			<div class="grey">
+	  				<div class="time-clock">18:00</div>
+	  				<div class="yuan"></div>
+	  				<div class="time-text">即将开始</div>
+	  			</div>
+	  			<div class="grey">
+	  				<div class="time-clock">22:00</div>
+	  				<div class="yuan"></div>
+	  				<div class="time-text">即将开始</div>
+	  			</div>
+	  		--></div>
+  		</div>
+  	</div>
+  	<div id="content1" class="col-md-12 col-sm-12 grid3" style="padding-left: 0;padding-right: 0;">
+    
+
+
+  <div class="bordered_content1 box deals_module" style="border:none;">
+  <div class="deals_module_wrapper owl-carousel owl-theme" style="opacity: 1; display: block;">
+    
+  <div class="owl-wrapper-outer autoHeight clearfix" style="overflow: visible;">
+     <div class="owl-wrapper1">
+     
+     
+     	
+     </div>
+ </div> 
+ 
+      
+ 
+      
+
+
+</div>
+
+<script type="text/javascript">
+window.onscroll=function(){
+		if($(window).width()>767){
+			if($(document).scrollTop()>700 ||document.documentElement.scrollTop>700){
+				$('#fix').fadeIn();
+			}else{
+				$('#fix').fadeOut();
+			}
+		}else{
+			if($(document).scrollTop()>200 ||document.documentElement.scrollTop>200){
+				$('.cart-fixed').fadeIn();
+			}else{
+				$('.cart-fixed').fadeOut();
+			}
+		}
+	}
+$(document).ready(function() {
+nameSubStr($('.namesubstr'),45);
+$("#seckillLi").addClass("active_select").siblings().removeClass("active_select")
+var startingEndTime = $("#startingEnd").val();
+var times1 = startingEndTime-serverTime;
+setInterval(function(){
+		times1 = times1 -1*haomiao; //秒数减1
+		spKillTimeFun(times1,0);
+},haomiao);
+
+
+var startingBeginTime = $("#startingBegin").val();
+var times2 = startingBeginTime-serverTime;
+timer=setInterval(function(){
+		times2 = times2 -1*haomiao; //秒数减1
+		spKillTimeFun(times2,1);
+},haomiao);
+
+/* //这个方法用来启动该页面的ReverseAjax功能  
+           dwr.engine.setActiveReverseAjax( true);  
+           //设置在页面关闭时，通知服务端销毁会话  
+           dwr.engine.setNotifyServerOnPageUnload( true);  
+           //这个函数是提供给后台推送的时候 调用的  
+           function show(content){   
+               $( ".times" ).eq(0).html(content);  
+           }  */
+
+});
+function ckQgList(xsqgId,type){
+	//window.location.href = "seckillAction!findxgGood.go?xsqgId="+xsqgId+"&timeItem="+type;
+}
+</script>   
+  
+ 
+      <!-- .bordered ends -->
+   <!-- if products ends -->
+  
+  
+  
+  </div>
+  </div>
+<script type="text/javascript">
+// Equal height on product items
+$('#content .filter_group').matchHeight();
+
+$(function() {
+	
+	$('#grid_view_icon').click(function() {
+		$(this).addClass('active');
+		$('#list_view_icon').removeClass();
+		$('#main').fadeTo( 150, 0, function() {
+			$(this).removeClass('product-list');
+			$(this).addClass('product-grid').fadeTo( 500, 1);
+			$('#content .product-grid.eq_height .item').matchHeight();
+			$.cookie('product_view', 'g');
+		});
+		return false;
+	});
+	$('#list_view_icon').click(function() {
+		$(this).addClass('active');
+		$('#grid_view_icon').removeClass();
+		$('#main').fadeTo( 150, 0, function() {
+			$(this).removeClass('product-grid');
+			$(this).addClass('product-list').fadeTo( 500, 1);
+			$.cookie('product_view', 'l');
+		});
+		return false;
+	});
+
+	var pv = $.cookie('product_view');
+	if (pv == 'g') {
+		$('#main').removeClass('product-list');
+		$('#main').addClass('product-grid');
+		$('#list_view_icon').removeClass();
+		$('#grid_view_icon').addClass('active');
+	} else if (pv == 'l') {
+		$('#main').removeClass('product-grid');
+		$('#main').addClass('product-list');
+		$('#grid_view_icon').removeClass();
+		$('#list_view_icon').addClass('active');
+	} else {
+		//设置默认网格形式
+		$('#grid_view_icon').click();
+	}
+});
+/*$(window).load(function() {
+	
+});*/
+</script>
+
+</div>
+
+</div>
+<div class="clearfix footer_margin"></div>
+
+<!-- footer 部分 -->
+
+</div>  <!-- .outer_container ends -->
+<!-- Resources dont needed until page load -->
+<script type="text/javascript" src="./js/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/searchAutoComplate.js"></script>
+<script>
+$(document).ready(function(){
+	$(document).bind('keydown', function(ev) {
+		try {
+			if( ev.keyCode == 13 && $('.selected').length > 0 ) {
+				if($('.selected').find('a').first().attr('href')){
+					document.location.href = $('.selected').find('a').first().attr('href');
+				}
+			}
+		}
+		catch(e) {}
+	});
+});
+
+		
+function buyItem(id){
+		//判断是否登陆
+		var flag = userLogin.isLogin();
+		var num=1;
+		QGForm.id.value=id;
+		QGForm.buynum.value=num;
+		if(flag){
+			
+			QGForm.submit();
+		}else{
+			userLogin.loginAlert({action:function(){
+					var url = "buyAction!buySingle.go";
+					QGForm.submit();
+				}}
+			);
+		}
+		
+}
+</script>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+<div id="cboxOverlay" style="display: none;"></div>
+
+<!-- 右侧客服浮窗 -->
+<link rel="stylesheet" href="./css/fix.css">
+<script charset="utf-8" src="http://wpa.b.qq.com/cgi/wpa.php"></script>
+<div id="fix">
+    <ul>
+        <li  id="BizQQWPA"><a href="javascript:void(0)" class="service"></a></li>
+        <li>
+            <a href="javascript:void(0)" class="phone">
+                <div class="tel">40099-55611<span></span></div>
+            </a>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="webchat">
+                <div class="chat">
+                    <img src="./images/webchat.jpg" alt="">
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <span class="bdsharebuttonbox share">
+                <dl>
+                    <dd><a class="weixin" href="#" data-cmd="weixin" title="分享到微信"></a></dd>
+                    <dd><a class="tx" href="#" data-cmd="tqq" title="分享到腾讯微博"></a></dd>
+                    <dd><a class="sina" href="#"  data-cmd="tsina" title="分享到新浪微博"></a></dd>
+                    <dd><a class="bd" href="#" data-cmd="tieba" title="分享到百度贴吧"></a></dd>
+                    <dd><a class="qq" href="#" data-cmd="sqq" title="分享到QQ好友"></a></dd>
+                    <dd><a class="qz" href="#" data-cmd="qzone" title="分享到QQ空间"></a></dd>
+                </dl>
+                <i></i>
+            </span>
+        </li>
+        <li class="gototop"><a href="javascript:void(0)" class="back"></a></li>
+    </ul>
+</div>
+
+ <script>
+ $('#cboxClose').click(function(){
+    $('#colorbox1').fadeOut('slow');
+    $('#cboxOverlay').fadeOut('slow');
+ })
+ //倒计时
+var haomiao = 1000;
+
+var serverTime = "1491809376539";//总时间
+/*var day=Math.floor(times/(60*60*24));
+var hour=Math.floor((times-day*24*60*60)/3600); 
+var minute=Math.floor((times-day*24*60*60-hour*3600)/60); 
+var second=Math.floor(times-day*24*60*60-hour*3600-minute*60);*/
+/*$('.time-list>div').eq(0).find('p').text(day>9?day.toString():'0'+day);
+$('.time-list>div').eq(1).find('p').text(hour>9?hour.toString():'0'+hour);
+$('.time-list>div').eq(2).find('p').text(minute>9?minute.toString():'0'+minute);
+$('.time-list>div').eq(3).find('p').text(second>9?second.toString():'0'+second);*/
+
+//
+//$('.seckill-haomiao').text(99);
+
+
+//倒计时 End
+//
+
+	$(function(){
+		initShare();
+	})
+	
+	function initShare(){
+		window._bd_share_config = {
+			common : {
+				bdText : "叮叮网 - 限时抢购 特价秒杀",	
+				bdDesc : "叮叮网 - 限时抢购 特价秒杀.叮叮网限时抢购专栏,全球正品特价秒杀，打折优惠都汇聚在这里，全网最低价。",	
+				bdUrl : "http://www.dindin.com/images/dindin_logo.png", 	
+				bdPic : "http://www.dindin.com/images/dindin_logo.png",
+				onBeforeClick:function(cmd,config){
+					var host= window.location.host;
+					var bdUrl='http://';
+					/* var itemId = document.getElementById('itemid').value;
+					if(host=='www.dindin.com'){
+						bdUrl=bdUrl+host+'/goodsDetail_id_'
+					}else{
+						bdUrl=bdUrl+host+'/hello/goodsDetail_id_';
+					} */
+					bdUrl="http://www.dindin.com/seckillAction!findxgGood.go";
+					config.bdUrl=bdUrl;
+					return config;
+				}
+			},
+			share : [{
+				"bdSize" : 32
+			}]/*,
+			image : [{
+				viewType : 'list',
+				viewPos : 'top',
+				viewColor : 'black',
+				viewSize : '16',
+				viewList : ['weixin','tqq','tsina','tieba','sqq','qzone','fbook']
+			}],
+			selectShare : [{
+				"bdselectMiniList" : ['weixin','tqq','tsina','tieba','sqq','qzone','fbook']
+			}]*/
+		}
+		with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='js/share.js'];
+		//with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+	}
+	
+	
+	BizQQWPA.addCustom({aty: '1', a: '1003', nameAccount: 4008622111, selector: 'BizQQWPA'});
+    jQuery(function(){
+        jQuery('#fix ul li .back').click(function(){
+            jQuery('html,body').animate({scrollTop:0},300);
+        });
+        jQuery('#fix ul li').each(function(){
+            jQuery(this).find('a').hover(function(){
+                jQuery(this).find('div').css({display:'block'});
+            },function(){
+                jQuery(this).find('div').css({display:'none'});
+            })
+        })
+        jQuery('#fix ul li span').hover(function(){
+            jQuery(this).find('dl').css({display:'block'});
+            jQuery(this).find('dl').next().show();
+        },function(){
+            jQuery(this).find('dl').css({display:'none'});
+            jQuery(this).find('dl').next().hide();
+        })
+        $('#fix .gototop').click(function(){
+        	$('body,html').animate({scrollTop:0},1500);
+        })
+    })
+ </script>
+<form action="buyAction!buySingle.go" id="QGForm" name="QGForm" style="display: none;" method="post">
+	<input type="text" name="id" />
+	<input type="text" name="buynum"/>
+</form>
+
+</body>
+</html>

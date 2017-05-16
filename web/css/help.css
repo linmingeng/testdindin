@@ -1,0 +1,348 @@
+@charset "utf-8";
+EM {
+	FONT-STYLE: normal
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BODY {
+	BACKGROUND: #fff
+}
+.logo_help {
+	WIDTH: 172px; FLOAT: left; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+.header_help {
+	MARGIN: 0px auto; WIDTH: 960px; BACKGROUND: #fff; HEIGHT: 84px; OVERFLOW: hidden
+}
+.contact_infor_help {
+	MARGIN-TOP: 13px; FLOAT: right
+}
+.help_left {
+	WIDTH: 182px; FLOAT: left; OVERFLOW: hidden;
+}
+.left_title {
+	WIDTH: 182px; BACKGROUND: url(../images/left_title.jpg) no-repeat; FLOAT: left; HEIGHT: 40px
+}
+.left_menu {
+	BORDER-BOTTOM: #d5dfe5 1px solid; BORDER-LEFT: #d5dfe5 1px solid; BORDER-RIGHT: 1px solid #d5dfe5; PADDING-BOTTOM: 10px; WIDTH: 180px; FLOAT: left; 
+}
+.left_menu DL {
+	PADDING-BOTTOM: 1px; WIDTH: 180px; FLOAT: left;padding-left
+}
+.left_menu DT {
+	BORDER-BOTTOM: #d5dfe5 1px solid; WIDTH: 180px; BACKGROUND: #d4e8ff; HEIGHT: 28px; BORDER-TOP: #d5dfe5 1px solid
+}
+.left_menu DT SPAN A {
+	LINE-HEIGHT: 28px; TEXT-INDENT: 35px; WIDTH: 180px; DISPLAY: block; BACKGROUND: url(../images/slogo01.jpg) no-repeat 13px 9px; FLOAT: left; COLOR: #012b5d; FONT-SIZE: 14px; CURSOR: default; FONT-WEIGHT: bold
+}
+.left_menu DT SPAN A:hover {
+	COLOR: #012b5d
+}
+.left_menu DT SPAN A.sel {
+	BACKGROUND: url(../images/slogo02.jpg) no-repeat 13px 9px
+}
+.left_menu DT SPAN A.sel:hover {
+	BACKGROUND: url(../images/slogo02.jpg) no-repeat 13px 9px; COLOR: #f60
+}
+.left_menu DT SPAN A:hover {
+	BACKGROUND: url(../images/slogo01.jpg) no-repeat 13px 9px
+}
+.left_menu DD {
+	PADDING-BOTTOM: 10px; PADDING-LEFT: 35px; WIDTH: 110px; PADDING-RIGHT: 35px; FLOAT: left; PADDING-TOP: 10px
+}
+.left_menu DD A {
+	LINE-HEIGHT: 22px; COLOR: #5e5e5e; FONT-SIZE: 12px
+}
+.left_menu DD A:visited {
+	LINE-HEIGHT: 22px; COLOR: #5e5e5e; FONT-SIZE: 12px
+}
+.left_menu DD A.select {
+	COLOR: #ff6500
+}
+.left_menu DD A.select:hover {
+	COLOR: #ff6500
+}
+.left_menu DD A:hover {
+	COLOR: #0064da
+}
+.help_right {
+	BORDER-BOTTOM: #d5dfe5 1px solid; BORDER-LEFT: #d5dfe5 1px solid; PADDING-BOTTOM: 15px; MARGIN-TOP: 9px; WIDTH: 768px; MARGIN-BOTTOM: 20px; FLOAT: right; BORDER-TOP: #d5dfe5 1px solid; BORDER-RIGHT: #d5dfe5 1px solid
+}
+.help_home_lc {
+	PADDING-LEFT: 30px; WIDTH: 500px; FLOAT: left; PADDING-TOP: 10px
+}
+.help_home_ksyd {
+	BORDER-BOTTOM: #bee5fc 1px solid; BORDER-LEFT: #bee5fc 1px solid; PADDING-BOTTOM: 20px; MARGIN-TOP: 0px; WIDTH: 160px; BACKGROUND: #f5fafd; FLOAT: right; BORDER-TOP: #bee5fc 1px solid; MARGIN-RIGHT: 24px; BORDER-RIGHT: #bee5fc 1px solid
+}
+.help_home_ksyd LI {
+	TEXT-INDENT: 20px; WIDTH: 160px; FLOAT: right; HEIGHT: 22px; COLOR: #00409f; OVERFLOW: hidden
+}
+.help_home_ksyd LI A {
+	LINE-HEIGHT: 22px; COLOR: #00409f
+}
+.help_home_ksyd LI A:visited {
+	LINE-HEIGHT: 22px; COLOR: #00409f
+}
+.help_home_ksyd LI A:hover {
+	TEXT-DECORATION: underline
+}
+.help_home_ksyd_title {
+	LINE-HEIGHT: 35px; TEXT-INDENT: 24px; BACKGROUND: url(..images/slogo03.jpg) no-repeat 11px 13px; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.help_home_class {
+	BORDER-BOTTOM: #d7d7d7 1px solid; WIDTH: 768px; BACKGROUND: url(../images/bg02.jpg) repeat-x; FLOAT: left; HEIGHT: 24px; BORDER-TOP: #d7d7d7 1px solid
+}
+.help_home_class LI {
+	TEXT-ALIGN: center; WIDTH: 110px; FLOAT: left
+}
+.help_home_class LI A {
+	LINE-HEIGHT: 24px; COLOR: #000; FONT-SIZE: 12px
+}
+.help_home_class LI A:hover {
+	COLOR: #0064da
+}
+.help_home_class LI.on {
+	TEXT-ALIGN: center; WIDTH: 110px; BACKGROUND: url(../images/bg03.jpg) repeat-x; FLOAT: left; HEIGHT: 24px
+}
+.help_home_class LI.on A {
+	LINE-HEIGHT: 24px; COLOR: #fff; FONT-SIZE: 14px
+}
+.help_home_class01 {
+	BORDER-BOTTOM: #d7d7d7 1px solid; PADDING-BOTTOM: 10px; LINE-HEIGHT: 20px; PADDING-LEFT: 10px; WIDTH: 748px; PADDING-RIGHT: 10px; BACKGROUND: url(../images/bg04.jpg) repeat-x; FLOAT: left; COLOR: #8db3c7; FONT-SIZE: 12px; PADDING-TOP: 10px
+}
+.help_home_class01 A {
+	PADDING-LEFT: 12px; PADDING-RIGHT: 12px; COLOR: #0064da; FONT-SIZE: 13px; TEXT-DECORATION: underline
+}
+.help_home_class01 A:visited {
+	PADDING-LEFT: 12px; PADDING-RIGHT: 12px; COLOR: #0064da; FONT-SIZE: 13px; TEXT-DECORATION: underline
+}
+.help_home_class01 A:hover {
+	COLOR: #ff6600
+}
+.help_home_question {
+	PADDING-BOTTOM: 40px; WIDTH: 766px; FLOAT: left
+}
+.help_home_question LI {
+	BORDER-BOTTOM-COLOR: #858585; TEXT-INDENT: 15px; WIDTH: 290px; BACKGROUND: url(../images/slogo04.jpg) no-repeat 5px 8px; FLOAT: left; BORDER-BOTTOM-WIDTH: 1px; HEIGHT: 20px; MARGIN-LEFT: 40px; OVERFLOW: hidden; PADDING-TOP: 4px; _margin-left: 20px; _margin-right: 20px
+}
+.help_home_question LI A {
+	LINE-HEIGHT: 20px; COLOR: #002f86; FONT-SIZE: 14px
+}
+.help_home_question LI A:visited {
+	LINE-HEIGHT: 20px; COLOR: #002f86; FONT-SIZE: 14px
+}
+.help_home_question LI A:hover {
+	COLOR: #f16c00
+}
+.help_home_question_title {
+	LINE-HEIGHT: 42px; TEXT-INDENT: 22px; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.help_title {
+	BORDER-BOTTOM: #d5dfe5 1px solid; LINE-HEIGHT: 28px; TEXT-INDENT: 21px; WIDTH: 768px; BACKGROUND: url(../images/bg01.jpg) repeat-x; COLOR: #00409f; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.help_hot {
+	BORDER-BOTTOM: #bee5fc 1px solid; BORDER-LEFT: #bee5fc 1px solid; PADDING-BOTTOM: 10px; MARGIN-TOP: 5px; PADDING-LEFT: 0px; WIDTH: 744px; PADDING-RIGHT: 0px; BACKGROUND: #f5fafd; FLOAT: left; MARGIN-LEFT: 11px; BORDER-TOP: #bee5fc 1px solid; BORDER-RIGHT: #bee5fc 1px solid; PADDING-TOP: 10px
+}
+.help_hot LI {
+	TEXT-INDENT: 31px; WIDTH: 700px; FLOAT: left; HEIGHT: 18px; COLOR: #00409f; OVERFLOW: hidden
+}
+.help_hot LI A {
+	LINE-HEIGHT: 18px; COLOR: #00409f
+}
+.help_hot LI A:hover {
+	TEXT-DECORATION: underline
+}
+.help_hot_title {
+	LINE-HEIGHT: 28px; TEXT-INDENT: 24px; BACKGROUND: url(..images/slogo03.jpg) no-repeat 11px 6px; FONT-SIZE: 14px
+}
+.help_centent {
+	PADDING-BOTTOM: 20px; MIN-HEIGHT: 200px; PADDING-LEFT: 20px; WIDTH: 726px; PADDING-RIGHT: 20px; FLOAT: left; PADDING-TOP: 20px
+}
+.help_centent H2 {
+	PADDING-BOTTOM: 5px; LINE-HEIGHT: 18px; PADDING-LEFT: 0px; WIDTH: 726px; PADDING-RIGHT: 0px; FLOAT: left; COLOR: #00409f; FONT-SIZE: 14px; PADDING-TOP: 5px
+}
+.help_centent IMG {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 11px; PADDING-RIGHT: 0px; PADDING-TOP: 3px
+}
+.help_centent H3 {
+	LINE-HEIGHT: 18px; PADDING-LEFT: 23px; WIDTH: 703px; FLOAT: left; COLOR: #333333; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+.help_centent_question {
+	PADDING-LEFT: 6px; WIDTH: 755px; FLOAT: left
+}
+.help_centent_question .title {
+	BORDER-BOTTOM: #066ed7 1px solid; BORDER-LEFT: #066ed7 1px solid; LINE-HEIGHT: 24px; WIDTH: 754px; BACKGROUND: url(../images/bg05.jpg) repeat-x; FLOAT: left; HEIGHT: 24px; COLOR: #fff; FONT-SIZE: 14px; BORDER-TOP: #066ed7 1px solid; BORDER-RIGHT: #066ed7 1px solid
+}
+.help_centent_question SPAN {
+	PADDING-LEFT: 16px; WIDTH: 19px; FLOAT: left; PADDING-TOP: 4px
+}
+.help_centent_question .list {
+	PADDING-BOTTOM: 15px; PADDING-LEFT: 15px; WIDTH: 725px; PADDING-RIGHT: 15px; FLOAT: left; PADDING-TOP: 15px
+}
+.help_centent_question .list LI {
+	PADDING-BOTTOM: 10px; FLOAT: left
+}
+.help_centent_question .list .ask {
+	LINE-HEIGHT: 20px; PADDING-LEFT: 22px; WIDTH: 680px; BACKGROUND: url(images/help/slogo06.jpg) no-repeat 0px 6px; FLOAT: left; COLOR: #0167cd; FONT-SIZE: 14px
+}
+.help_centent_question .list .answer {
+	LINE-HEIGHT: 18px; PADDING-LEFT: 22px; WIDTH: 680px; BACKGROUND: url(images/help/slogo07.jpg) no-repeat 0px 6px; FLOAT: left; COLOR: #333333; FONT-SIZE: 12px
+}
+.hide {
+	DISPLAY: block
+}
+#gotop {
+	Z-INDEX: 10000; POSITION: absolute; TEXT-INDENT: -9999px; WIDTH: 39px; HEIGHT: 34px
+}
+#gotop A {
+	WIDTH: 39px; DISPLAY: block; BACKGROUND: url(images/help/top.gif) no-repeat; HEIGHT: 34px
+}
+#help_right {
+	BORDER-BOTTOM: #d5dfe5 1px solid; BORDER-LEFT: #d5dfe5 1px solid; PADDING-BOTTOM: 15px; MARGIN-TOP: 9px; WIDTH: 768px; MARGIN-BOTTOM: 20px; FLOAT: right; BORDER-TOP: #d5dfe5 1px solid; BORDER-RIGHT: #d5dfe5 1px solid
+}
+#help_right .help_title{width:758px;height:29px;background:url(../images/titbg.gif);line-height:29px;padding-left:10px;}
+#help_right H2 {
+	LINE-HEIGHT: 28px; PADDING-LEFT: 24px; FONT-FAMILY: 宋体; BACKGROUND: url(images/help/rtbg.jpg) #ffffff repeat-x 50% top; HEIGHT: 28px; COLOR: #000; FONT-SIZE: 13px; FONT-WEIGHT: normal
+}
+#help_right P {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; PADDING-LEFT: 48px; PADDING-RIGHT: 48px; FONT-FAMILY: "宋体"; COLOR: #000000; FONT-SIZE: 13px; FONT-WEIGHT: normal; PADDING-TOP: 18px
+}
+#help_right H3 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 16px; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; HEIGHT: 16px; COLOR: #006699; FONT-SIZE: 13px; FONT-WEIGHT: bold; PADDING-TOP: 24px
+}
+#help_right H4 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 16px; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; HEIGHT: 16px; COLOR: #000; FONT-SIZE: 13px; FONT-WEIGHT: normal; PADDING-TOP: 24px
+}
+#help_right H5 {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 16px; PADDING-LEFT: 48px; PADDING-RIGHT: 0px; FONT-FAMILY: 宋体; HEIGHT: 16px; COLOR: #ff6500; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 24px
+}
+#help_right #title_nav {
+	COLOR: #000000
+}
+#help_right IMG {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; MARGIN: 24px 0px 12px 72px; OVERFLOW: hidden; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+#help_right A:link {
+	COLOR: #006699
+}
+#help_right A:visited {
+	COLOR: #006699
+}
+#help_right A:hover {
+	COLOR: #ff6500
+}
+#help_right A:active {
+	COLOR: #ff6500
+}
+#imgfl {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; FLOAT: left; MARGIN-LEFT: 0px; OVERFLOW: hidden; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+.main {
+	MARGIN: 0px auto 10px
+}
+.leftHelp {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 182px; FLOAT: left; HEIGHT: 596px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+
+HTML {
+	FONT-FAMILY: "宋体", serif; HEIGHT: 10px; COLOR: #333; FONT-SIZE: 12px
+}
+BODY {
+	FONT-FAMILY: "宋体", serif; HEIGHT: 10px; COLOR: #333; FONT-SIZE: 12px
+}
+BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DIV {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+DD {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+OL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H1 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H2 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H3 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H4 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H5 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+H6 {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+FIELDSET {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+TEXTAREA {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+BLOCKQUOTE {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+P {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	LIST-STYLE-POSITION: outside; LIST-STYLE-TYPE: none
+}
+IMG {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; VERTICAL-ALIGN: top; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}
+INPUT {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: middle
+}
+BUTTON {
+	FONT-SIZE: 12px; VERTICAL-ALIGN: middle
+}
+OL {
+	LIST-STYLE: none none outside
+}
+UL {
+	LIST-STYLE: none none outside
+}
+A {
+	COLOR: #363636; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #363636; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #001465; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #001465
+}
+A:focus {
+	OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium
+}

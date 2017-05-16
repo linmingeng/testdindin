@@ -1,0 +1,25 @@
+<ion-view title="收货地址" hide-back-button="true">
+    <ion-nav-buttons side="left">
+       <button class="button back-button button-icon icon iconfont icon-iosarrowback" ng-click="utils.goBack('account')" >
+            {{ utils.hasHistory()?'返回':'我的'}}
+       </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-clear button-positive" ng-click="goAddressAdd()" >添加</button>
+    </ion-nav-buttons>
+    <ion-content has-header="true" has-bouncing="true">
+        <ion-refresher on-refresh="doRefresh()" ></ion-refresher>
+        <div class="list common-margin-top" ng-if="dt.data.length">
+            <div class="item item-icon-right addr" ng-repeat="addr in dt.data track by addr.addressid" ng-click="useAddr(addr);$event.stopPropagation();">
+                <span ng-bind="addr.name" ></span>，<span ng-bind="addr.phone" ></span> <br>
+                <span ng-bind="addr.area +' '+addr.address" class="fs_10"></span>
+                <i class="icon iconfont icon-ioscheckmark" ng-class="{'balanced icon-ioscheckmark':ifSelected(addr.addressid), 'icon-ioscircleoutline': !ifSelected(addr.addressid)}" ng-if="utils.stateName() != 'app.address'" ng-click="useAddr(addr);$event.stopPropagation();"></i>
+                <i class="icon iconfont icon-iostrashoutline" ng-if="utils.stateName() == 'app.address'" ng-click="removeAddr(addr, $index);$event.stopPropagation();"></i>
+            </div>
+        </div>
+        <div class="text-center padding gray empty" ng-if="dt.isEmpty">
+             <i class="icon iconfont icon-31dingwei gray" style="font-size:64px;"></i>
+             <br /><span class="lh_64">添加收货地址，就能收收收...</span>
+        </div>
+    </ion-content>
+</ion-view>

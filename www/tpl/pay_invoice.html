@@ -1,0 +1,12 @@
+<ion-view title="发票抬头">
+    <ion-nav-buttons side="right">
+        <button class="button button-small button-clear button-positive" ng-click="setInvoice(dt.invoice)">确定</button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="list my-list">
+            <label class="item item-input">
+                <input maxLength="18" type="text" ng-model="dt.invoice" style="height:24px;" placeholder="请输入个人或公司抬头" one-key-clear-input />
+            </label>
+        </div>
+    </ion-content>
+</ion-view>
